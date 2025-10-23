@@ -1,0 +1,92 @@
+import Link from "next/link"
+
+interface FooterProps {
+  locale?: string
+}
+
+export function Footer({ locale = "en" }: FooterProps) {
+  const currentYear = new Date().getFullYear()
+
+  const footerSections = [
+    {
+      title: locale === "zh" ? "产品" : "Product",
+      links: [
+        { label: locale === "zh" ? "解决方案" : "Solutions", href: "/solutions" },
+        { label: locale === "zh" ? "案例研究" : "Case Studies", href: "/case-studies" },
+        { label: locale === "zh" ? "定价" : "Pricing", href: "#" },
+      ],
+    },
+    {
+      title: locale === "zh" ? "公司" : "Company",
+      links: [
+        { label: locale === "zh" ? "关于我们" : "About", href: "/about" },
+        { label: locale === "zh" ? "博客" : "Blog", href: "#" },
+        { label: locale === "zh" ? "职业" : "Careers", href: "#" },
+      ],
+    },
+    {
+      title: locale === "zh" ? "资源" : "Resources",
+      links: [
+        { label: locale === "zh" ? "文档" : "Documentation", href: "#" },
+        { label: locale === "zh" ? "支持" : "Support", href: "#" },
+        { label: locale === "zh" ? "联系" : "Contact", href: "#" },
+      ],
+    },
+  ]
+
+  return (
+    <footer className="border-t border-border bg-card">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-lg">F</span>
+              </div>
+              <span className="font-semibold">Functions Ltd</span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              {locale === "zh"
+                ? "为企业提供创新的技术和工程解决方案"
+                : "Innovative tech and engineering solutions for enterprises"}
+            </p>
+          </div>
+
+          {/* Links */}
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="font-semibold mb-4">{section.title}</h3>
+              <ul className="space-y-2">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} Functions Ltd. {locale === "zh" ? "保留所有权利。" : "All rights reserved."}
+          </p>
+          <div className="flex gap-6">
+            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              {locale === "zh" ? "隐私政策" : "Privacy"}
+            </Link>
+            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              {locale === "zh" ? "服务条款" : "Terms"}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
