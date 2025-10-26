@@ -217,7 +217,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-base border-white text-white hover:bg-white/10"
+                  className="text-base border-white text-white hover:bg-white/10 cursor-pointer"
                 >
                   {t.hero.cta2}
                 </Button>
