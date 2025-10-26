@@ -234,36 +234,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problem Section */}
+      {/* Problem Section: Three vertical rectangles with text */}
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.problem.title}</h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t.problem.description}</p>
-              <ul className="space-y-4">
-                {t.problem.points.map((point, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="mt-1 text-destructive">
-                      <div className="w-5 h-5 rounded-full border-2 border-destructive flex items-center justify-center">
-                        <div className="w-2 h-2 bg-destructive rounded-full" />
-                      </div>
-                    </div>
-                    <span className="text-muted-foreground">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="relative aspect-square bg-muted rounded-2xl overflow-hidden">
-              <img
-                src="/complex-enterprise-technology-infrastructure.jpg"
-                alt="Enterprise challenges"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-balance">{t.problem.title}</h2>
+      
+          <div className="grid md:grid-cols-3 gap-6">
+            {t.problem.points.map((point, index) => (
+              <div
+                key={index}
+                className="flex flex-col justify-center items-center bg-gradient-to-b from-primary/20 to-primary/10 p-8 rounded-xl min-h-[300px] text-center transition-transform hover:scale-105"
+              >
+                <div className="text-2xl font-semibold mb-4 text-primary">{`0${index + 1}`}</div>
+                <p className="text-lg text-muted-foreground">{point}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
 
       {/* Solution Section */}
       <section className="py-24 md:py-32 bg-card">
