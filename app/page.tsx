@@ -20,7 +20,11 @@ export default function Home() {
     en: {
       hero: {
         eyebrow: "Engineering Sustainability",
-        title: "Smarter buildings. Healthier lives. Sustainable future.",
+        title: [
+                  "Smarter buildings.",
+                  "Healthier lives.",
+                  "Sustainable future."
+                ],
         description:
           "We help our clients balance economic efficiency, environmental responsibility, and human wellbeing — creating buildings that perform today and stand up to tomorrow.",
         cta1: "Get Started",
@@ -196,6 +200,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Title Strip */}
+      <h1 className="text-4xl font-bold mt-2 space-y-1">
+        {content[locale].hero.title.map((line, i) => (
+          <div key={i}>{line}</div>
+        ))}
+      </h1>
 
       {/* Logo Strip */}
       <section className="border-y border-border bg-card">
