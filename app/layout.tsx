@@ -24,5 +24,6 @@ export default function RootLayout({
 }
 
 export const metadata = {
-      generator: 'v0.app'
-    };
+  title: "Functions Ltd - Tech & Engineering Solutions",
+  description: "Innovative technology and engineering solutions for modern enterprises",
+};

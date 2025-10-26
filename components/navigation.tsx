@@ -28,10 +28,14 @@ export function Navigation({ locale = "en", onLocaleChange, onThemeToggle, theme
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">F</span>
+            <div className="flex items-center">
+              <img
+                src={theme === "dark" ? "/logo-light.png" : "/logo-dark.png"}
+                alt="Functions logo"
+                className="w-8 h-8 object-contain"
+              />
             </div>
-            <span className="font-semibold text-lg">Functions Ltd</span>
+            <span className="font-semibold text-lg">FUNCTIONS</span>
           </Link>
 
           {/* Desktop Navigation */}
