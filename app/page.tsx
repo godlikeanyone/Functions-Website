@@ -186,7 +186,11 @@ export default function Home() {
             <div className="inline-block mb-4 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
               <span className="text-sm font-medium text-primary">{t.hero.eyebrow}</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance leading-tight">{t.hero.title}</h1>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance leading-tight">
+                {Array.isArray(t.hero.title)
+                  ? t.hero.title.map((line, i) => <div key={i}>{line}</div>)
+                  : t.hero.title}
+            </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-balance">{t.hero.description}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-base">
@@ -200,13 +204,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Title Strip */}
-      <h1 className="text-4xl font-bold mt-2 space-y-1">
-        {content[locale].hero.title.map((line, i) => (
-          <div key={i}>{line}</div>
-        ))}
-      </h1>
 
       {/* Logo Strip */}
       <section className="border-y border-border bg-card">
