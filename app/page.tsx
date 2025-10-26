@@ -19,10 +19,10 @@ export default function Home() {
   const content = {
     en: {
       hero: {
-        eyebrow: "Engineering Excellence",
-        title: "Building the future of enterprise technology",
+        eyebrow: "Engineering Sustainability",
+        title: "Smarter buildings. Healthier lives. Sustainable future.",
         description:
-          "We deliver cutting-edge engineering solutions that transform complex challenges into competitive advantages for global enterprises.",
+          "We help our clients balance economic efficiency, environmental responsibility, and human wellbeing — creating buildings that perform today and stand up to tomorrow.",
         cta1: "Get Started",
         cta2: "View Solutions",
       },
