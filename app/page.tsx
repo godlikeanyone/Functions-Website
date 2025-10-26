@@ -175,29 +175,42 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
-        </div>
+      <section
+        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/bg-home.webp')" }}
+      >
+        {/* 半透明遮罩 */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+        {/* 内容 */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center z-10">
           <div className="animate-fade-in">
-            <div className="inline-block mb-4 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
-              <span className="text-sm font-medium text-primary">{t.hero.eyebrow}</span>
+            {/* 小标题 */}
+            <div className="inline-block mb-4 px-4 py-1.5 bg-primary/20 border border-primary/30 rounded-full">
+              <span className="text-sm font-medium text-white">{t.hero.eyebrow}</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance leading-tight">
-                {Array.isArray(t.hero.title)
-                  ? t.hero.title.map((line, i) => <div key={i}>{line}</div>)
-                  : t.hero.title}
+
+            {/* 大标题，多行 */}
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-snug space-y-2">
+              {Array.isArray(t.hero.title)
+                ? t.hero.title.map((line, i) => <div key={i}>{line}</div>)
+                : t.hero.title}
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto text-balance">{t.hero.description}</p>
+
+            {/* 描述 */}
+            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">{t.hero.description}</p>
+
+            {/* 按钮 */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-base">
+              <Button size="lg" className="text-base text-white bg-primary hover:bg-primary/90">
                 {t.hero.cta1}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="text-base bg-transparent">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base border-white text-white hover:bg-white/10"
+              >
                 {t.hero.cta2}
               </Button>
             </div>
