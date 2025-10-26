@@ -32,7 +32,7 @@ export function Navigation({ locale = "en", onLocaleChange, onThemeToggle, theme
               <img
                 src={theme === "dark" ? "/logo-light.png" : "/logo-dark.png"}
                 alt="Functions logo"
-                className="w-8 h-8 object-contain"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
               />
             </div>
             <span className="font-semibold text-lg">FUNCTIONS</span>
