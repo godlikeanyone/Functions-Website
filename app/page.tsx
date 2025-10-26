@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { StatsBand } from "@/components/stats-band"
 import { LogoStrip } from "@/components/logo-strip"
@@ -101,8 +102,14 @@ export default function Home() {
     zh: {
       hero: {
         eyebrow: "工程卓越",
-        title: "构建企业技术的未来",
-        description: "我们提供尖端的工程解决方案，将复杂挑战转化为全球企业的竞争优势。",
+        title: [
+                  "更智能的建筑。",
+                  "更健康的生活。",
+                  "更可持续的未来。"
+                ],
+        description:
+          "我们帮助客户在经济效率、环境责任和人类福祉之间取得平衡——打造既能满足当今需求又能经受住未来考验的高性能建筑。",
+        description: "我们帮助客户在经济效率、环境责任和人类福祉之间取得平衡——打造既能满足当今需求又能经受住未来考验的高性能建筑。",
         cta1: "开始使用",
         cta2: "查看解决方案",
       },
@@ -179,40 +186,42 @@ export default function Home() {
         className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('/bg-home.webp')" }}
       >
-        {/* 半透明遮罩 */}
+        {/* Half-transparent overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
 
-        {/* 内容 */}
+        {/* Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center z-10">
           <div className="animate-fade-in">
-            {/* 小标题 */}
+            {/* Subtitle */}
             <div className="inline-block mb-4 px-4 py-1.5 bg-primary/20 border border-primary/30 rounded-full">
               <span className="text-sm font-medium text-white">{t.hero.eyebrow}</span>
             </div>
 
-            {/* 大标题，多行 */}
+            {/* Title */}
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-snug space-y-2">
               {Array.isArray(t.hero.title)
                 ? t.hero.title.map((line, i) => <div key={i}>{line}</div>)
                 : t.hero.title}
             </h1>
 
-            {/* 描述 */}
+            {/* Description */}
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">{t.hero.description}</p>
 
-            {/* 按钮 */}
+            {/* Button */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-base text-white bg-primary hover:bg-primary/90">
                 {t.hero.cta1}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-base border-white text-white hover:bg-white/10"
-              >
-                {t.hero.cta2}
-              </Button>
+              <Link href="/solutions">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-base border-white text-white hover:bg-white/10"
+                >
+                  {t.hero.cta2}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
