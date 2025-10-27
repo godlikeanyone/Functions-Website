@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { StatsBand } from "@/components/stats-band"
 import { LogoStrip } from "@/components/logo-strip"
@@ -10,6 +11,7 @@ import { useEffect, useState } from "react"
 
 export default function Home() {
   const [locale, setLocale] = useState("en")
+  const [active, setActive] = useState<number | null>(null)
 
   useEffect(() => {
     // Get locale from parent layout if needed
@@ -39,6 +41,29 @@ export default function Home() {
           "Legacy infrastructure holding back innovation",
           "Disconnected systems creating inefficiencies",
           "Lack of scalable, future-proof solutions",
+        ],
+        panels: [
+          {
+            title: "Integration Complexity",
+            detail:
+              "Enterprises face challenges integrating legacy systems with modern cloud infrastructure.",
+            bgImage: "/complex-enterprise-technology-infrastructure.jpg",
+            bgPosition: "left",
+          },
+          {
+            title: "Security & Compliance",
+            detail:
+              "Maintaining security standards across multiple services and regions is costly.",
+            bgImage: "/complex-enterprise-technology-infrastructure.jpg",
+            bgPosition: "center",
+          },
+          {
+            title: "Scalability Bottlenecks",
+            detail:
+              "Scaling across distributed systems requires both technical and architectural foresight.",
+            bgImage: "/complex-enterprise-technology-infrastructure.jpg",
+            bgPosition: "right",
+          },
         ],
       },
       solution: {
@@ -234,26 +259,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problem Section: Three vertical rectangles with text */}
+      {/* Problem Section */}
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-balance">{t.problem.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-balance">
+            {t.problem.title}
+          </h2>
       
-          <div className="grid md:grid-cols-3 gap-6">
-            {t.problem.points.map((point, index) => (
-              <div
+          <div className="flex flex-col md:flex-row gap-6 h-[480px]">
+            {t.problem.panels.map((panel, index) => (
+              <motion.div
                 key={index}
-                className="flex flex-col justify-center items-center bg-gradient-to-b from-primary/20 to-primary/10 p-8 rounded-xl min-h-[300px] text-center transition-transform hover:scale-105"
+                className="relative rounded-2xl overflow-hidden bg-gray-200 cursor-pointer flex flex-col justify-end text-white"
+                style={{
+                  backgroundImage: `url(${panel.bgImage})`,
+                  backgroundSize: "300% 100%",
+                  backgroundPosition: panel.bgPosition,
+                }}
+                onMouseEnter={() => setActive(index)}
+                onMouseLeave={() => setActive(null)}
+                animate={{
+                  flex: active === index ? 1.8 : 1,
+                  transition: { duration: 0.6, type: "spring" },
+                }}
               >
-                <div className="text-2xl font-semibold mb-4 text-primary">{`0${index + 1}`}</div>
-                <p className="text-lg text-muted-foreground">{point}</p>
-              </div>
+                {/* 半透明遮罩 */}
+                <div className="absolute inset-0 bg-black/40" />
+      
+                {/* 文本内容 */}
+                <div className="relative p-6 md:p-8 z-10">
+                  <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
+                  {active === index && (
+                    <motion.p
+                      className="text-sm md:text-base text-gray-200 leading-relaxed"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {panel.detail}
+                    </motion.p>
+                  )}
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-
+      
       {/* Solution Section */}
       <section className="py-24 md:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
