@@ -35,13 +35,6 @@ export default function Home() {
       },
       problem: {
         title: "The challenge facing modern enterprises",
-        description:
-          "Organizations struggle with legacy systems, fragmented technology stacks, and the complexity of digital transformation. Traditional approaches can't keep pace with innovation.",
-        points: [
-          "Legacy infrastructure holding back innovation",
-          "Disconnected systems creating inefficiencies",
-          "Lack of scalable, future-proof solutions",
-        ],
         panels: [
           {
             title: "Integration Complexity",
