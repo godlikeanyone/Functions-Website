@@ -300,11 +300,20 @@ export default function Home() {
                     transition: { duration: 0.5 },
                   }}
                 >
-                  <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
-
-                  <p className={`text-sm md:text-base text-gray-200 leading-relaxed`}>
-                    {panel.detail}
-                  </p>
+                  <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{
+                      y: active === index ? 0 : 30,  // 悬停时上升
+                      opacity: active === index ? 1 : 0.9,
+                    }}
+                    transition={{ duration: 0.6, type: "spring" }}
+                  >
+                    <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
+                    <p className="text-sm md:text-base text-gray-200 leading-relaxed">
+                      {panel.detail}
+                    </p>
+                  </motion.div>
+                  
                   {/* Hover for more bullet points */}
                   {active === index && panel.bullets && (
                     <motion.ul
