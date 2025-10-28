@@ -294,7 +294,7 @@ export default function Home() {
       
                 {/* Content */}
                 <motion.div className="relative p-6 md:p-8 z-10 flex flex-col justify-end h-full"
-                  style={{ minWidth: "260px" }}
+                  style={{ maxWidth: "320px" }}
                   animate={{
                     justifyContent: active === index ? "flex-start" : "flex-end",
                     transition: { duration: 0.5 },
