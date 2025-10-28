@@ -294,28 +294,27 @@ export default function Home() {
       
                 {/* Content */}
                 <motion.div
-                  className="relative p-6 md:p-8 z-10 flex flex-col justify-end h-full"
+                  className="relative p-6 md:p-8 z-10 flex flex-col h-full"
                   style={{ maxWidth: "550px" }}
+                  animate={{
+                    justifyContent: active === index ? "flex-start" : "flex-end", // 上浮到底部/顶部
+                  }}
+                  transition={{ duration: 0.6, type: "spring", stiffness: 80 }}
                 >
-                  {/* title + detail animation */}
+                  {/* Title + Detail */}
                   <motion.div
                     initial={{ y: 40, opacity: 0 }}
                     animate={{
-                      y: active === index ? 0 : 20,
+                      y: active === index ? 0 : 40,  // 悬停时不偏移
                       opacity: active === index ? 1 : 0.9,
                     }}
-                    transition={{
-                      duration: 0.6,
-                      ease: "easeOut",
-                    }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                   >
                     <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
-                    <p className="text-sm md:text-base text-gray-200 leading-relaxed">
-                      {panel.detail}
-                    </p>
+                    <p className="text-sm md:text-base text-gray-200 leading-relaxed">{panel.detail}</p>
                   </motion.div>
-                  
-                  {/* Hover for more bullet points */}
+                
+                  {/* Bullet Points */}
                   {active === index && panel.bullets && (
                     <motion.ul
                       className="mt-4 text-gray-200 list-disc list-inside text-sm"
