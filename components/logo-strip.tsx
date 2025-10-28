@@ -13,31 +13,26 @@ export function LogoStrip({ title, logos }: LogoStripProps) {
       name: "Henkel",
       image: "/henkel-logo.svg",
       url: "https://www.henkel.com/",
-      height: "h-16",
     },
     {
       name: "Moncler",
       image: "/moncler-logo.svg",
       url: "https://www.moncler.com/",
-      height: "h-16",
     },
     {
       name: "Nafas",
       image: "/nafas-logo.svg",
       url: "https://nafas.co.id/",
-      height: "h-20",
     },
     {
       name: "NOC Qatar",
       image: "/noc-logo.png",
       url: "https://www.noc.qa/",
-      height: "h-18",
     },
     {
       name: "Nirvana Being",
       image: "/nirvana-logo.svg",
       url: "https://nirvanabeing.com/",
-      height: "h-20",
     },
   ]
 
@@ -59,11 +54,13 @@ export function LogoStrip({ title, logos }: LogoStripProps) {
             rel="noopener noreferrer"
             className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
           >
-            <img
-              src={logo.image}
-              alt={logo.name}
-              className="${logo.height} object-contain transition-shadow hover:shadow-lg"
-            />
+            <div className="h-16 w-32 flex items-center justify-center">
+              <img
+                src={logo.image}
+                alt={logo.name}
+                className="max-h-full max-w-full object-contain transition-shadow hover:shadow-lg"
+              />
+            </div>
           </a>
         ))}
       </div>
