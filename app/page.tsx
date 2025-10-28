@@ -297,15 +297,15 @@ export default function Home() {
                   className="relative p-6 md:p-8 z-10 flex flex-col h-full"
                   style={{ maxWidth: "550px" }}
                   animate={{
-                    justifyContent: active === index ? "flex-start" : "flex-end", // 上浮到底部/顶部
+                    justifyContent: active === index ? "flex-start" : "flex-end",
                   }}
                   transition={{ duration: 0.6, type: "spring", stiffness: 80 }}
                 >
                   {/* Title + Detail */}
                   <motion.div
-                    initial={{ y: 40, opacity: 0 }}
+                    initial={{ y: 20, opacity: 0 }}
                     animate={{
-                      y: active === index ? 0 : 40,  // 悬停时不偏移
+                      y: active === index ? 0 : 20,
                       opacity: active === index ? 1 : 0.9,
                     }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
