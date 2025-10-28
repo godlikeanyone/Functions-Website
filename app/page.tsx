@@ -294,6 +294,7 @@ export default function Home() {
       
                 {/* Content */}
                 <motion.div className="relative p-6 md:p-8 z-10 flex flex-col justify-end h-full"
+                  style={{ minWidth: "260px" }}
                   animate={{
                     justifyContent: active === index ? "flex-start" : "flex-end",
                     transition: { duration: 0.5 },
@@ -301,7 +302,7 @@ export default function Home() {
                 >
                   <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
 
-                  <p className={`text-sm md:text-base text-gray-200 leading-relaxed truncate`}>
+                  <p className={`text-sm md:text-base text-gray-200 leading-relaxed`}>
                     {panel.detail}
                   </p>
                   {/* Hover for more bullet points */}
