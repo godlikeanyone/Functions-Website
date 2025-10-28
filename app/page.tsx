@@ -301,11 +301,12 @@ export default function Home() {
                   }}
                 >
                   <motion.div
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{
-                      y: active === index ? 0 : 30,  // 悬停时上升
-                      opacity: active === index ? 1 : 0.9,
+                    variants={{
+                      inactive: { y: 30, opacity: 0.9 },
+                      active: { y: 0, opacity: 1 },
                     }}
+                    initial="inactive"
+                    animate={active === index ? "active" : "inactive"}
                     transition={{ duration: 0.6, type: "spring" }}
                   >
                     <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
