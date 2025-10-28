@@ -299,7 +299,7 @@ export default function Home() {
                 >
                   {/* title + detail animation */}
                   <motion.div
-                    initial={{ y: 60, opacity: 0 }}
+                    initial={{ y: 40, opacity: 0 }}
                     animate={{
                       y: active === index ? 0 : 60,
                       opacity: active === index ? 1 : 0.9,
