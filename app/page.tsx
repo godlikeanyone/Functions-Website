@@ -301,7 +301,7 @@ export default function Home() {
                   <motion.div
                     initial={{ y: 40, opacity: 0 }}
                     animate={{
-                      y: active === index ? 0 : 60,
+                      y: active === index ? 0 : 40,
                       opacity: active === index ? 1 : 0.9,
                     }}
                     transition={{
