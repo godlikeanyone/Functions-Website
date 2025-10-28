@@ -25,19 +25,19 @@ export function LogoStrip({ title, logos }: LogoStripProps) {
       name: "Nafas",
       image: "/nafas-logo.svg",
       url: "https://nafas.co.id/",
-      height: "h-16",
+      height: "h-20",
     },
     {
       name: "NOC Qatar",
       image: "/noc-logo.png",
       url: "https://www.noc.qa/",
-      height: "h-16",
+      height: "h-18",
     },
     {
       name: "Nirvana Being",
       image: "/nirvana-logo.svg",
       url: "https://nirvanabeing.com/",
-      height: "h-16",
+      height: "h-20",
     },
   ]
 
