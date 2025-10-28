@@ -11,27 +11,27 @@ export function LogoStrip({ title, logos }: LogoStripProps) {
   const defaultLogos = [
     {
       name: "Henkel",
-      image: "/henkel-logo.jpg",
+      image: "/henkel-logo.svg",
       url: "https://www.henkel.com/",
     },
     {
       name: "Moncler",
-      image: "/moncler-logo.jpg",
+      image: "/moncler-logo.svg",
       url: "https://www.moncler.com/",
     },
     {
       name: "Nafas",
-      image: "/nafas-logo.jpg",
+      image: "/nafas-logo.svg",
       url: "https://nafas.co.id/",
     },
     {
       name: "NOC Qatar",
-      image: "/noc-logo.jpg",
+      image: "/noc-logo.png",
       url: "https://www.noc.qa/",
     },
     {
       name: "Nirvana Being",
-      image: "/nirvana-logo.jpg",
+      image: "/nirvana-logo.svg",
       url: "https://nirvanabeing.com/",
     },
   ]
