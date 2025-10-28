@@ -1,24 +1,65 @@
 interface LogoStripProps {
   title?: string
-  logos?: string[]
+  logos?: {
+    name: string
+    image: string
+    url: string
+  }[]
 }
 
-export function LogoStrip({ title, logos = [] }: LogoStripProps) {
-  const defaultLogos = ["Company A", "Company B", "Company C", "Company D", "Company E", "Company F"]
+export function LogoStrip({ title, logos }: LogoStripProps) {
+  const defaultLogos = [
+    {
+      name: "Henkel",
+      image: "/henkel-logo.jpg",
+      url: "https://www.henkel.com/",
+    },
+    {
+      name: "Moncler",
+      image: "/moncler-logo.jpg",
+      url: "https://www.moncler.com/",
+    },
+    {
+      name: "Nafas",
+      image: "/nafas-logo.jpg",
+      url: "https://nafas.co.id/",
+    },
+    {
+      name: "NOC Qatar",
+      image: "/noc-logo.jpg",
+      url: "https://www.noc.qa/",
+    },
+    {
+      name: "Nirvana Being",
+      image: "/nirvana-logo.jpg",
+      url: "https://nirvanabeing.com/",
+    },
+  ]
 
-  const displayLogos = logos.length > 0 ? logos : defaultLogos
+  const displayLogos = logos && logos.length > 0 ? logos : defaultLogos
 
   return (
     <div className="py-16">
-      {title && <h3 className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-wider">{title}</h3>}
-      <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
+      {title && (
+        <h3 className="text-center text-sm text-muted-foreground mb-8 uppercase tracking-wider">
+          {title}
+        </h3>
+      )}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center">
         {displayLogos.map((logo, index) => (
-          <div
+          <a
             key={index}
-            className="flex items-center justify-center h-12 text-muted-foreground/50 font-semibold text-sm"
+            href={logo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
           >
-            {logo}
-          </div>
+            <img
+              src={logo.image}
+              alt={logo.name}
+              className="h-10 object-contain grayscale hover:grayscale-0 transition"
+            />
+          </a>
         ))}
       </div>
     </div>
