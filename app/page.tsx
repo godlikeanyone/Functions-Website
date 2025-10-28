@@ -37,25 +37,38 @@ export default function Home() {
         title: "The challenge facing modern enterprises",
         panels: [
           {
-            title: "Integration Complexity",
+            title: "Hardware Solutions",
             detail:
-              "Enterprises face challenges integrating legacy systems with modern cloud infrastructure.",
+              "Delivering advanced air and ventilation systems to enhance indoor air quality and building performance.",
             bgImage: "/complex-enterprise-technology-infrastructure.jpg",
             bgPosition: "left",
+            bullets: [
+              "MESP Units – Electrostatic air purification with high efficiency and low maintenance",
+              "Ventilation Units – Fresh air solutions improving comfort and wellbeing",
+              "Environmental Sensors – Real-time indoor environmental monitoring for data-driven decisions"
+            ],
           },
           {
-            title: "Security & Compliance",
+            title: "Smart Platform",
             detail:
-              "Maintaining security standards across multiple services and regions is costly.",
+              "Harnessing data intelligence to optimize energy performance and indoor environmental quality.",
             bgImage: "/complex-enterprise-technology-infrastructure.jpg",
             bgPosition: "center",
+            bullets: [
+              "Monitoring Platform – Centralized dashboard for real-time environmental quality and comfort insights",
+              "AI Energy Optimization – Machine-learning algorithms that reduce energy consumption and enhance system efficiency"
+            ],
           },
           {
-            title: "Scalability Bottlenecks",
+            title: "Professional Consultancy",
             detail:
-              "Scaling across distributed systems requires both technical and architectural foresight.",
+              "Guiding clients toward healthier, greener, and more responsible buildings and organizations.",
             bgImage: "/complex-enterprise-technology-infrastructure.jpg",
             bgPosition: "right",
+            bullets: [
+              "Green Building Certification – LEED, BREEAM, WELL and other sustainability frameworks",
+              "ESG Strategy & Planning – Customized ESG roadmaps and reporting solutions"
+            ],
           },
         ],
       },
