@@ -276,23 +276,35 @@ export default function Home() {
                   transition: { duration: 0.6, type: "spring" },
                 }}
               >
-                {/* 半透明遮罩 */}
+                {/* Half-transparent overlay */}
                 <div className="absolute inset-0 bg-black/40" />
       
-                {/* 文本内容 */}
-                <div className="relative p-6 md:p-8 z-10">
+                {/* Content */}
+                <motion.div className="relative p-6 md:p-8 z-10 flex flex-col justify-end h-full"
+                  animate={{
+                    justifyContent: active === index ? "flex-start" : "flex-end",
+                    transition: { duration: 0.5 },
+                  }}
+                >
                   <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
-                  {active === index && (
-                    <motion.p
-                      className="text-sm md:text-base text-gray-200 leading-relaxed"
+
+                  <p className={`text-sm md:text-base text-gray-200 leading-relaxed`}>
+                    {panel.detail}
+                  </p>
+                  {/* Hover for more bullet points */}
+                  {active === index && panel.bullets && (
+                    <motion.ul
+                      className="mt-4 text-gray-200 list-disc list-inside text-sm"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      {panel.detail}
-                    </motion.p>
+                      {panel.bullets.map((bullet, i) => (
+                        <li key={i}>{bullet}</li>
+                      ))}
+                    </motion.ul>
                   )}
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
