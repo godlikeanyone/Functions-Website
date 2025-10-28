@@ -301,13 +301,13 @@ export default function Home() {
                 >
                   <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
 
-                  <p className={`text-sm md:text-base text-gray-200 leading-relaxed`}>
+                  <p className={`text-sm md:text-base text-gray-200 leading-relaxed truncate`}>
                     {panel.detail}
                   </p>
                   {/* Hover for more bullet points */}
                   {active === index && panel.bullets && (
                     <motion.ul
-                      className="mt-4 text-gray-200 list-disc list-inside text-sm truncate"
+                      className="mt-4 text-gray-200 list-disc list-inside text-sm"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
