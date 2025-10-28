@@ -285,8 +285,7 @@ export default function Home() {
                 onMouseEnter={() => setActive(index)}
                 onMouseLeave={() => setActive(null)}
                 animate={{
-                  scale: active === index ? 1.05 : 1,
-                  zIndex: active === index ? 10 : 1,
+                  flex: active === index ? 1.8 : 1,
                   transition: { duration: 0.6, type: "spring" },
                 }}
               >
