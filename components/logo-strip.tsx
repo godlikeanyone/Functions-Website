@@ -54,7 +54,7 @@ export function LogoStrip({ title, logos }: LogoStripProps) {
             rel="noopener noreferrer"
             className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
           >
-            <div className="h-20 w-32 flex items-center justify-center">
+            <div className="h-30 w-30 flex items-center justify-center">
               <img
                 src={logo.image}
                 alt={logo.name}
