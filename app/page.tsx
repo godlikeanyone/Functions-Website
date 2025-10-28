@@ -307,7 +307,7 @@ export default function Home() {
                   {/* Hover for more bullet points */}
                   {active === index && panel.bullets && (
                     <motion.ul
-                      className="mt-4 text-gray-200 list-disc list-inside text-sm"
+                      className="mt-4 text-gray-200 list-disc list-inside text-sm truncate"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
