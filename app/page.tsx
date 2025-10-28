@@ -293,21 +293,21 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/40" />
       
                 {/* Content */}
-                <motion.div className="relative p-6 md:p-8 z-10 flex flex-col justify-end h-full"
+                <motion.div
+                  className="relative p-6 md:p-8 z-10 flex flex-col justify-end h-full"
                   style={{ maxWidth: "550px" }}
-                  animate={{
-                    justifyContent: active === index ? "flex-start" : "flex-end",
-                    transition: { duration: 0.5 },
-                  }}
                 >
+                  {/* title + detail animation */}
                   <motion.div
-                    variants={{
-                      inactive: { y: 30, opacity: 0.9 },
-                      active: { y: 0, opacity: 1 },
+                    initial={{ y: 60, opacity: 0 }}
+                    animate={{
+                      y: active === index ? 0 : 60,
+                      opacity: active === index ? 1 : 0.9,
                     }}
-                    initial="inactive"
-                    animate={active === index ? "active" : "inactive"}
-                    transition={{ duration: 0.6, type: "spring" }}
+                    transition={{
+                      duration: 0.6,
+                      ease: "easeOut",
+                    }}
                   >
                     <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
                     <p className="text-sm md:text-base text-gray-200 leading-relaxed">
