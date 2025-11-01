@@ -125,9 +125,9 @@ export default function Home() {
         ],
       },
       cta: {
-        title: "Ready to transform your enterprise?",
-        description: "Let's discuss how Functions Ltd can accelerate your digital journey",
-        button: "Schedule a Consultation",
+        title: "Ready to build a more sustainable future?",
+        description: "Let‘s discuss how Functions could accelerate your journey",
+        button: "Schedule an inquiry",
       },
     },
     zh: {
