@@ -9,15 +9,15 @@ export function Footer({ locale = "en" }: FooterProps) {
 
   const footerSections = [
     {
-      title: locale === "zh" ? "产品" : "Product",
+      title: locale === "zh" ? "解决方案" : "Solutions",
       links: [
-        { label: locale === "zh" ? "解决方案" : "Solutions", href: "/solutions" },
-        { label: locale === "zh" ? "案例研究" : "Case Studies", href: "/case-studies" },
-        { label: locale === "zh" ? "定价" : "Pricing", href: "#" },
+        { label: locale === "zh" ? "硬件方案" : "Hardware", href: "#" },
+        { label: locale === "zh" ? "软件方案" : "Software", href: "#" },
+        { label: locale === "zh" ? "咨询服务" : "Consultancy", href: "#" },
       ],
     },
     {
-      title: locale === "zh" ? "公司" : "Company",
+      title: locale === "zh" ? "成功案例" : "Case Studies",
       links: [
         { label: locale === "zh" ? "关于我们" : "About", href: "/about" },
         { label: locale === "zh" ? "博客" : "Blog", href: "#" },
@@ -25,12 +25,8 @@ export function Footer({ locale = "en" }: FooterProps) {
       ],
     },
     {
-      title: locale === "zh" ? "资源" : "Resources",
-      links: [
-        { label: locale === "zh" ? "文档" : "Documentation", href: "#" },
-        { label: locale === "zh" ? "支持" : "Support", href: "#" },
-        { label: locale === "zh" ? "联系" : "Contact", href: "#" },
-      ],
+      title: locale === "zh" ? "关于我们" : "About",
+      links: [],
     },
   ]
 
