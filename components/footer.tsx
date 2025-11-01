@@ -41,15 +41,17 @@ export function Footer({ locale = "en" }: FooterProps) {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">F</span>
-              </div>
-              <span className="font-semibold">Functions Ltd</span>
+              <img
+                src="/logo-light.png"
+                alt="Functions Limited Logo"
+                className="w-8 h-8 rounded-lg object-contain"
+              />
+              <span className="font-semibold">Functions Limited</span>
             </div>
             <p className="text-sm text-muted-foreground">
               {locale === "zh"
                 ? "为企业提供创新的技术和工程解决方案"
-                : "Innovative tech and engineering solutions for enterprises"}
+                : "Engineering Sustainability"}
             </p>
           </div>
 
