@@ -40,7 +40,7 @@ export function Footer({ locale = "en" }: FooterProps) {
               <img
                 src="/logo-light.png"
                 alt="Functions Limited Logo"
-                className="w-10 h-10 rounded-lg object-contain"
+                className="w-12 h-12 rounded-lg object-contain"
               />
               <span className="font-semibold">Functions Limited</span>
             </div>
