@@ -27,7 +27,7 @@ export default function SolutionsPage() {
           icon: Cloud,
           title: "MESP Unit",
           description:
-            "Advanced micro-electrostatic air purification technology capturing fine particles, dust, and pathogens with high efficiency and low resistance. Long-lasting, easy to clean and energy-saving — delivering clean, healthy air for sustainable buildings.",
+            "Advanced micro-electrostatic air purification technology capturing fine particles, dust, and pathogens with high efficiency and low resistance.\nLong-lasting, easy to clean and energy-saving — delivering clean, healthy air for sustainable buildings.",
           features: [],
         },
         {
@@ -254,7 +254,7 @@ export default function SolutionsPage() {
       {/* Solutions Grid */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 whitespace-pre-line">
             {t.solutions.map((solution, index) => (
               <SolutionCard
                 key={index}
