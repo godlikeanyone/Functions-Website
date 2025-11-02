@@ -16,7 +16,7 @@ export default function AboutPage() {
   const content = {
     en: {
       hero: {
-        eyebrow: "About Functions Ltd",
+        eyebrow: "About Functions",
         title: "Engineering the future, one solution at a time",
         description:
           "Founded in 2015, Functions Ltd has grown from a small team of engineers to a global technology partner trusted by Fortune 500 companies.",
