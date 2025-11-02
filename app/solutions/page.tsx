@@ -31,14 +31,14 @@ export default function SolutionsPage() {
         },
         {
           icon: Database,
-          title: "Data Engineering",
+          title: "Ventilation Unit",
           description:
-            "Transform raw data into actionable insights with robust data pipelines and analytics platforms.",
+            "Smart fresh-air systems designed for comfort and wellbeing.\nContinuously renews indoor air while optimizing energy through intelligent control and heat recovery, ensuring a balanced, healthy environment year-round.",
         },
         {
           icon: Lock,
-          title: "Security & Compliance",
-          description: "Protect your assets with enterprise-grade security frameworks and compliance automation.",
+          title: "Environmental Monitor",
+          description: "Real-time monitoring of PM2.5, PM10, CO₂, TVOC, Nox, temperature, humidity, light, noise, air pressure, ozone, NO2, CO and others.\nCloud-connected and data-driven, providing actionable insights for healthier spaces and seamless integration with AI energy optimization platforms.",
         },
         {
           icon: Workflow,
