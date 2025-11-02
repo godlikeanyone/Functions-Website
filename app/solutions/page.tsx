@@ -25,15 +25,10 @@ export default function SolutionsPage() {
       solutions: [
         {
           icon: Cloud,
-          title: "Cloud Infrastructure",
+          title: "MESP Unit",
           description:
-            "Modernize your infrastructure with scalable, secure cloud solutions designed for enterprise performance.",
-          features: [
-            "Multi-cloud architecture design",
-            "Migration with zero downtime",
-            "Cost optimization strategies",
-            "24/7 monitoring and support",
-          ],
+            "Advanced micro-electrostatic air purification technology capturing fine particles, dust, and pathogens with high efficiency and low resistance. Long-lasting, easy to clean and energy-saving — delivering clean, healthy air for sustainable buildings.",
+          features: [],
         },
         {
           icon: Database,
