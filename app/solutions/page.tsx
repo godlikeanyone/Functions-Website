@@ -18,9 +18,9 @@ export default function SolutionsPage() {
     en: {
       hero: {
         eyebrow: "Our Solutions",
-        title: "Comprehensive technology solutions for every challenge",
+        title: "Smart systems for healthier, sustainable buildings",
         description:
-          "From cloud infrastructure to AI-powered analytics, we provide end-to-end solutions that drive measurable business outcomes.",
+          "Our solutions combine advanced air purification, smart ventilation, and real-time environmental monitoring to create healthier, more efficient, and more sustainable indoor environments. Designed for modern buildings, each system works together to enhance comfort, wellbeing, and performance.",
       },
       solutions: [
         {
