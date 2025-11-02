@@ -28,63 +28,32 @@ export default function SolutionsPage() {
           title: "MESP Unit",
           description:
             "Advanced micro-electrostatic air purification technology capturing fine particles, dust, and pathogens with high efficiency and low resistance.\nLong-lasting, easy to clean and energy-saving — delivering clean, healthy air for sustainable buildings.",
-          features: [],
         },
         {
           icon: Database,
           title: "Data Engineering",
           description:
             "Transform raw data into actionable insights with robust data pipelines and analytics platforms.",
-          features: [
-            "Real-time data processing",
-            "Data warehouse modernization",
-            "ETL pipeline development",
-            "Advanced analytics integration",
-          ],
         },
         {
           icon: Lock,
           title: "Security & Compliance",
           description: "Protect your assets with enterprise-grade security frameworks and compliance automation.",
-          features: [
-            "Zero-trust architecture",
-            "Compliance automation (SOC2, HIPAA, GDPR)",
-            "Threat detection and response",
-            "Security audit and remediation",
-          ],
         },
         {
           icon: Workflow,
           title: "Process Automation",
           description: "Streamline operations with intelligent automation that reduces costs and improves efficiency.",
-          features: [
-            "Workflow automation design",
-            "RPA implementation",
-            "Integration with existing systems",
-            "Performance monitoring dashboards",
-          ],
         },
         {
           icon: Code,
           title: "Custom Development",
           description: "Build bespoke applications tailored to your unique business requirements and workflows.",
-          features: [
-            "Full-stack application development",
-            "API design and integration",
-            "Mobile and web platforms",
-            "Agile development methodology",
-          ],
         },
         {
           icon: BarChart,
           title: "AI & Analytics",
           description: "Leverage machine learning and AI to unlock predictive insights and automate decision-making.",
-          features: [
-            "Predictive analytics models",
-            "Natural language processing",
-            "Computer vision solutions",
-            "ML model deployment and monitoring",
-          ],
         },
       ],
       comparison: {
@@ -147,37 +116,31 @@ export default function SolutionsPage() {
           icon: Cloud,
           title: "云基础设施",
           description: "通过为企业性能设计的可扩展、安全的云解决方案实现基础设施现代化。",
-          features: ["多云架构设计", "零停机迁移", "成本优化策略", "24/7监控和支持"],
         },
         {
           icon: Database,
           title: "数据工程",
           description: "通过强大的数据管道和分析平台将原始数据转化为可操作的见解。",
-          features: ["实时数据处理", "数据仓库现代化", "ETL管道开发", "高级分析集成"],
         },
         {
           icon: Lock,
           title: "安全与合规",
           description: "通过企业级安全框架和合规自动化保护您的资产。",
-          features: ["零信任架构", "合规自动化（SOC2、HIPAA、GDPR）", "威胁检测和响应", "安全审计和修复"],
         },
         {
           icon: Workflow,
           title: "流程自动化",
           description: "通过智能自动化简化运营，降低成本并提高效率。",
-          features: ["工作流自动化设计", "RPA实施", "与现有系统集成", "性能监控仪表板"],
         },
         {
           icon: Code,
           title: "定制开发",
           description: "构建针对您独特业务需求和工作流程量身定制的应用程序。",
-          features: ["全栈应用开发", "API设计和集成", "移动和Web平台", "敏捷开发方法"],
         },
         {
           icon: BarChart,
           title: "AI与分析",
           description: "利用机器学习和AI解锁预测性见解并自动化决策。",
-          features: ["预测分析模型", "自然语言处理", "计算机视觉解决方案", "ML模型部署和监控"],
         },
       ],
       comparison: {
@@ -261,7 +224,6 @@ export default function SolutionsPage() {
                 icon={solution.icon}
                 title={solution.title}
                 description={solution.description}
-                features={solution.features}
                 locale={locale}
               />
             ))}
