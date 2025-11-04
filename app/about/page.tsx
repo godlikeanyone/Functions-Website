@@ -355,6 +355,93 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* FUNCTIONS Section */}
+      <section className="relative py-32 bg-background overflow-hidden">
+        <div className="max-w-6xl mx-auto text-center relative">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold mb-16"
+          >
+            FUNCTIONS
+          </motion.h2>
+      
+          {/* Center Circle */}
+          <div className="relative mx-auto w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center font-semibold text-lg shadow-lg">
+            FUNCTIONS
+          </div>
+      
+          {/* All bullets */}
+          {[
+            "Air filtration for particulates, chemicals, virus and bacterias",
+            "ERVs",
+            "Ventilation",
+            "FAN filter units",
+            "Sensors and controls",
+            "Energy optimization",
+            "HVAC optimization",
+            "Green building and sustainability consulting",
+            "Waste Management",
+          ].map((text, i) => {
+            const angle = (i / 9) * 2 * Math.PI; // 分布9个点
+            const radius = 230; // 圆半径(px)
+            const x = Math.cos(angle) * radius;
+            const y = Math.sin(angle) * radius;
+      
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="absolute text-sm md:text-base font-medium w-40 text-muted-foreground"
+                style={{
+                  top: `calc(50% + ${y}px)`,
+                  left: `calc(50% + ${x}px)`,
+                  transform: `translate(-50%, -50%)`,
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="inline-block w-2 h-2 bg-primary rounded-full"></span>
+                  <span className="whitespace-pre-line leading-snug">{text}</span>
+                </div>
+              </motion.div>
+            );
+          })}
+      
+          {/* Connecting line */}
+          <svg
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            width="600"
+            height="600"
+          >
+            {Array.from({ length: 9 }).map((_, i) => {
+              const angle = (i / 9) * 2 * Math.PI;
+              const x = 300 + Math.cos(angle) * 230;
+              const y = 300 + Math.sin(angle) * 230;
+              return (
+                <motion.line
+                  key={i}
+                  x1="300"
+                  y1="300"
+                  x2={x}
+                  y2={y}
+                  stroke="hsl(var(--primary))"
+                  strokeWidth="1"
+                  strokeOpacity="0.3"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 0.8, delay: i * 0.1 }}
+                />
+              );
+            })}
+          </svg>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
