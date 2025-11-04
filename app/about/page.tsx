@@ -324,7 +324,7 @@ export default function AboutPage() {
       </section>
 
       {/* WHY WORK WITH US Section */}
-      <section className="py-24 md:py-32 bg-background relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-background border-y border-border relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
