@@ -22,9 +22,33 @@ export default function AboutPage() {
           "Harness intelligent monitoring and automation to reduce energy waste, ensure compliance, and enhance comfort across every building you manage.",
       },
       mission: {
-        title: "Our mission",
-        description:
-          "To empower enterprises with innovative technology solutions that transform complexity into competitive advantage, enabling them to focus on what they do best.",
+        title: "Our Mission",
+        items: [
+          {
+            title: "Sustainability First",
+            bullets: [
+              "Reduce energy waste through intelligent automation",
+              "Support carbon neutrality goals",
+              "Ensure long-term resource efficiency",
+            ],
+          },
+          {
+            title: "Empower Through Intelligence",
+            bullets: [
+              "Real-time environmental monitoring",
+              "Predictive analytics for system optimization",
+              "Adaptive AI-driven controls",
+            ],
+          },
+          {
+            title: "Human-Centered Innovation",
+            bullets: [
+              "Enhance occupant comfort and safety",
+              "Streamlined workflows for facility managers",
+              "Design experiences that delight and empower",
+            ],
+          },
+        ],
       },
       values: [
         {
@@ -97,13 +121,38 @@ export default function AboutPage() {
     },
     zh: {
       hero: {
-        eyebrow: "关于Functions Ltd",
+        eyebrow: "关于Functions",
         title: "一次一个解决方案，工程未来",
         description: "Functions Ltd成立于2015年，从一个小型工程师团队发展成为财富500强公司信赖的全球技术合作伙伴。",
       },
       mission: {
         title: "我们的使命",
-        description: "通过创新的技术解决方案赋能企业，将复杂性转化为竞争优势，使他们能够专注于自己最擅长的事情。",
+        items: [
+          {
+            title: "以可持续发展为核心",
+            bullets: [
+              "通过智能自动化减少能源浪费",
+              "支持碳中和目标",
+              "确保长期资源利用效率",
+            ],
+          },
+          {
+            title: "以智能赋能",
+            bullets: [
+              "实时环境监测",
+              "基于预测分析的系统优化",
+              "AI驱动的自适应控制",
+            ],
+          },
+          {
+            title: "以人为本的创新",
+            bullets: [
+              "提升居住与工作环境舒适度",
+              "简化设施管理流程",
+              "创造令人愉悦且高效的体验",
+            ],
+          },
+        ],
       },
       values: [
         {
@@ -197,10 +246,28 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 md:py-32 bg-card">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t.mission.title}</h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">{t.mission.description}</p>
+      <section className="py-24 md:py-32 bg-card/30 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12">{t.mission.title}</h2>
+      
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            {t.mission.items.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-border bg-card/60 shadow-sm hover:shadow-md transition-all p-8"
+              >
+                <h3 className="text-2xl font-semibold mb-6 text-center">{item.title}</h3>
+                <ul className="space-y-3">
+                  {item.bullets.map((bullet: string, i: number) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
