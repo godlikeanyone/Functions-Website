@@ -257,12 +257,9 @@ export default function AboutPage() {
                 className="rounded-2xl border border-border bg-card/60 shadow-sm hover:shadow-md transition-all p-8"
               >
                 <h3 className="text-2xl font-semibold mb-6 text-center">{item.title}</h3>
-                <ul className="space-y-3">
+                <ul className="list-disc list-inside space-y-3 text-muted-foreground text-sm leading-relaxed">
                   {item.bullets.map((bullet: string, i: number) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{bullet}</span>
-                    </li>
+                    <li key={i}>{bullet}</li>
                   ))}
                 </ul>
               </div>
