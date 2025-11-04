@@ -73,12 +73,27 @@ export default function AboutPage() {
           description: "Transparency, honesty, and ethical practices guide every decision we make.",
         },
       ],
-      stats: [
-        { value: "2015", label: "Founded" },
-        { value: "500+", label: "Projects Delivered" },
-        { value: "50+", label: "Enterprise Clients" },
-        { value: "200+", label: "Team Members" },
-      ],
+      whywork: {
+        title: "WHY WORK WITH US",
+        items: [
+          {
+            title: "Tested and Validated Technologies",
+            text: "Trusted by global brands across commercial, healthcare, education, and the hospitality & retail sectors.",
+          },
+          {
+            title: "Easy To Implement Solutions",
+            text: "Innovations proven to improve wellbeing and reduce costs, easily deployable at scale.",
+          },
+          {
+            title: "Result Focussed",
+            text: "Measurable improvements in air quality, energy use, and certification outcomes.",
+          },
+          {
+            title: "Customized Product Development and Supply",
+            text: "Our solutions of filters, modules, and systems can be tailored to individual project needs.",
+          },
+        ],
+      },
       team: {
         title: "Leadership team",
         description: "Experienced leaders driving innovation and excellence",
@@ -177,12 +192,27 @@ export default function AboutPage() {
           description: "透明、诚实和道德实践指导我们做出的每一个决定。",
         },
       ],
-      stats: [
-        { value: "2015", label: "成立" },
-        { value: "500+", label: "已交付项目" },
-        { value: "50+", label: "企业客户" },
-        { value: "200+", label: "团队成员" },
-      ],
+      whywork: {
+        title: "为什么选择我们",
+        items: [
+          {
+            title: "经过验证的技术",
+            text: "受到全球商业、医疗、教育、酒店及零售行业品牌的信赖。",
+          },
+          {
+            title: "易于实施的解决方案",
+            text: "经验证可提升健康与福祉、降低成本，且易于大规模部署。",
+          },
+          {
+            title: "以结果为导向",
+            text: "在空气质量、能源使用和认证成果方面实现可衡量的改进。",
+          },
+          {
+            title: "定制化产品开发与供应",
+            text: "我们的过滤器、模块和系统可根据项目需求进行个性化定制。",
+          },
+        ],
+      },
       team: {
         title: "领导团队",
         description: "经验丰富的领导者推动创新和卓越",
@@ -293,10 +323,35 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 md:py-32 border-y border-border bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <StatsBand stats={t.stats} />
+      {/* WHY WORK WITH US Section */}
+      <section className="py-24 md:py-32 bg-background relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-4xl md:text-5xl font-bold mb-16"
+          >
+            {t.whywork.title}
+          </motion.h2>
+      
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+            {t.whywork.items.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
+                className="rounded-2xl border border-border bg-card/50 p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="h-1.5 w-12 bg-gradient-to-r from-primary/80 to-primary/40 rounded-full mb-6"></div>
+                <h3 className="text-xl font-semibold mb-4 leading-snug">{item.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
