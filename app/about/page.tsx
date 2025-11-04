@@ -356,85 +356,110 @@ export default function AboutPage() {
       </section>
 
       {/* FUNCTIONS Radial Section */}
-      <section className="relative py-32 bg-background overflow-hidden">
-        <div className="max-w-6xl mx-auto relative w-full h-[600px]">
-          {/* Center Circle */}
-          <div className="absolute top-1/2 left-1/2 w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center font-semibold text-lg shadow-lg -translate-x-1/2 -translate-y-1/2 z-10">
-            FUNCTIONS
-          </div>
-      
-          {/* Bullets */}
-          {[
-            "Air filtration for particulates, chemicals, virus and bacterias",
-            "ERVs",
-            "Ventilation",
-            "FAN filter units",
-            "Sensors and controls",
-            "Energy optimization",
-            "HVAC optimization",
-            "Green building and sustainability consulting",
-            "Waste Management",
-          ].map((text, i) => {
-            const total = 9;
-            const angle = (i / total) * 2 * Math.PI; // 0 ~ 2π
-            const radius = 220; // distance from center
-            // calculate offset from container center
-            const x = radius * Math.cos(angle);
-            const y = radius * Math.sin(angle);
-      
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="absolute w-40 text-sm md:text-base font-medium text-muted-foreground"
-                style={{
-                  top: "50%",
-                  left: "50%",
-                  transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
-                }}
-              >
-                <div className="flex items-center gap-2">
-                  <span className="inline-block w-2 h-2 bg-primary rounded-full"></span>
-                  <span className="whitespace-pre-line leading-snug">{text}</span>
-                </div>
-              </motion.div>
-            );
-          })}
-      
-          {/* Connecting lines */}
-          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-            {Array.from({ length: 9 }).map((_, i) => {
-              const total = 9;
-              const angle = (i / total) * 2 * Math.PI;
-              const radius = 220;
-              const center = 300; // center of SVG (viewBox)
-              const x = center + radius * Math.cos(angle);
-              const y = center + radius * Math.sin(angle);
-      
+      <section className="relative py-32 bg-gradient-to-b from-slate-50 to-slate-100 overflow-hidden">
+        <div className="flex justify-center items-center" style={{ height: '700px' }}>
+          <div 
+            className="relative"
+            style={{ 
+              width: '600px', 
+              height: '600px',
+            }}
+          >
+            
+            {/* 中心圆形 */}
+            <div 
+              className="absolute w-40 h-40 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/40 flex items-center justify-center font-semibold text-lg shadow-lg border border-blue-200 z-10"
+              style={{
+                left: '220px',
+                top: '220px',
+              }}
+            >
+              FUNCTIONS
+            </div>
+  
+            {/* 周围项目 */}
+            {[
+              "Air filtration for particulates, chemicals, virus and bacterias",
+              "ERVs",
+              "Ventilation",
+              "FAN filter units",
+              "Sensors and controls",
+              "Energy optimization",
+              "HVAC optimization",
+              "Green building and sustainability consulting",
+              "Waste Management",
+            ].map((text, i) => {
+              const angle = (i / 9) * 2 * Math.PI - Math.PI / 2;
+              const x = 300 + 240 * Math.cos(angle);
+              const y = 300 + 240 * Math.sin(angle);
+  
               return (
-                <motion.line
-                  key={i}
-                  x1={center}
-                  y1={center}
-                  x2={x}
-                  y2={y}
-                  stroke="hsl(var(--primary))"
-                  strokeWidth={1.5}
-                  strokeOpacity={0.3}
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
+                <motion.div
+                  key={`item-${i}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                />
+                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                  className="absolute"
+                  style={{
+                    left: `${x - 70}px`,
+                    top: `${y - 20}px`,
+                    width: '140px',
+                  }}
+                >
+                  <div className="flex items-start gap-3 group">
+                    <span className="inline-block w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-1 group-hover:w-3 group-hover:h-3 transition-all duration-300"></span>
+                    <span className="text-xs md:text-sm font-medium text-slate-700 leading-snug group-hover:text-blue-600 transition-colors duration-300">
+                      {text}
+                    </span>
+                  </div>
+                </motion.div>
               );
             })}
-          </svg>
+  
+            {/* SVG 连接线 */}
+            <svg
+              className="absolute inset-0 pointer-events-none"
+              width="600"
+              height="600"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {[
+                "Air filtration for particulates, chemicals, virus and bacterias",
+                "ERVs",
+                "Ventilation",
+                "FAN filter units",
+                "Sensors and controls",
+                "Energy optimization",
+                "HVAC optimization",
+                "Green building and sustainability consulting",
+                "Waste Management",
+              ].map((_, i) => {
+                const angle = (i / 9) * 2 * Math.PI - Math.PI / 2;
+                const x = 300 + 180 * Math.cos(angle);
+                const y = 300 + 180 * Math.sin(angle);
+                
+                return (
+                  <motion.line
+                    key={`line-${i}`}
+                    x1="300"
+                    y1="300"
+                    x2={x}
+                    y2={y}
+                    stroke="rgb(59, 130, 246)"
+                    strokeWidth="2"
+                    strokeOpacity="0.3"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08, duration: 0.6 }}
+                  />
+                );
+              })}
+            </svg>
+          </div>
         </div>
       </section>
-
 
       {/* Team Section */}
       <section className="py-24 md:py-32">
