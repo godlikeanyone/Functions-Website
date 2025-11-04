@@ -385,8 +385,8 @@ export default function AboutPage() {
             "Green building and sustainability consulting",
             "Waste Management",
           ].map((text, i) => {
-            const angle = (i / 9) * 2 * Math.PI; // 分布9个点
-            const radius = 230; // 圆半径(px)
+            const angle = (i / 9) * 2 * Math.PI;
+            const radius = 230;
             const x = Math.cos(angle) * radius;
             const y = Math.sin(angle) * radius;
       
