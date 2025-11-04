@@ -17,9 +17,9 @@ export default function AboutPage() {
     en: {
       hero: {
         eyebrow: "About Functions",
-        title: "Engineering the future, one solution at a time",
+        title: "Reimagining the Future of Indoor Environments",
         description:
-          "Founded in 2015, Functions Ltd has grown from a small team of engineers to a global technology partner trusted by Fortune 500 companies.",
+          "Harness intelligent monitoring and automation to reduce energy waste, ensure compliance, and enhance comfort across every building you manage.",
       },
       mission: {
         title: "Our mission",
