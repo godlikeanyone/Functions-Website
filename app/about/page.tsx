@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { StatsBand } from "@/components/stats-band"
 import { ArrowRight, Target, Users, Globe, Award } from "lucide-react"
 import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
 
 export default function AboutPage() {
   const [locale, setLocale] = useState("en")
@@ -252,8 +253,12 @@ export default function AboutPage() {
       
           <div className="grid md:grid-cols-3 gap-8 text-left">
             {t.mission.items.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
                 className="rounded-2xl border border-border bg-card/60 shadow-sm hover:shadow-md transition-all p-8"
               >
                 <h3 className="text-2xl font-semibold mb-6 text-center">{item.title}</h3>
@@ -262,7 +267,7 @@ export default function AboutPage() {
                     <li key={i}>{bullet}</li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
