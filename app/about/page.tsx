@@ -355,25 +355,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* FUNCTIONS Section */}
+      {/* FUNCTIONS Radial Section */}
       <section className="relative py-32 bg-background overflow-hidden">
-        <div className="max-w-6xl mx-auto text-center relative">
+        <div className="max-w-6xl mx-auto relative h-[600px]">
+          {/* Section Title */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold mb-16"
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
           >
             FUNCTIONS
           </motion.h2>
       
           {/* Center Circle */}
-          <div className="relative mx-auto w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center font-semibold text-lg shadow-lg">
+          <div className="absolute top-1/2 left-1/2 w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center font-semibold text-lg shadow-lg -translate-x-1/2 -translate-y-1/2">
             FUNCTIONS
           </div>
       
-          {/* All bullets */}
+          {/* Bullet Items */}
           {[
             "Air filtration for particulates, chemicals, virus and bacterias",
             "ERVs",
@@ -385,8 +386,9 @@ export default function AboutPage() {
             "Green building and sustainability consulting",
             "Waste Management",
           ].map((text, i) => {
-            const angle = (i / 9) * 2 * Math.PI;
-            const radius = 230;
+            const total = 9;
+            const angle = (i / total) * 2 * Math.PI; // evenly distribute around circle
+            const radius = 220; // distance from center
             const x = Math.cos(angle) * radius;
             const y = Math.sin(angle) * radius;
       
@@ -397,11 +399,11 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="absolute text-sm md:text-base font-medium w-40 text-muted-foreground"
+                className="absolute w-40 text-sm md:text-base font-medium text-muted-foreground"
                 style={{
-                  top: `calc(50% + ${y}px)`,
-                  left: `calc(50% + ${x}px)`,
-                  transform: `translate(-50%, -50%)`,
+                  top: "50%",
+                  left: "50%",
+                  transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
                 }}
               >
                 <div className="flex items-center gap-2">
@@ -412,28 +414,32 @@ export default function AboutPage() {
             );
           })}
       
-          {/* Connecting line */}
+          {/* Connecting Lines */}
           <svg
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            width="600"
-            height="600"
+            className="absolute top-0 left-0 w-full h-full pointer-events-none"
+            viewBox="0 0 600 600"
           >
             {Array.from({ length: 9 }).map((_, i) => {
-              const angle = (i / 9) * 2 * Math.PI;
-              const x = 300 + Math.cos(angle) * 230;
-              const y = 300 + Math.sin(angle) * 230;
+              const total = 9;
+              const radius = 220;
+              const center = 300; // SVG center
+              const angle = (i / total) * 2 * Math.PI;
+              const x = center + Math.cos(angle) * radius;
+              const y = center + Math.sin(angle) * radius;
+      
               return (
                 <motion.line
                   key={i}
-                  x1="300"
-                  y1="300"
+                  x1={center}
+                  y1={center}
                   x2={x}
                   y2={y}
                   stroke="hsl(var(--primary))"
-                  strokeWidth="1"
-                  strokeOpacity="0.3"
+                  strokeWidth={1}
+                  strokeOpacity={0.3}
                   initial={{ pathLength: 0 }}
                   whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: i * 0.1 }}
                 />
               );
