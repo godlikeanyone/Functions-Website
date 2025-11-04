@@ -357,24 +357,13 @@ export default function AboutPage() {
 
       {/* FUNCTIONS Radial Section */}
       <section className="relative py-32 bg-background overflow-hidden">
-        <div className="max-w-6xl mx-auto relative h-[600px]">
-          {/* Section Title */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            FUNCTIONS
-          </motion.h2>
-      
+        <div className="max-w-6xl mx-auto relative w-full h-[600px]">
           {/* Center Circle */}
-          <div className="absolute top-1/2 left-1/2 w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center font-semibold text-lg shadow-lg -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute top-1/2 left-1/2 w-40 h-40 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center font-semibold text-lg shadow-lg -translate-x-1/2 -translate-y-1/2 z-10">
             FUNCTIONS
           </div>
       
-          {/* Bullet Items */}
+          {/* Bullets */}
           {[
             "Air filtration for particulates, chemicals, virus and bacterias",
             "ERVs",
@@ -387,10 +376,11 @@ export default function AboutPage() {
             "Waste Management",
           ].map((text, i) => {
             const total = 9;
-            const angle = (i / total) * 2 * Math.PI; // evenly distribute around circle
+            const angle = (i / total) * 2 * Math.PI; // 0 ~ 2π
             const radius = 220; // distance from center
-            const x = Math.cos(angle) * radius;
-            const y = Math.sin(angle) * radius;
+            // calculate offset from container center
+            const x = radius * Math.cos(angle);
+            const y = radius * Math.sin(angle);
       
             return (
               <motion.div
@@ -414,18 +404,15 @@ export default function AboutPage() {
             );
           })}
       
-          {/* Connecting Lines */}
-          <svg
-            className="absolute top-0 left-0 w-full h-full pointer-events-none"
-            viewBox="0 0 600 600"
-          >
+          {/* Connecting lines */}
+          <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
             {Array.from({ length: 9 }).map((_, i) => {
               const total = 9;
-              const radius = 220;
-              const center = 300; // SVG center
               const angle = (i / total) * 2 * Math.PI;
-              const x = center + Math.cos(angle) * radius;
-              const y = center + Math.sin(angle) * radius;
+              const radius = 220;
+              const center = 300; // center of SVG (viewBox)
+              const x = center + radius * Math.cos(angle);
+              const y = center + radius * Math.sin(angle);
       
               return (
                 <motion.line
@@ -435,18 +422,19 @@ export default function AboutPage() {
                   x2={x}
                   y2={y}
                   stroke="hsl(var(--primary))"
-                  strokeWidth={1}
+                  strokeWidth={1.5}
                   strokeOpacity={0.3}
                   initial={{ pathLength: 0 }}
                   whileInView={{ pathLength: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: i * 0.1 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
                 />
               );
             })}
           </svg>
         </div>
       </section>
+
 
       {/* Team Section */}
       <section className="py-24 md:py-32">
