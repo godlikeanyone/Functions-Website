@@ -94,30 +94,6 @@ export default function AboutPage() {
           },
         ],
       },
-      team: {
-        title: "Leadership team",
-        description: "Experienced leaders driving innovation and excellence",
-        members: [
-          {
-            name: "Sarah Chen",
-            role: "Chief Executive Officer",
-            bio: "Former VP of Engineering at Fortune 100 tech company. 20+ years building enterprise systems.",
-            image: "/team-ceo.jpg",
-          },
-          {
-            name: "Michael Rodriguez",
-            role: "Chief Technology Officer",
-            bio: "PhD in Computer Science. Led engineering teams at leading cloud infrastructure companies.",
-            image: "/team-cto.jpg",
-          },
-          {
-            name: "Emily Watson",
-            role: "Chief Operating Officer",
-            bio: "15+ years scaling operations for high-growth technology companies across 3 continents.",
-            image: "/team-coo.jpg",
-          },
-        ],
-      },
       timeline: {
         title: "Our journey",
         events: [
@@ -210,30 +186,6 @@ export default function AboutPage() {
           {
             title: "定制化产品开发与供应",
             text: "我们的过滤器、模块和系统可根据项目需求进行个性化定制。",
-          },
-        ],
-      },
-      team: {
-        title: "领导团队",
-        description: "经验丰富的领导者推动创新和卓越",
-        members: [
-          {
-            name: "陈莎拉",
-            role: "首席执行官",
-            bio: "前财富100强科技公司工程副总裁。20多年构建企业系统经验。",
-            image: "/team-ceo.jpg",
-          },
-          {
-            name: "迈克尔·罗德里格斯",
-            role: "首席技术官",
-            bio: "计算机科学博士。曾在领先的云基础设施公司领导工程团队。",
-            image: "/team-cto.jpg",
-          },
-          {
-            name: "艾米丽·沃森",
-            role: "首席运营官",
-            bio: "15年以上在3大洲为高增长技术公司扩展运营的经验。",
-            image: "/team-coo.jpg",
           },
         ],
       },
@@ -366,7 +318,7 @@ export default function AboutPage() {
             }}
           >
             
-            {/* 中心圆形 */}
+            {/* Central Circle */}
             <div 
               className="absolute w-40 h-40 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/40 flex items-center justify-center font-semibold text-lg shadow-lg border border-blue-200 z-10"
               style={{
@@ -377,7 +329,7 @@ export default function AboutPage() {
               FUNCTIONS
             </div>
   
-            {/* 周围项目 */}
+            {/* Surroundings */}
             {[
               "Air filtration for particulates, chemicals, virus and bacterias",
               "ERVs",
@@ -417,7 +369,7 @@ export default function AboutPage() {
               );
             })}
   
-            {/* SVG 连接线 */}
+            {/* SVG lines */}
             <svg
               className="absolute inset-0 pointer-events-none"
               width="600"
@@ -457,35 +409,6 @@ export default function AboutPage() {
                 );
               })}
             </svg>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.team.title}</h2>
-            <p className="text-lg text-muted-foreground">{t.team.description}</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {t.team.members.map((member, index) => (
-              <div key={index} className="bg-card border border-border rounded-xl overflow-hidden">
-                <div className="aspect-square bg-muted relative">
-                  <img
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <div className="text-sm text-primary font-medium mb-3">{member.role}</div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
