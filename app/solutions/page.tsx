@@ -40,21 +40,6 @@ export default function SolutionsPage() {
           title: "Environmental Monitor",
           description: "Real-time monitoring of PM2.5, PM10, CO₂, TVOC, Nox, temperature, humidity, light, noise, air pressure, ozone, NO2, CO and others.\nCloud-connected and data-driven, providing actionable insights for healthier spaces and seamless integration with AI energy optimization platforms.",
         },
-        {
-          icon: Workflow,
-          title: "Process Automation",
-          description: "Streamline operations with intelligent automation that reduces costs and improves efficiency.",
-        },
-        {
-          icon: Code,
-          title: "Custom Development",
-          description: "Build bespoke applications tailored to your unique business requirements and workflows.",
-        },
-        {
-          icon: BarChart,
-          title: "AI & Analytics",
-          description: "Leverage machine learning and AI to unlock predictive insights and automate decision-making.",
-        },
       ],
       comparison: {
         title: "Why choose Functions Ltd?",
@@ -126,21 +111,6 @@ export default function SolutionsPage() {
           icon: Lock,
           title: "安全与合规",
           description: "通过企业级安全框架和合规自动化保护您的资产。",
-        },
-        {
-          icon: Workflow,
-          title: "流程自动化",
-          description: "通过智能自动化简化运营，降低成本并提高效率。",
-        },
-        {
-          icon: Code,
-          title: "定制开发",
-          description: "构建针对您独特业务需求和工作流程量身定制的应用程序。",
-        },
-        {
-          icon: BarChart,
-          title: "AI与分析",
-          description: "利用机器学习和AI解锁预测性见解并自动化决策。",
         },
       ],
       comparison: {
