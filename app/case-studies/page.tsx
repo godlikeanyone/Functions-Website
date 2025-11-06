@@ -34,7 +34,7 @@ export default function CaseStudiesPage() {
           { icon: Clock, value: "60%", label: "Faster Production" },
           { icon: Users, value: "2M+", label: "Hours Saved Annually" },
         ],
-        image: "/modern-factory-automation.png",
+        image: "/henkel-office.webp",
       },
       studies: [
         {
@@ -111,7 +111,7 @@ export default function CaseStudiesPage() {
           { icon: Clock, value: "60%", label: "生产加速" },
           { icon: Users, value: "200万+", label: "每年节省工时" },
         ],
-        image: "/modern-factory-automation.png",
+        image: "/henkel-office.webp",
       },
       studies: [
         {
