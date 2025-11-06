@@ -36,56 +36,6 @@ export default function CaseStudiesPage() {
         ],
         image: "/henkel-office.webp",
       },
-      studies: [
-        {
-          title: "Financial Services Cloud Migration",
-          description:
-            "Migrated a legacy banking system to cloud infrastructure with zero downtime, enabling 10x faster transaction processing.",
-          category: "Finance",
-          image: "/financial-technology-dashboard.png",
-          stats: { metric1: "Zero downtime", metric2: "10x faster", metric3: "$5M saved" },
-        },
-        {
-          title: "Healthcare Data Platform",
-          description:
-            "Built HIPAA-compliant data platform serving 2M+ patients across 50 hospitals with real-time analytics.",
-          category: "Healthcare",
-          image: "/medical-technology-interface.jpg",
-          stats: { metric1: "2M+ patients", metric2: "50 hospitals", metric3: "99.99% uptime" },
-        },
-        {
-          title: "Retail AI Personalization Engine",
-          description:
-            "Deployed machine learning platform that increased conversion rates by 35% through personalized recommendations.",
-          category: "Retail",
-          image: "/retail-ai-personalization.jpg",
-          stats: { metric1: "35% conversion", metric2: "50M users", metric3: "Real-time" },
-        },
-        {
-          title: "Logistics Optimization Platform",
-          description:
-            "Created route optimization system reducing delivery times by 25% and fuel costs by 30% for global logistics provider.",
-          category: "Logistics",
-          image: "/logistics-optimization-dashboard.jpg",
-          stats: { metric1: "25% faster", metric2: "30% cost cut", metric3: "Global scale" },
-        },
-        {
-          title: "Energy Grid Modernization",
-          description:
-            "Implemented smart grid technology enabling real-time monitoring and 40% reduction in energy waste.",
-          category: "Energy",
-          image: "/smart-energy-grid.jpg",
-          stats: { metric1: "40% less waste", metric2: "Real-time", metric3: "5M homes" },
-        },
-        {
-          title: "EdTech Learning Platform",
-          description:
-            "Built scalable learning management system serving 1M+ students with AI-powered adaptive learning.",
-          category: "Education",
-          image: "/educational-technology-platform.jpg",
-          stats: { metric1: "1M+ students", metric2: "AI-powered", metric3: "95% satisfaction" },
-        },
-      ],
       cta: {
         title: "Ready to write your success story?",
         description: "Let's discuss how we can help you achieve similar results",
@@ -113,50 +63,6 @@ export default function CaseStudiesPage() {
         ],
         image: "/henkel-office.webp",
       },
-      studies: [
-        {
-          title: "金融服务云迁移",
-          description: "将传统银行系统迁移到云基础设施，实现零停机，交易处理速度提高10倍。",
-          category: "金融",
-          image: "/financial-technology-dashboard.png",
-          stats: { metric1: "零停机", metric2: "快10倍", metric3: "节省500万美元" },
-        },
-        {
-          title: "医疗数据平台",
-          description: "构建符合HIPAA标准的数据平台，为50家医院的200万+患者提供实时分析服务。",
-          category: "医疗保健",
-          image: "/medical-technology-interface.jpg",
-          stats: { metric1: "200万+患者", metric2: "50家医院", metric3: "99.99%正常运行时间" },
-        },
-        {
-          title: "零售AI个性化引擎",
-          description: "部署机器学习平台，通过个性化推荐将转化率提高35%。",
-          category: "零售",
-          image: "/retail-ai-personalization.jpg",
-          stats: { metric1: "35%转化", metric2: "5000万用户", metric3: "实时" },
-        },
-        {
-          title: "物流优化平台",
-          description: "为全球物流提供商创建路线优化系统，将交付时间缩短25%，燃料成本降低30%。",
-          category: "物流",
-          image: "/logistics-optimization-dashboard.jpg",
-          stats: { metric1: "快25%", metric2: "成本降低30%", metric3: "全球规模" },
-        },
-        {
-          title: "能源电网现代化",
-          description: "实施智能电网技术，实现实时监控，能源浪费减少40%。",
-          category: "能源",
-          image: "/smart-energy-grid.jpg",
-          stats: { metric1: "浪费减少40%", metric2: "实时", metric3: "500万家庭" },
-        },
-        {
-          title: "教育科技学习平台",
-          description: "构建可扩展的学习管理系统，为100万+学生提供AI驱动的自适应学习。",
-          category: "教育",
-          image: "/educational-technology-platform.jpg",
-          stats: { metric1: "100万+学生", metric2: "AI驱动", metric3: "95%满意度" },
-        },
-      ],
       cta: {
         title: "准备好书写您的成功故事了吗？",
         description: "让我们讨论如何帮助您取得类似的成果",
@@ -226,25 +132,6 @@ export default function CaseStudiesPage() {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Grid */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {t.studies.map((study, index) => (
-              <CaseStudyCard
-                key={index}
-                title={study.title}
-                description={study.description}
-                category={study.category}
-                image={study.image}
-                href="/case-studies"
-                locale={locale}
-              />
-            ))}
           </div>
         </div>
       </section>
