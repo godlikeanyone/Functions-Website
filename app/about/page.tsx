@@ -116,7 +116,7 @@ export default function AboutPage() {
         ],
       },
       cta: {
-        title: "Functions delivers projects that perform.",
+        title: "Functions delivers projects that perform",
         subtitle:
           "For stakeholders this means realized value and ROI.\nFor end users the result are healthier indoor environments which are proven to be happier and more productive places of work and leisure.",
         contact: "Connect at inquiry@functions.ltd",
