@@ -189,17 +189,6 @@ export default function AboutPage() {
           },
         ],
       },
-      timeline: {
-        title: "我们的旅程",
-        events: [
-          { year: "2015", title: "成立", description: "从5名工程师和一个愿景开始" },
-          { year: "2017", title: "首个企业客户", description: "获得财富500强合作伙伴关系" },
-          { year: "2019", title: "全球扩张", description: "在伦敦和新加坡开设办事处" },
-          { year: "2021", title: "AI创新实验室", description: "推出专门的AI研究部门" },
-          { year: "2023", title: "行业认可", description: "被评为十大企业技术合作伙伴" },
-          { year: "2025", title: "持续增长", description: "500+项目，50+企业客户" },
-        ],
-      },
       cta: {
         title: "加入我们的使命",
         description: "我们一直在寻找有才华的工程师和创新者",
@@ -409,33 +398,6 @@ export default function AboutPage() {
                 );
               })}
             </svg>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="py-24 md:py-32 bg-card">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">{t.timeline.title}</h2>
-
-          <div className="space-y-8">
-            {t.timeline.events.map((event, index) => (
-              <div key={index} className="flex gap-8 items-start">
-                <div className="flex-shrink-0 w-24 text-right">
-                  <div className="text-2xl font-bold text-primary">{event.year}</div>
-                </div>
-                <div className="flex-shrink-0 relative">
-                  <div className="w-4 h-4 bg-primary rounded-full" />
-                  {index < t.timeline.events.length - 1 && (
-                    <div className="absolute top-4 left-1/2 w-0.5 h-16 bg-border -translate-x-1/2" />
-                  )}
-                </div>
-                <div className="flex-1 pb-8">
-                  <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                  <p className="text-muted-foreground">{event.description}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
