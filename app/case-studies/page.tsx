@@ -204,7 +204,6 @@ export default function CaseStudiesPage() {
                       : <li>{t.featured.solution}</li>}
                   </ul>
                 </div>
-              </div>
 
               <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
                 {t.featured.results.map((result, index) => {
