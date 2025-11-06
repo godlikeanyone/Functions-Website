@@ -116,9 +116,10 @@ export default function AboutPage() {
         ],
       },
       cta: {
-        title: "Join us on our mission",
-        description: "We're always looking for talented engineers and innovators",
-        button: "View Open Positions",
+        title: "Functions delivers projects that perform.",
+        subtitle:
+          "For stakeholders this means realized value and ROI. For end users the result are healthier indoor environments which are proven to be happier and more productive places of work and leisure.",
+        contact: "Connect at inquiry@functions.ltd",
       },
     },
     zh: {
@@ -535,14 +536,38 @@ export default function AboutPage() {
       </section>
       
       {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.cta.title}</h2>
-          <p className="text-xl mb-8 opacity-90 text-balance">{t.cta.description}</p>
-          <Button size="lg" variant="secondary" className="text-base">
-            {t.cta.button}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-gray-800 text-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.h2
+            className="text-3xl md:text-4xl font-semibold mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            {content.cta.title}
+          </motion.h2>
+      
+          <motion.p
+            className="text-lg text-gray-300 leading-relaxed mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            {content.cta.subtitle}
+          </motion.p>
+      
+          <motion.a
+            href="mailto:inquiry@functions.ltd"
+            className="inline-block mt-2 px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full shadow-lg transition-all duration-300"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            {content.cta.contact}
+          </motion.a>
         </div>
       </section>
     </div>
