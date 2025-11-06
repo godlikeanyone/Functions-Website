@@ -118,7 +118,7 @@ export default function AboutPage() {
       cta: {
         title: "Functions delivers projects that perform.",
         subtitle:
-          "For stakeholders this means realized value and ROI. For end users the result are healthier indoor environments which are proven to be happier and more productive places of work and leisure.",
+          "For stakeholders this means realized value and ROI.\nFor end users the result are healthier indoor environments which are proven to be happier and more productive places of work and leisure.",
         contact: "Connect at inquiry@functions.ltd",
       },
     },
@@ -549,7 +549,7 @@ export default function AboutPage() {
           </motion.h2>
       
           <motion.p
-            className="text-lg text-gray-300 leading-relaxed mb-8"
+            className="text-lg text-gray-300 leading-relaxed mb-8 whitespace-pre-line"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
