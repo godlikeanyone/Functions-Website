@@ -94,15 +94,25 @@ export default function AboutPage() {
           },
         ],
       },
-      timeline: {
-        title: "Our journey",
-        events: [
-          { year: "2015", title: "Founded", description: "Started with 5 engineers and a vision" },
-          { year: "2017", title: "First Enterprise Client", description: "Secured Fortune 500 partnership" },
-          { year: "2019", title: "Global Expansion", description: "Opened offices in London and Singapore" },
-          { year: "2021", title: "AI Innovation Lab", description: "Launched dedicated AI research division" },
-          { year: "2023", title: "Industry Recognition", description: "Named Top 10 Enterprise Tech Partner" },
-          { year: "2025", title: "Continued Growth", description: "500+ projects, 50+ enterprise clients" },
+      innovationApproach: {
+        title:
+          "Delivering an innovative approach that proves value across portfolios through measurable performance and meaningful outcomes.",
+        cards: [
+          {
+            title: "Deliver Peace of Mind",
+            description:
+              "Guarantee healthier indoor environments and compliance today, backed by certifications and performance data you can trust.",
+          },
+          {
+            title: "Reimagine Buildings",
+            description:
+              "Transform spaces into hubs of wellbeing, sustainability, and occupant experience, unlocking greater value for owners and users alike.",
+          },
+          {
+            title: "Future Proof Projects",
+            description:
+              "Deploy versatile, tech-driven solutions that sustain health, productivity, and ESG performance for years to come.",
+          },
         ],
       },
       cta: {
@@ -486,6 +496,44 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* InnovationApproach Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        <div className="max-w-6xl mx-auto text-center px-6">
+          <motion.h2
+            className="text-3xl md:text-4xl font-semibold text-gray-900 leading-snug mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            {content.innovationApproach.title}
+          </motion.h2>
+    
+          <div className="grid md:grid-cols-3 gap-8">
+            {content.innovationApproach.cards.map((card, index) => (
+              <motion.div
+                key={index}
+                className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 p-8 flex flex-col items-start text-left"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.2,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                  {card.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{card.description}</p>
+                <div className="mt-6 h-1 w-0 group-hover:w-full bg-blue-500 transition-all duration-500 rounded-full"></div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* CTA Section */}
       <section className="py-24 md:py-32 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
