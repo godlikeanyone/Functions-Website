@@ -545,7 +545,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            {content.cta.title}
+            {t.cta.title}
           </motion.h2>
       
           <motion.p
@@ -555,7 +555,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            {content.cta.subtitle}
+            {t.cta.subtitle}
           </motion.p>
       
           <motion.a
@@ -566,7 +566,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            {content.cta.contact}
+            {t.cta.contact}
           </motion.a>
         </div>
       </section>
