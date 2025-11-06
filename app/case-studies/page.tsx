@@ -36,6 +36,21 @@ export default function CaseStudiesPage() {
         ],
         image: "/henkel-office.webp",
       },
+      monclerCase: {
+        category: "Retail",
+        title: "Building Green Luxury for Moncler: Clean Air, Certified Performance",
+        solution: [
+          "LEED certification consulting and on-site testing & commissioning",
+          "Tailored indoor air purification solution for retail space",
+          "Integrated monitoring system ensuring comfort and sustainability",
+        ],
+        results: [
+          { icon: TrendingUp, value: "40%", label: "Cost Reduction" },
+          { icon: Clock, value: "60%", label: "Faster Production" },
+          { icon: Users, value: "2M+", label: "Hours Saved Annually" },
+        ],
+        image: "/moncler-store.webp",
+      },
       cta: {
         title: "Ready to write your success story?",
         description: "Let's discuss how we can help you achieve similar results",
@@ -91,47 +106,56 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Henkel Case Study */}
+      {/* Case Study */}
       <section className="py-24 md:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="text-xs text-primary font-semibold mb-4 uppercase tracking-wider">
-                {t.henkelCase.category}
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.henkelCase.title}</h2>
+          <div className="grid gap-24">
+            {[t.henkelCase, t.monclerCase].map((caseItem, index) => (
+              <div key={index} className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Left Side */}
                 <div>
-                  <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                    {locale === "zh" ? "解决方案" : "Solution"}
-                  </h3>
-                  <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
-                    {Array.isArray(t.henkelCase.solution)
-                      ? t.henkelCase.solution.map((point, i) => <li key={i}>{point}</li>)
-                      : <li>{t.henkelCase.solution}</li>}
-                  </ul>
+                  <div className="text-xs text-primary font-semibold mb-4 uppercase tracking-wider">
+                    {caseItem.category}
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+                    {caseItem.title}
+                  </h2>
+      
+                  <div>
+                    <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                      {locale === "zh" ? "解决方案" : "Solution"}
+                    </h3>
+                    <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
+                      {caseItem.solution.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+      
+                  <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
+                    {caseItem.results.map((result, idx) => {
+                      const Icon = result.icon
+                      return (
+                        <div key={idx}>
+                          <Icon className="h-5 w-5 text-primary mb-2" />
+                          <div className="text-3xl font-bold text-primary mb-1">{result.value}</div>
+                          <div className="text-xs text-muted-foreground">{result.label}</div>
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
-
-              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
-                {t.henkelCase.results.map((result, index) => {
-                  const Icon = result.icon
-                  return (
-                    <div key={index}>
-                      <Icon className="h-5 w-5 text-primary mb-2" />
-                      <div className="text-3xl font-bold text-primary mb-1">{result.value}</div>
-                      <div className="text-xs text-muted-foreground">{result.label}</div>
-                    </div>
-                  )
-                })}
+      
+                {/* Right Side */}
+                <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden">
+                  <img
+                    src={caseItem.image || "/placeholder.svg"}
+                    alt={caseItem.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-
-            <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden">
-              <img
-                src={t.henkelCase.image || "/placeholder.svg"}
-                alt={t.henkelCase.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            ))}
           </div>
         </div>
       </section>
