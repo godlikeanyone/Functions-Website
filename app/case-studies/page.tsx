@@ -21,7 +21,7 @@ export default function CaseStudiesPage() {
         description:
           "Explore how we've helped organizations across industries transform their operations and achieve measurable success.",
       },
-      featured: {
+      henkelCase: {
         category: "Manufacturing",
         title: "Building WELL for Henkel: Smart Air, Healthy People",
         solution: [
@@ -48,7 +48,7 @@ export default function CaseStudiesPage() {
         title: "真实合作伙伴关系的真实成果",
         description: "探索我们如何帮助各行业的组织转型运营并取得可衡量的成功。",
       },
-      featured: {
+      henkelCase: {
         category: "制造业",
         title: "全球制造业数字化转型",
         solution: [
@@ -91,28 +91,28 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Featured Case Study */}
+      {/* Henkel Case Study */}
       <section className="py-24 md:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="text-xs text-primary font-semibold mb-4 uppercase tracking-wider">
-                {t.featured.category}
+                {t.henkelCase.category}
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.featured.title}</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.henkelCase.title}</h2>
                 <div>
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                     {locale === "zh" ? "解决方案" : "Solution"}
                   </h3>
                   <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
-                    {Array.isArray(t.featured.solution)
-                      ? t.featured.solution.map((point, i) => <li key={i}>{point}</li>)
-                      : <li>{t.featured.solution}</li>}
+                    {Array.isArray(t.henkelCase.solution)
+                      ? t.henkelCase.solution.map((point, i) => <li key={i}>{point}</li>)
+                      : <li>{t.henkelCase.solution}</li>}
                   </ul>
                 </div>
 
               <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
-                {t.featured.results.map((result, index) => {
+                {t.henkelCase.results.map((result, index) => {
                   const Icon = result.icon
                   return (
                     <div key={index}>
@@ -127,8 +127,8 @@ export default function CaseStudiesPage() {
 
             <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden">
               <img
-                src={t.featured.image || "/placeholder.svg"}
-                alt={t.featured.title}
+                src={t.henkelCase.image || "/placeholder.svg"}
+                alt={t.henkelCase.title}
                 className="w-full h-full object-cover"
               />
             </div>
