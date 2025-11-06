@@ -402,6 +402,90 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Legacy vs Future Section */}
+      <section className="py-32 bg-gradient-to-br from-red-50 via-white to-green-50 border-t border-border relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            From <span className="text-red-600">Legacy</span> to <span className="text-green-600">Future</span>
+          </motion.h2>
+
+          <div className="grid md:grid-cols-2 gap-12 items-start relative">
+            {/* Legacy Side */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-red-50/80 border border-red-100 rounded-2xl shadow-sm hover:shadow-md p-10 relative z-10"
+            >
+              <h3 className="text-2xl font-semibold text-red-700 mb-8 text-center">Legacy</h3>
+              <ul className="space-y-5 text-red-800/90">
+                <li className="flex items-start gap-3">
+                  <span className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Practices rely on reactive methods</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Higher costs</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Dissatisfaction when things go wrong</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-3 h-3 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Missed opportunities</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Arrow Transition (Center line for larger screens) */}
+            <div className="hidden md:flex absolute inset-0 justify-center items-center pointer-events-none">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="flex items-center justify-center"
+              >
+                <div className="w-1 h-64 bg-gradient-to-b from-red-400 via-gray-300 to-green-400 rounded-full"></div>
+                <ArrowRight className="absolute text-gray-500 w-10 h-10" />
+              </motion.div>
+            </div>
+
+            {/* Future Side */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-green-50/80 border border-green-100 rounded-2xl shadow-sm hover:shadow-md p-10 relative z-10"
+            >
+              <h3 className="text-2xl font-semibold text-green-700 mb-8 text-center">Future</h3>
+              <ul className="space-y-5 text-green-800/90">
+                <li className="flex items-start gap-3">
+                  <span className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Using data to drive certification compliance is lower risk</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Use data to conduct proactive root cause analysis</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Lower effort, higher return method</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 md:py-32 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
