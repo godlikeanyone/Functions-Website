@@ -506,11 +506,11 @@ export default function AboutPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            {content.innovationApproach.title}
+            {t.innovationApproach.title}
           </motion.h2>
     
           <div className="grid md:grid-cols-3 gap-8">
-            {content.innovationApproach.cards.map((card, index) => (
+            {t.innovationApproach.cards.map((card, index) => (
               <motion.div
                 key={index}
                 className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 p-8 flex flex-col items-start text-left"
