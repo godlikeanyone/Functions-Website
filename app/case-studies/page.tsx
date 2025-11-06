@@ -23,11 +23,12 @@ export default function CaseStudiesPage() {
       },
       featured: {
         category: "Manufacturing",
-        title: "Global Manufacturing Digital Transformation",
-        challenge:
-          "A Fortune 500 manufacturing company struggled with legacy systems across 50+ facilities, resulting in data silos, inefficient operations, and inability to respond to market changes.",
-        solution:
-          "We implemented an integrated IoT platform with real-time analytics, automated quality control systems, and predictive maintenance algorithms across their global operations.",
+        title: "Building WELL for Henkel: Smart Air, Healthy People",
+        solution: [
+          "WELL certification advisory and implementation",
+          "Continuous indoor environment monitoring",
+          "Tailored air ventilation upgrade improving comfort and efficiency",
+        ],
         results: [
           { icon: TrendingUp, value: "40%", label: "Cost Reduction" },
           { icon: Clock, value: "60%", label: "Faster Production" },
@@ -100,8 +101,11 @@ export default function CaseStudiesPage() {
       featured: {
         category: "制造业",
         title: "全球制造业数字化转型",
-        challenge: "一家财富500强制造公司在50多个设施中使用遗留系统，导致数据孤岛、运营效率低下以及无法响应市场变化。",
-        solution: "我们在其全球运营中实施了集成物联网平台，具有实时分析、自动化质量控制系统和预测性维护算法。",
+        solution: [
+          "WELL认证咨询与实施",
+          "持续的室内环境监测",
+          "定制化空气通风系统升级以提升舒适度与效率",
+        ],
         results: [
           { icon: TrendingUp, value: "40%", label: "成本降低" },
           { icon: Clock, value: "60%", label: "生产加速" },
@@ -190,20 +194,15 @@ export default function CaseStudiesPage() {
                 {t.featured.category}
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.featured.title}</h2>
-
-              <div className="space-y-6 mb-8">
-                <div>
-                  <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                    {locale === "zh" ? "挑战" : "Challenge"}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">{t.featured.challenge}</p>
-                </div>
-
                 <div>
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                     {locale === "zh" ? "解决方案" : "Solution"}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">{t.featured.solution}</p>
+                  <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
+                    {Array.isArray(t.featured.solution)
+                      ? t.featured.solution.map((point, i) => <li key={i}>{point}</li>)
+                      : <li>{t.featured.solution}</li>}
+                  </ul>
                 </div>
               </div>
 
