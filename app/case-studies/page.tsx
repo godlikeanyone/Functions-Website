@@ -110,8 +110,8 @@ export default function CaseStudiesPage() {
       <section className="py-24 md:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-24">
-            {[t.henkelCase, t.monclerCase].map((caseItem, index) => (
-              const isReversed = index === 1 // Reverse Moncler
+            {[t.henkelCase, t.monclerCase].map((caseItem, index) => {
+              const isReversed = index === 1 // Moncler 左图右文
               return (
                 <div
                   key={index}
@@ -119,7 +119,7 @@ export default function CaseStudiesPage() {
                     isReversed ? "lg:[&>div:first-child]:order-2" : ""
                   }`}
                 >
-                  {/* Left Side */}
+                  {/* Left Side (text) */}
                   <div>
                     <div className="text-xs text-primary font-semibold mb-4 uppercase tracking-wider">
                       {caseItem.category}
@@ -127,7 +127,7 @@ export default function CaseStudiesPage() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
                       {caseItem.title}
                     </h2>
-        
+            
                     <div>
                       <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                         {locale === "zh" ? "解决方案" : "Solution"}
@@ -138,7 +138,7 @@ export default function CaseStudiesPage() {
                         ))}
                       </ul>
                     </div>
-        
+            
                     <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
                       {caseItem.results.map((result, idx) => {
                         const Icon = result.icon
@@ -152,8 +152,8 @@ export default function CaseStudiesPage() {
                       })}
                     </div>
                   </div>
-        
-                  {/* Right Side */}
+            
+                  {/* Right Side (image) */}
                   <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden">
                     <img
                       src={caseItem.image || "/placeholder.svg"}
@@ -163,7 +163,7 @@ export default function CaseStudiesPage() {
                   </div>
                 </div>
               )
-            ))}
+            })}
           </div>
         </div>
       </section>
