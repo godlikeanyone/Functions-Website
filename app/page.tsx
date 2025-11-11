@@ -94,12 +94,6 @@ export default function Home() {
           },
         ],
       },
-      stats: [
-        { value: "500+", label: "Projects Delivered" },
-        { value: "98%", label: "Client Satisfaction" },
-        { value: "50+", label: "Enterprise Clients" },
-        { value: "24/7", label: "Global Support" },
-      ],
       cta: {
         title: "Ready to build a more sustainable future?",
         description: "Let‘s discuss how Functions could accelerate your journey",
@@ -336,13 +330,6 @@ export default function Home() {
               )
             })}
           </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-24 md:py-32 border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <StatsBand stats={t.stats} />
         </div>
       </section>
 
