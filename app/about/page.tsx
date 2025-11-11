@@ -26,27 +26,27 @@ export default function AboutPage() {
         title: "Our Mission",
         items: [
           {
-            title: "Sustainability First",
+            title: "Healthier Buildings",
             bullets: [
-              "Reduce energy waste through intelligent automation",
-              "Support carbon neutrality goals",
-              "Ensure long-term resource efficiency",
+              "Reduce occupant complaints",
+              "Ensure compliance to regulatory targets",
+              "Deliver safer and certified indoor environments",
             ],
           },
           {
-            title: "Empower Through Intelligence",
+            title: "More Sustainable Operations",
             bullets: [
-              "Real-time environmental monitoring",
-              "Predictive analytics for system optimization",
-              "Adaptive AI-driven controls",
+              "Optimize HVAC operations to deliver more with less",
+              "Cost down maintenance",
+              "Balance performance, energy and cost",
             ],
           },
           {
-            title: "Human-Centered Innovation",
+            title: "More Productive Profitable Spaces",
             bullets: [
-              "Enhance occupant comfort and safety",
-              "Streamlined workflows for facility managers",
-              "Design experiences that delight and empower",
+              "Engage occupants through trust and transparency reporting",
+              "Become a leader in environmental excellence",
+              "Contribute to ESG goals and targets",
             ],
           },
         ],
