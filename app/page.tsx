@@ -97,57 +97,6 @@ export default function Home() {
         description: "组织面临遗留系统、分散的技术堆栈以及数字化转型的复杂性。传统方法无法跟上创新的步伐。",
         points: ["遗留基础设施阻碍创新", "断开的系统造成低效", "缺乏可扩展的未来解决方案"],
       },
-      solution: {
-        title: "为卓越而设计",
-        description: "我们的综合方法将深厚的技术专长与战略思维相结合，提供与您的雄心相匹配的解决方案。",
-        features: [
-          {
-            icon: Zap,
-            title: "快速实施",
-            description: "在数周而非数月内部署企业级解决方案",
-          },
-          {
-            icon: Shield,
-            title: "安全优先",
-            description: "每一层都内置合规性和安全性",
-          },
-          {
-            icon: Cpu,
-            title: "面向未来",
-            description: "随业务增长的可扩展架构",
-          },
-        ],
-      },
-      stats: [
-        { value: "500+", label: "已交付项目" },
-        { value: "98%", label: "客户满意度" },
-        { value: "50+", label: "企业客户" },
-        { value: "24/7", label: "全球支持" },
-      ],
-      caseStudies: {
-        title: "跨行业的成功案例",
-        description: "了解我们如何帮助领先组织转型运营",
-        studies: [
-          {
-            title: "全球制造业数字化转型",
-            description: "通过智能自动化和物联网集成，将运营成本降低40%",
-            category: "制造业",
-            image: "/modern-factory-automation.png",
-          },
-          {
-            title: "金融服务云迁移",
-            description: "将传统银行系统迁移到云基础设施，实现零停机",
-            category: "金融",
-            image: "/financial-technology-dashboard.png",
-          },
-          {
-            title: "医疗数据平台",
-            description: "构建符合HIPAA标准的数据平台，为50家医院的200万+患者提供服务",
-            category: "医疗保健",
-            image: "/medical-technology-interface.jpg",
-          },
-        ],
-      },
       cta: {
         title: "准备好转型您的企业了吗？",
         description: "让我们讨论Functions Ltd如何加速您的数字化之旅",
