@@ -51,11 +51,6 @@ export default function CaseStudiesPage() {
         ],
         image: "/moncler-store.webp",
       },
-      cta: {
-        title: "Ready to write your success story?",
-        description: "Let's discuss how we can help you achieve similar results",
-        button: "Start Your Project",
-      },
     },
     zh: {
       hero: {
@@ -77,11 +72,6 @@ export default function CaseStudiesPage() {
           { icon: Users, value: "200万+", label: "每年节省工时" },
         ],
         image: "/henkel-office.webp",
-      },
-      cta: {
-        title: "准备好书写您的成功故事了吗？",
-        description: "让我们讨论如何帮助您取得类似的成果",
-        button: "开始您的项目",
       },
     },
   }
@@ -165,18 +155,6 @@ export default function CaseStudiesPage() {
               )
             })}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.cta.title}</h2>
-          <p className="text-xl mb-8 opacity-90 text-balance">{t.cta.description}</p>
-          <Button size="lg" variant="secondary" className="text-base">
-            {t.cta.button}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
         </div>
       </section>
     </div>
