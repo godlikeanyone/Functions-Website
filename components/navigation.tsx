@@ -58,6 +58,7 @@ export function Navigation({ locale = "en", onLocaleChange, onThemeToggle, theme
               <Button variant="ghost" size="sm" onClick={onThemeToggle} className="hidden sm:flex">
                 {theme === "dark" ? "☀️" : "🌙"}
               </Button>
+              {/* Maybe later
               <Button
                 variant="ghost"
                 size="sm"
@@ -66,6 +67,7 @@ export function Navigation({ locale = "en", onLocaleChange, onThemeToggle, theme
               >
                 {locale === "en" ? "中文" : "EN"}
               </Button>
+              */}
               <Button size="sm" className="hidden sm:flex">
                 {locale === "zh" ? "联系我们" : "Contact Us"}
               </Button>
@@ -95,9 +97,11 @@ export function Navigation({ locale = "en", onLocaleChange, onThemeToggle, theme
                   <Button variant="ghost" size="sm" onClick={onThemeToggle}>
                     {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
                   </Button>
+                  {/* Maybe later
                   <Button variant="ghost" size="sm" onClick={() => onLocaleChange?.(locale === "en" ? "zh" : "en")}>
                     {locale === "en" ? "中文" : "EN"}
                   </Button>
+                  */}
                 </div>
               </div>
             </div>
