@@ -306,7 +306,19 @@ export default function Home() {
               </div>
             ))}
           </div>
-      
+
+          {/* World Map */}
+          <div className="my-12 flex justify-center">
+            <motion.img
+              src="/world-map.svg"
+              alt="Global Presence"
+              className="w-full max-w-4xl h-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            />
+          </div>
+          
           {/* Certification Logos */}
           <div className="flex flex-wrap justify-center items-center gap-6">
             {t.companyInfo.logos.map((logo, index) => (
