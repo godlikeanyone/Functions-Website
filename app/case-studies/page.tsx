@@ -119,49 +119,50 @@ export default function CaseStudiesPage() {
                     isReversed ? "lg:[&>div:first-child]:order-2" : ""
                   }`}
                 >
-                {/* Left Side */}
-                <div>
-                  <div className="text-xs text-primary font-semibold mb-4 uppercase tracking-wider">
-                    {caseItem.category}
-                  </div>
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                    {caseItem.title}
-                  </h2>
-      
+                  {/* Left Side */}
                   <div>
-                    <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                      {locale === "zh" ? "解决方案" : "Solution"}
-                    </h3>
-                    <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
-                      {caseItem.solution.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
+                    <div className="text-xs text-primary font-semibold mb-4 uppercase tracking-wider">
+                      {caseItem.category}
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+                      {caseItem.title}
+                    </h2>
+        
+                    <div>
+                      <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                        {locale === "zh" ? "解决方案" : "Solution"}
+                      </h3>
+                      <ul className="list-disc list-inside text-muted-foreground leading-relaxed space-y-2">
+                        {caseItem.solution.map((point, i) => (
+                          <li key={i}>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+        
+                    <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
+                      {caseItem.results.map((result, idx) => {
+                        const Icon = result.icon
+                        return (
+                          <div key={idx}>
+                            <Icon className="h-5 w-5 text-primary mb-2" />
+                            <div className="text-3xl font-bold text-primary mb-1">{result.value}</div>
+                            <div className="text-xs text-muted-foreground">{result.label}</div>
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
-      
-                  <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
-                    {caseItem.results.map((result, idx) => {
-                      const Icon = result.icon
-                      return (
-                        <div key={idx}>
-                          <Icon className="h-5 w-5 text-primary mb-2" />
-                          <div className="text-3xl font-bold text-primary mb-1">{result.value}</div>
-                          <div className="text-xs text-muted-foreground">{result.label}</div>
-                        </div>
-                      )
-                    })}
+        
+                  {/* Right Side */}
+                  <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden">
+                    <img
+                      src={caseItem.image || "/placeholder.svg"}
+                      alt={caseItem.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-      
-                {/* Right Side */}
-                <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden">
-                  <img
-                    src={caseItem.image || "/placeholder.svg"}
-                    alt={caseItem.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+              )
             ))}
           </div>
         </div>
