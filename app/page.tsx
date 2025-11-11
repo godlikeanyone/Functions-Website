@@ -72,28 +72,6 @@ export default function Home() {
           },
         ],
       },
-      solution: {
-        title: "Engineered for excellence",
-        description:
-          "Our integrated approach combines deep technical expertise with strategic thinking to deliver solutions that scale with your ambitions.",
-        features: [
-          {
-            icon: Zap,
-            title: "Rapid Implementation",
-            description: "Deploy enterprise-grade solutions in weeks, not months",
-          },
-          {
-            icon: Shield,
-            title: "Security First",
-            description: "Built-in compliance and security at every layer",
-          },
-          {
-            icon: Cpu,
-            title: "Future-Ready",
-            description: "Scalable architecture that grows with your business",
-          },
-        ],
-      },
       cta: {
         title: "Ready to build a more sustainable future?",
         description: "Let‘s discuss how Functions could accelerate your journey",
@@ -300,35 +278,6 @@ export default function Home() {
                 </motion.div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      
-      {/* Solution Section */}
-      <section className="py-24 md:py-32 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.solution.title}</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance">{t.solution.description}</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {t.solution.features.map((feature, index) => {
-              const Icon = feature.icon
-              return (
-                <div
-                  key={index}
-                  className="bg-background border border-border rounded-xl p-8 hover:border-primary/50 transition-colors"
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </div>
-              )
-            })}
           </div>
         </div>
       </section>
