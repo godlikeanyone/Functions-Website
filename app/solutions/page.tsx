@@ -84,11 +84,6 @@ export default function SolutionsPage() {
           },
         ],
       },
-      cta: {
-        title: "Let's build your solution",
-        description: "Schedule a consultation to discuss your specific needs",
-        button: "Contact Our Team",
-      },
     },
     zh: {
       hero: {
@@ -155,11 +150,6 @@ export default function SolutionsPage() {
             description: "通过监控、反馈和迭代持续改进",
           },
         ],
-      },
-      cta: {
-        title: "让我们构建您的解决方案",
-        description: "安排咨询以讨论您的具体需求",
-        button: "联系我们的团队",
       },
     },
   }
@@ -228,18 +218,6 @@ export default function SolutionsPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.cta.title}</h2>
-          <p className="text-xl mb-8 opacity-90 text-balance">{t.cta.description}</p>
-          <Button size="lg" variant="secondary" className="text-base">
-            {t.cta.button}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
         </div>
       </section>
     </div>
