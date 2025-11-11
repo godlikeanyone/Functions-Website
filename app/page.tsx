@@ -97,6 +97,66 @@ export default function Home() {
         description: "组织面临遗留系统、分散的技术堆栈以及数字化转型的复杂性。传统方法无法跟上创新的步伐。",
         points: ["遗留基础设施阻碍创新", "断开的系统造成低效", "缺乏可扩展的未来解决方案"],
       },
+      companyInfo: {
+        intro: "Founded in 2017 in Hong Kong, Functions delivers environmental and sustainability consultancy projects across Asia, the Subcontinent and the Middle East through a network of industry partners who excel in their regions.",
+        points: [
+          {
+            title: "Expertise",
+            detail: "Functions brings together seasoned consultants and engineers with over 40 years of combined experience in indoor environmental quality and sustainability.",
+          },
+          {
+            title: "Capabilities",
+            detail: "Functions specializes in filtration, ventilation, monitoring, digital integration, and environmental solutions to build healthier, more efficient spaces.",
+          },
+          {
+            title: "Collaboration",
+            detail: "Functions works with partners to customize, source, or co-develop solutions, supported by local communication, project management, and quality control.",
+          },
+          {
+            title: "Solutions",
+            detail: "Functions delivers end-to-end wellness and sustainability services—from planning and design to construction, retrofit, and operations.",
+          },
+        ],
+        logos: [
+          "/logo/well.png",
+          "/logo/leed.png",
+          "/logo/ese.png",
+          "/logo/reset.png",
+          "/logo/breeam.png",
+          "/logo/esg.png",
+          "/logo/ashrae.png",
+        ],
+      },
+      companyInfo: {
+        intro: "Functions Ltd成立于2017年，总部位于香港，通过其在各地区表现卓越的行业合作伙伴网络，在亚洲、次大陆和中东提供环境和可持续发展咨询项目。",
+        points: [
+          {
+            title: "专业经验",
+            detail: "Functions汇集了拥有40年以上室内环境质量与可持续发展经验的资深顾问和工程师。",
+          },
+          {
+            title: "能力",
+            detail: "Functions专注于过滤、通风、监测、数字化集成及环境解决方案，打造更健康、更高效的空间。",
+          },
+          {
+            title: "合作",
+            detail: "Functions与合作伙伴共同定制、采购或联合开发解决方案，并提供本地沟通、项目管理及质量控制支持。",
+          },
+          {
+            title: "解决方案",
+            detail: "Functions提供端到端的健康与可持续服务——从规划设计到施工、改造及运营。",
+          },
+        ],
+        logos: [
+          "/logo/well.png",
+          "/logo/leed.png",
+          "/logo/ese.png",
+          "/logo/reset.png",
+          "/logo/breeam.png",
+          "/logo/esg.png",
+          "/logo/ashrae.png",
+        ],
+      },
       cta: {
         title: "准备好转型您的企业了吗？",
         description: "让我们讨论Functions Ltd如何加速您的数字化之旅",
