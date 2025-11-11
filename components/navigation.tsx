@@ -32,7 +32,7 @@ export function Navigation({ locale = "en", onLocaleChange, onThemeToggle, theme
             <Link href="/" className="flex items-center gap-2">
               <div className="flex items-center">
                 <img
-                  src={theme === "dark" ? "/logo-light.png" : "/logo-dark.png"}
+                  src={theme === "dark" ? "/logo-light.webp" : "/logo-dark.webp"}
                   alt="Functions logo"
                   className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
                 />
