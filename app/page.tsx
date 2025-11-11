@@ -291,6 +291,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Company Info Section */}
+      <section className="py-24 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Intro */}
+          <p className="text-lg md:text-xl mb-12 text-gray-700">{t.companyInfo.intro}</p>
+      
+          {/* 4 Key Points */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {t.companyInfo.points.map((point, index) => (
+              <div key={index} className="p-6 bg-white rounded-2xl shadow-sm">
+                <h3 className="text-2xl font-semibold mb-2">{point.title}</h3>
+                <p className="text-gray-600">{point.detail}</p>
+              </div>
+            ))}
+          </div>
+      
+          {/* Certification Logos */}
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {t.companyInfo.logos.map((logo, index) => (
+              <img key={index} src={logo} alt={`logo-${index}`} className="h-12" />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="py-24 md:py-32 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
