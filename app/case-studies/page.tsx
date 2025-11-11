@@ -111,7 +111,14 @@ export default function CaseStudiesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-24">
             {[t.henkelCase, t.monclerCase].map((caseItem, index) => (
-              <div key={index} className="grid lg:grid-cols-2 gap-12 items-center">
+              const isReversed = index === 1 // Reverse Moncler
+              return (
+                <div
+                  key={index}
+                  className={`grid lg:grid-cols-2 gap-12 items-center ${
+                    isReversed ? "lg:[&>div:first-child]:order-2" : ""
+                  }`}
+                >
                 {/* Left Side */}
                 <div>
                   <div className="text-xs text-primary font-semibold mb-4 uppercase tracking-wider">
