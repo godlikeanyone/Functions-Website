@@ -299,18 +299,11 @@ export default function Home() {
 
           {/* World Map */}
           <div className="my-12 flex justify-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="w-full max-w-4xl"
-            >
               <img
                 src="/world-map.svg"
                 alt="Global Presence"
                 className="w-full h-auto"
               />
-            </motion.div>
           </div>
 
           {/* 4 Key Points */}
