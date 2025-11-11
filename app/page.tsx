@@ -296,16 +296,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Intro */}
           <p className="text-lg md:text-xl mb-12 text-gray-700">{t.companyInfo.intro}</p>
-      
-          {/* 4 Key Points */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {t.companyInfo.points.map((point, index) => (
-              <div key={index} className="p-6 bg-white rounded-2xl shadow-sm">
-                <h3 className="text-2xl font-semibold mb-2">{point.title}</h3>
-                <p className="text-gray-600">{point.detail}</p>
-              </div>
-            ))}
-          </div>
 
           {/* World Map */}
           <div className="my-12 flex justify-center">
@@ -317,6 +307,16 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             />
+          </div>
+          
+          {/* 4 Key Points */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {t.companyInfo.points.map((point, index) => (
+              <div key={index} className="p-6 bg-white rounded-2xl shadow-sm">
+                <h3 className="text-2xl font-semibold mb-2">{point.title}</h3>
+                <p className="text-gray-600">{point.detail}</p>
+              </div>
+            ))}
           </div>
           
           {/* Certification Logos */}
