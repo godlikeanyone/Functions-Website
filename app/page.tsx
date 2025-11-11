@@ -100,30 +100,6 @@ export default function Home() {
         { value: "50+", label: "Enterprise Clients" },
         { value: "24/7", label: "Global Support" },
       ],
-      caseStudies: {
-        title: "Proven results across industries",
-        description: "See how we've helped leading organizations transform their operations",
-        studies: [
-          {
-            title: "Global Manufacturing Digital Transformation",
-            description: "Reduced operational costs by 40% through intelligent automation and IoT integration",
-            category: "Manufacturing",
-            image: "/modern-factory-automation.png",
-          },
-          {
-            title: "Financial Services Cloud Migration",
-            description: "Migrated legacy banking systems to cloud infrastructure with zero downtime",
-            category: "Finance",
-            image: "/financial-technology-dashboard.png",
-          },
-          {
-            title: "Healthcare Data Platform",
-            description: "Built HIPAA-compliant data platform serving 2M+ patients across 50 hospitals",
-            category: "Healthcare",
-            image: "/medical-technology-interface.jpg",
-          },
-        ],
-      },
       cta: {
         title: "Ready to build a more sustainable future?",
         description: "Let‘s discuss how Functions could accelerate your journey",
@@ -367,30 +343,6 @@ export default function Home() {
       <section className="py-24 md:py-32 border-y border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <StatsBand stats={t.stats} />
-        </div>
-      </section>
-
-      {/* Case Studies Section */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.caseStudies.title}</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance">{t.caseStudies.description}</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {t.caseStudies.studies.map((study, index) => (
-              <CaseStudyCard
-                key={index}
-                title={study.title}
-                description={study.description}
-                category={study.category}
-                image={study.image}
-                href="/case-studies"
-                locale={locale}
-              />
-            ))}
-          </div>
         </div>
       </section>
 
