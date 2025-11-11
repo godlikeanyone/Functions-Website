@@ -95,10 +95,10 @@ export default function Home() {
         logos: [
           "/well.webp",
           "/leed.webp",
-          "/ese.webp",
           "/reset.webp",
           "/breeam.webp",
           "/esg.webp",
+          "/ma.webp",
           "/ashrae.webp",
         ],
       },
