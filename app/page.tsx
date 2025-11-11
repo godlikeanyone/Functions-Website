@@ -72,31 +72,6 @@ export default function Home() {
           },
         ],
       },
-      cta: {
-        title: "Ready to build a more sustainable future?",
-        description: "Let‘s discuss how Functions could accelerate your journey",
-        button: "Schedule an inquiry",
-      },
-    },
-    zh: {
-      hero: {
-        eyebrow: "工程卓越",
-        title: [
-                  "更智能的建筑。",
-                  "更健康的生活。",
-                  "更可持续的未来。"
-                ],
-        description:
-          "我们帮助客户在经济效率、环境责任和人类福祉之间取得平衡——打造既能满足当今需求又能经受住未来考验的高性能建筑。",
-        description: "我们帮助客户在经济效率、环境责任和人类福祉之间取得平衡——打造既能满足当今需求又能经受住未来考验的高性能建筑。",
-        cta1: "开始使用",
-        cta2: "查看解决方案",
-      },
-      problem: {
-        title: "现代企业面临的挑战",
-        description: "组织面临遗留系统、分散的技术堆栈以及数字化转型的复杂性。传统方法无法跟上创新的步伐。",
-        points: ["遗留基础设施阻碍创新", "断开的系统造成低效", "缺乏可扩展的未来解决方案"],
-      },
       companyInfo: {
         intro: "Founded in 2017 in Hong Kong, Functions delivers environmental and sustainability consultancy projects across Asia, the Subcontinent and the Middle East through a network of industry partners who excel in their regions.",
         points: [
@@ -126,6 +101,31 @@ export default function Home() {
           "/esg.webp",
           "/ashrae.webp",
         ],
+      },
+      cta: {
+        title: "Ready to build a more sustainable future?",
+        description: "Let‘s discuss how Functions could accelerate your journey",
+        button: "Schedule an inquiry",
+      },
+    },
+    zh: {
+      hero: {
+        eyebrow: "工程卓越",
+        title: [
+                  "更智能的建筑。",
+                  "更健康的生活。",
+                  "更可持续的未来。"
+                ],
+        description:
+          "我们帮助客户在经济效率、环境责任和人类福祉之间取得平衡——打造既能满足当今需求又能经受住未来考验的高性能建筑。",
+        description: "我们帮助客户在经济效率、环境责任和人类福祉之间取得平衡——打造既能满足当今需求又能经受住未来考验的高性能建筑。",
+        cta1: "开始使用",
+        cta2: "查看解决方案",
+      },
+      problem: {
+        title: "现代企业面临的挑战",
+        description: "组织面临遗留系统、分散的技术堆栈以及数字化转型的复杂性。传统方法无法跟上创新的步伐。",
+        points: ["遗留基础设施阻碍创新", "断开的系统造成低效", "缺乏可扩展的未来解决方案"],
       },
       companyInfo: {
         intro: "Functions Ltd成立于2017年，总部位于香港，通过其在各地区表现卓越的行业合作伙伴网络，在亚洲、次大陆和中东提供环境和可持续发展咨询项目。",
