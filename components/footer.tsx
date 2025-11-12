@@ -18,11 +18,7 @@ export function Footer({ locale = "en" }: FooterProps) {
     },
     {
       title: locale === "zh" ? "成功案例" : "Case Studies",
-      links: [
-        { label: locale === "zh" ? "关于我们" : "About", href: "/about" },
-        { label: locale === "zh" ? "博客" : "Blog", href: "#" },
-        { label: locale === "zh" ? "职业" : "Careers", href: "#" },
-      ],
+      links: [],
     },
     {
       title: locale === "zh" ? "关于我们" : "About",
