@@ -334,7 +334,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.cta.title}</h2>
           <p className="text-xl mb-8 opacity-90 text-balance">{t.cta.description}</p>
           <Link href="mailto:inquiry@functions.ltd">
-            <Button size="lg" variant="secondary" className="text-base">
+            <Button size="lg" variant="secondary" className="text-base cursor-pointer hover:bg-primary-foreground/10 transition">
               {t.cta.button}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
