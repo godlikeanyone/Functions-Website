@@ -333,7 +333,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">{t.cta.title}</h2>
           <p className="text-xl mb-8 opacity-90 text-balance">{t.cta.description}</p>
-          <Link href="mailto:abc@abc.com">
+          <Link href="mailto:inquiry@functions.ltd">
             <Button size="lg" variant="secondary" className="text-base">
               {t.cta.button}
               <ArrowRight className="ml-2 h-5 w-5" />
