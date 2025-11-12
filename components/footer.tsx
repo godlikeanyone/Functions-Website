@@ -38,7 +38,7 @@ export function Footer({ locale = "en" }: FooterProps) {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/logo-light.png"
+                src="/logo-light.webp"
                 alt="Functions Limited Logo"
                 className="w-12 h-12 rounded-lg object-contain"
               />
