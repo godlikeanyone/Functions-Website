@@ -30,9 +30,9 @@ export default function CaseStudiesPage() {
           "Tailored air ventilation upgrade improving comfort and efficiency",
         ],
         results: [
-          { icon: TrendingUp, value: "40%", label: "Cost Reduction" },
-          { icon: Clock, value: "60%", label: "Faster Production" },
-          { icon: Users, value: "2M+", label: "Hours Saved Annually" },
+          { icon: TrendingUp, value: "1st", label: "WELL V2 Platium" },
+          { icon: Users, value: "90%", label: "Staff Satisfaction" },
+          { icon: Clock, value: "8%", label: "Productivity Enhancement" },
         ],
         image: "/henkel-office.webp",
       },
