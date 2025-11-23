@@ -11,9 +11,9 @@ export function Footer({ locale = "en" }: FooterProps) {
     {
       title: locale === "zh" ? "解决方案" : "Solutions",
       links: [
-        { label: locale === "zh" ? "硬件方案" : "Hardware", href: "#" },
-        { label: locale === "zh" ? "软件方案" : "Software", href: "#" },
-        { label: locale === "zh" ? "咨询服务" : "Consultancy", href: "#" },
+        { label: locale === "zh" ? "硬件方案" : "Hardware", href: "/solutions/hardware" },
+        { label: locale === "zh" ? "软件方案" : "Software", href: "/solutions/software" },
+        { label: locale === "zh" ? "咨询服务" : "Consultancy", href: "/solutions/consultancy" },
       ],
     },
     {
