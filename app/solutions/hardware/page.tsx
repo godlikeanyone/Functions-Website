@@ -343,7 +343,7 @@ export default function HardwarePage() {
                 <div className="mt-12 hidden lg:block aspect-video rounded-xl bg-muted border border-border overflow-hidden">
                     {/* Dashboard Screenshot */}
                      <div className="w-full h-full flex items-center justify-center text-muted-foreground/20">
-                        <LineChart className="h-12 w-12" />
+                        <img src="/monitor.webp" alt="Monitor"  />
                      </div>
                 </div>
               </div>
