@@ -263,11 +263,10 @@ export default function HardwarePage() {
 
               {/* Visual Area */}
               <div className="order-1 lg:order-2 relative aspect-square lg:h-[700px] bg-gradient-to-br from-muted to-muted/50 rounded-3xl overflow-hidden border border-border shadow-2xl">
-                 {/* 占位图：建议放 MESP 滤网特写或电场示意图 */}
                  <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/30">
                     <Zap className="h-24 w-24 mb-4 opacity-20" />
                     <span className="uppercase tracking-widest text-sm">Micro-ESP Field Visualization</span>
-                    {/* <img src="/mesp-tech.webp" alt="MESP Technology" className="absolute inset-0 w-full h-full object-cover" /> */}
+                    {/* <img src="/mesp-filter.webp" alt="MESP Technology" className="absolute inset-0 w-full h-full object-cover" /> */}
                  </div>
               </div>
             </div>
