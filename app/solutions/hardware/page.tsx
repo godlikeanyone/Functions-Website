@@ -1,18 +1,26 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { 
-  Cpu, 
-  Wifi, 
-  Wind, 
-  Battery, 
-  ShieldCheck, 
-  Activity, 
-  ArrowRight 
+import {
+  Zap,
+  Wind,
+  RefreshCw,
+  ShieldCheck,
+  Fan,
+  Cpu,
+  Gauge,
+  Maximize,
+  Activity,
+  Wifi,
+  LineChart,
+  Award,
+  MonitorSmartphone,
+  ArrowRight,
+  CheckCircle2
 } from "lucide-react"
 import { useEffect, useState } from "react"
 
-export default function HardwareSolutionsPage() {
+export default function HardwarePage() {
   const [locale, setLocale] = useState("en")
 
   useEffect(() => {
@@ -23,198 +31,360 @@ export default function HardwareSolutionsPage() {
   const content = {
     en: {
       hero: {
-        eyebrow: "Hardware Solutions",
-        title: "Precision Sensing, Intelligent Control",
+        eyebrow: "Hardware & Technology",
+        title: "Engineering the Invisible",
         description:
-          "Proprietary IoT hardware designed for commercial reliability. Monitor, control, and optimize your building environment with enterprise-grade accuracy.",
+          "From proprietary MESP filtration to digital twin analytics, our hardware ecosystem is designed to make buildings breathe, think, and perform.",
       },
-      products: [
-        {
-          id: "sensor",
-          category: "Sensing",
-          title: "AuraSense Pro: Enterprise Air Quality Monitor",
-          description: "A comprehensive indoor environmental quality monitor designed for WELL v2 and LEED certifications. Real-time data for CO2, PM2.5, TVOC, Temperature, and Humidity.",
+      sections: {
+        mesp: {
+          tag: "Core Technology",
+          title: "MESP Filtration: CleanFlow",
+          description:
+            "CleanFlow is Functions’ flagship air purification technology—an advanced Micro Electrostatic Precipitation (Micro-ESP) system. Unlike traditional filters that restrict airflow, MESP+ uses polymer dielectric materials to generate a stable, intense electric field that captures and sterilises particles down to 0.01μm.",
+          cta: "Discover MESP+",
           features: [
-            "Industrial-grade NDIR CO2 sensors",
-            "Laser scattering PM2.5 monitoring",
-            "Self-calibrating sensors with 5+ year lifespan",
-            "Discrete design suitable for luxury interiors"
+            {
+              icon: Zap,
+              title: "High Efficiency",
+              text: ">95–99% removal of PM2.5, bacteria, and viruses.",
+            },
+            {
+              icon: Wind,
+              title: "Low Energy",
+              text: "Up to 50% reduction in fan power versus HEPA systems.",
+            },
+            {
+              icon: RefreshCw,
+              title: "Washable & Reusable",
+              text: " significantly lower operating costs and waste generation.",
+            },
+            {
+              icon: ShieldCheck,
+              title: "Safe & Silent",
+              text: "No arcing, no ozone, compliant with ASHRAE standards.",
+            },
           ],
-          specs: [
-            { icon: Activity, value: "±3%", label: "CO2 Accuracy" },
-            { icon: Wifi, value: "Dual", label: "Wi-Fi + LoRaWAN" },
-            { icon: ShieldCheck, value: "IP40", label: "Protection Rating" },
-          ],
-          image: "/hardware-sensor.webp", // 替换为你的图片路径
         },
-        {
-          id: "gateway",
-          category: "Connectivity",
-          title: "Nexus Hub: Edge Computing Gateway",
-          description: "The central nervous system of your smart building. Securely aggregates data from thousands of sensors and enables local automation without cloud latency.",
+        ventilation: {
+          tag: "Commercial Systems",
+          title: "Purifier & Ventilation",
+          description:
+            "A range of commercial systems designed to enhance indoor air quality while reducing energy consumption. Our solutions combine automated control, modular filtration, and energy recovery to create smarter, more efficient airflow management.",
+          cta: "Explore Ventilation Solutions",
           features: [
-            "Supports up to 2,000 end-nodes per gateway",
-            "Built-in 4G LTE failover backup",
-            "Edge computing for local logic execution",
-            "AES-128 End-to-End Encryption"
+            "Smart, on-demand ventilation triggered by CO₂ levels or occupancy",
+            "Integrated HEPA or MESP filtration for particle and pathogen control",
+            "Energy recovery cores achieving up to 60% efficiency",
+            "Compact, ceiling-mounted designs for easy installation",
           ],
-          specs: [
-            { icon: Cpu, value: "4-Core", label: "Processing Unit" },
-            { icon: Battery, value: "48h", label: "Backup Battery" },
-            { icon: Wifi, value: "10km", label: "LoRa Range" },
-          ],
-          image: "/hardware-gateway.webp", // 替换为你的图片路径
         },
-      ],
-      cta: "View Full Datasheet"
+        monitoring: {
+          tag: "Digital Intelligence",
+          title: "Monitoring & Digital Analytics",
+          description:
+            "Turning invisible factors like air, comfort, and energy into actionable insights. Designed for consultants, engineers, and facility teams to measure, manage, and prove performance.",
+          cta: "View Analytics Platform",
+          subFeatures: [
+            {
+              icon: Activity,
+              title: "Comprehensive Measurement",
+              text: "Tracks 16 key parameters (PM₂.₅, CO₂, TVOC, etc.) for a complete environmental picture.",
+            },
+            {
+              icon: Wifi,
+              title: "Seamless Integration",
+              text: "Wi-Fi, LoRa, MQTT, BACnet, and Modbus integration with BMS and IoT platforms.",
+            },
+            {
+              icon: LineChart,
+              title: "Data-Driven Performance",
+              text: "Supports demand-based ventilation, reducing HVAC runtime and maintenance costs.",
+            },
+            {
+              icon: Award,
+              title: "Certification Ready",
+              text: "Live data and alerts to meet WELL, RESET, LEED, and Fitwel criteria.",
+            },
+            {
+              icon: MonitorSmartphone,
+              title: "Digital Platform",
+              text: "Intuitive dashboards, analytics, and automated reporting for ESG outcomes.",
+            },
+          ],
+        },
+      },
     },
     zh: {
       hero: {
-        eyebrow: "硬件解决方案",
-        title: "精准感知，智能控制",
-        description: "专为商业可靠性设计的自研物联网硬件。以企业级精度监测、控制并优化您的建筑环境。",
+        eyebrow: "硬件与技术",
+        title: "重塑隐形环境",
+        description: "从自研 MESP 过滤技术到数字孪生分析，我们的硬件生态系统旨在让建筑会呼吸、会思考、且性能卓越。",
       },
-      products: [
-        {
-          id: "sensor",
-          category: "环境感知",
-          title: "AuraSense Pro: 企业级空气质量监测仪",
-          description: "专为 WELL v2 和 LEED 认证设计的综合室内环境质量监测仪。实时监测 CO2、PM2.5、TVOC、温度和湿度。",
+      sections: {
+        mesp: {
+          tag: "内核技术",
+          title: "MESP 过滤技术: CleanFlow",
+          description:
+            "CleanFlow 是 Functions 的旗舰空气净化技术——一种先进的微静电沉淀 (Micro-ESP) 系统。与限制气流的传统过滤器不同，MESP+ 使用高分子介电材料产生稳定、强烈的电场，可捕获并杀灭小至 0.01μm 的颗粒物。",
+          cta: "探索 MESP+",
           features: [
-            "工业级 NDIR 二氧化碳传感器",
-            "激光散射 PM2.5 监测技术",
-            "自校准传感器，使用寿命超过 5 年",
-            "适合高端内饰的隐蔽式设计"
+            {
+              icon: Zap,
+              title: "高效净化",
+              text: "PM2.5、细菌和病毒的去除率 >95–99%。",
+            },
+            {
+              icon: Wind,
+              title: "低能耗",
+              text: "与 HEPA 系统相比，风机能耗降低高达 50%。",
+            },
+            {
+              icon: RefreshCw,
+              title: "可水洗重复使用",
+              text: "显着降低运营成本并减少废物产生。",
+            },
+            {
+              icon: ShieldCheck,
+              title: "安全静音",
+              text: "无拉弧，无臭氧，符合 ASHRAE 标准。",
+            },
           ],
-          specs: [
-            { icon: Activity, value: "±3%", label: "CO2 精度" },
-            { icon: Wifi, value: "双模", label: "Wi-Fi + LoRaWAN" },
-            { icon: ShieldCheck, value: "IP40", label: "防护等级" },
-          ],
-          image: "/hardware-sensor.webp",
         },
-        {
-          id: "gateway",
-          category: "连接枢纽",
-          title: "Nexus Hub: 边缘计算网关",
-          description: "智能建筑的中枢神经系统。安全汇聚数千个传感器的数据，并实现无云端延迟的本地自动化控制。",
+        ventilation: {
+          tag: "商业系统",
+          title: "商用净化与新风系统",
+          description:
+            "一系列旨在提升室内空气质量同时降低能耗的商用系统。我们的解决方案结合了自动控制、模块化过滤和能量回收，创造更智能、更高效的气流管理。",
+          cta: "探索新风解决方案",
           features: [
-            "单网关支持多达 2,000 个终端节点",
-            "内置 4G LTE 故障切换备份",
-            "边缘计算支持本地逻辑执行",
-            "AES-128 端到端加密"
+            "由 CO₂ 浓度或占用率触发的智能按需通风",
+            "集成 HEPA 或 MESP 过滤，用于颗粒物和病原体控制",
+            "能量回收内核效率高达 60%",
+            "紧凑的吸顶式设计，易于安装且干扰最小",
           ],
-          specs: [
-            { icon: Cpu, value: "4核", label: "处理单元" },
-            { icon: Battery, value: "48h", label: "备用电池" },
-            { icon: Wifi, value: "10km", label: "LoRa 覆盖范围" },
-          ],
-          image: "/hardware-gateway.webp",
         },
-      ],
-      cta: "查看完整规格书"
+        monitoring: {
+          tag: "数字智能",
+          title: "监测与数字分析",
+          description:
+            "将空气、舒适度和能源等不可见因素转化为可操作的洞察。专为顾问、工程师和设施团队设计，用于测量、管理和证明建筑性能。",
+          cta: "查看分析平台",
+          subFeatures: [
+            {
+              icon: Activity,
+              title: "全面测量",
+              text: "追踪 16 个关键参数（PM₂.₅、CO₂、TVOC等），提供完整的环境画像。",
+            },
+            {
+              icon: Wifi,
+              title: "无缝集成",
+              text: "支持 Wi-Fi, LoRa, MQTT, BACnet 和 Modbus，轻松对接 BMS 和 IoT 平台。",
+            },
+            {
+              icon: LineChart,
+              title: "数据驱动性能",
+              text: "支持按需通风，减少不必要的暖通空调运行时间和维护成本。",
+            },
+            {
+              icon: Award,
+              title: "认证合规",
+              text: "实时数据和警报助力满足 WELL, RESET, LEED 和 Fitwel 标准。",
+            },
+            {
+              icon: MonitorSmartphone,
+              title: "数字平台",
+              text: "直观的仪表板、分析和自动报告，展示可衡量的 ESG 成果。",
+            },
+          ],
+        },
+      },
     },
   }
 
   const t = content[locale as keyof typeof content] || content.en
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section - 保持与 CaseStudy 一致的视觉风格 */}
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-card via-background to-background" />
         <div className="absolute inset-0 opacity-20">
-          {/* 稍微调整了光斑的位置，让它看起来有点变化但风格统一 */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]" />
+           {/* 这里的背景光斑稍微偏科技蓝/青色 */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(6,182,212,0.15),transparent_50%)]" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block mb-4 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
-            <span className="text-sm font-medium text-primary">{t.hero.eyebrow}</span>
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-block mb-6 px-4 py-1.5 bg-primary/5 border border-primary/10 rounded-full backdrop-blur-sm">
+            <span className="text-sm font-medium text-primary tracking-wide uppercase">{t.hero.eyebrow}</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">{t.hero.title}</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">{t.hero.description}</p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-balance tracking-tight">{t.hero.title}</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
+            {t.hero.description}
+          </p>
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-24 md:py-32 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-24">
-            {t.products.map((product, index) => {
-              const isReversed = index % 2 !== 0 // 交替布局
-              return (
-                <div
-                  key={product.id}
-                  className={`grid lg:grid-cols-2 gap-12 items-center ${
-                    isReversed ? "lg:[&>div:first-child]:order-2" : ""
-                  }`}
-                >
-                  {/* Left Side (Text Info) */}
-                  <div>
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="h-px w-8 bg-primary"></div>
-                      <span className="text-xs text-primary font-semibold uppercase tracking-wider">
-                        {product.category}
-                      </span>
-                    </div>
-                    
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                      {product.title}
-                    </h2>
-
-                    <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                      {product.description}
-                    </p>
-                 
-                    <div className="mb-8">
-                      <ul className="grid gap-3">
-                        {product.features.map((feature, i) => (
-                          <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                            <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                 
-                    {/* Tech Specs Grid - 模仿了 Case Study 的 Results 区域 */}
-                    <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border mb-8">
-                      {product.specs.map((spec, idx) => {
-                        const Icon = spec.icon
-                        return (
-                          <div key={idx}>
-                            <Icon className="h-5 w-5 text-primary mb-2" />
-                            <div className="text-2xl font-bold text-foreground mb-1">{spec.value}</div>
-                            <div className="text-xs text-muted-foreground">{spec.label}</div>
-                          </div>
-                        )
-                      })}
-                    </div>
-
-                    <Button variant="outline" className="group">
-                      {t.cta}
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </div>
-                 
-                  {/* Right Side (Image) */}
-                  <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden border border-border/50 shadow-xl">
-                    {/* 这里使用 div 模拟图片占位，实际使用时请换回 img 标签 */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
-                         <img
-                            src={product.image || "/placeholder.svg"}
-                            alt={product.title}
-                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                          />
-                    </div>
-                  </div>
+      <div className="flex flex-col gap-24 md:gap-32 pb-32">
+        {/* SECTION 1: MESP Filtration (Technology Focus) */}
+        <section className="relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Text Content */}
+              <div className="order-2 lg:order-1">
+                <div className="text-xs font-bold text-primary mb-4 uppercase tracking-widest">
+                  {t.sections.mesp.tag}
                 </div>
-              )
-            })}
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+                  {t.sections.mesp.title}
+                </h2>
+                <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+                  {t.sections.mesp.description}
+                </p>
+
+                {/* 2x2 Grid for MESP Advantages */}
+                <div className="grid sm:grid-cols-2 gap-6 mb-10">
+                  {t.sections.mesp.features.map((feature, i) => {
+                    const Icon = feature.icon
+                    return (
+                      <div key={i} className="p-5 rounded-xl bg-muted/30 border border-border/50 hover:border-primary/20 transition-colors">
+                        <Icon className="h-6 w-6 text-primary mb-3" />
+                        <h3 className="font-semibold mb-1">{feature.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-snug">{feature.text}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+
+                <Button variant="outline" className="group">
+                  {t.sections.mesp.cta}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </div>
+
+              {/* Visual Area */}
+              <div className="order-1 lg:order-2 relative aspect-square lg:h-[700px] bg-gradient-to-br from-muted to-muted/50 rounded-3xl overflow-hidden border border-border shadow-2xl">
+                 {/* 占位图：建议放 MESP 滤网特写或电场示意图 */}
+                 <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/30">
+                    <Zap className="h-24 w-24 mb-4 opacity-20" />
+                    <span className="uppercase tracking-widest text-sm">Micro-ESP Field Visualization</span>
+                    {/* <img src="/mesp-tech.webp" alt="MESP Technology" className="absolute inset-0 w-full h-full object-cover" /> */}
+                 </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* SECTION 2: Commercial Ventilation (System Focus) */}
+        <section className="relative bg-card py-24 border-y border-border/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Visual Area - Left side for zigzag effect */}
+              <div className="relative aspect-square lg:h-[600px] bg-muted rounded-3xl overflow-hidden border border-border shadow-2xl">
+                 {/* 占位图：建议放吸顶式新风机或办公室场景图 */}
+                 <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/30">
+                    <Fan className="h-24 w-24 mb-4 opacity-20" />
+                    <span className="uppercase tracking-widest text-sm">Ventilation Unit Integration</span>
+                    {/* <img src="/ventilation-unit.webp" alt="Ventilation" className="absolute inset-0 w-full h-full object-cover" /> */}
+                 </div>
+              </div>
+
+              {/* Text Content */}
+              <div>
+                <div className="text-xs font-bold text-primary mb-4 uppercase tracking-widest">
+                  {t.sections.ventilation.tag}
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+                  {t.sections.ventilation.title}
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  {t.sections.ventilation.description}
+                </p>
+
+                {/* List Style for Features */}
+                <ul className="space-y-4 mb-10">
+                  {t.sections.ventilation.features.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button variant="default" className="group">
+                  {t.sections.ventilation.cta}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 3: Monitoring & Analytics (Data Focus) */}
+        <section className="relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-12 gap-12 items-start">
+              
+              {/* Left: Sticky Header / Introduction (Occupies 4 cols) */}
+              <div className="lg:col-span-5 lg:sticky lg:top-32">
+                <div className="text-xs font-bold text-primary mb-4 uppercase tracking-widest">
+                  {t.sections.monitoring.tag}
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+                  {t.sections.monitoring.title}
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  {t.sections.monitoring.description}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <Button variant="outline" className="group">
+                    {t.sections.monitoring.cta}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                </div>
+
+                {/* Mini Image for Context */}
+                <div className="mt-12 hidden lg:block aspect-video rounded-xl bg-muted border border-border overflow-hidden">
+                    {/* 占位图：Dashboard 截图 */}
+                     <div className="w-full h-full flex items-center justify-center text-muted-foreground/20">
+                        <LineChart className="h-12 w-12" />
+                     </div>
+                </div>
+              </div>
+
+              {/* Right: Feature Grid (Occupies 7 cols) */}
+              <div className="lg:col-span-7">
+                <div className="grid sm:grid-cols-2 gap-6">
+                  {t.sections.monitoring.subFeatures.map((feature, i) => {
+                    const Icon = feature.icon
+                    // Make the last item span full width if it's an odd number of items for better balance
+                    const isLast = i === t.sections.monitoring.subFeatures.length - 1
+                    const isOddTotal = t.sections.monitoring.subFeatures.length % 2 !== 0
+                    
+                    return (
+                      <div 
+                        key={i} 
+                        className={`p-6 rounded-2xl bg-card border border-border/60 hover:border-primary/30 hover:shadow-lg transition-all duration-300 ${
+                            isLast && isOddTotal ? "sm:col-span-2" : ""
+                        }`}
+                      >
+                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
+                           <Icon className="h-5 w-5" />
+                        </div>
+                        <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {feature.text}
+                        </p>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   )
 }
