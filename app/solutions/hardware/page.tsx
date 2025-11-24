@@ -210,8 +210,7 @@ export default function HardwarePage() {
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-card via-background to-background" />
         <div className="absolute inset-0 opacity-20">
-           {/* 这里的背景光斑稍微偏科技蓝/青色 */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(6,182,212,0.15),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(14,165,233,0.3),transparent_50%)]" />
         </div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -345,7 +344,7 @@ export default function HardwarePage() {
 
                 {/* Mini Image for Context */}
                 <div className="mt-12 hidden lg:block aspect-video rounded-xl bg-muted border border-border overflow-hidden">
-                    {/* 占位图：Dashboard 截图 */}
+                    {/* Dashboard Screenshot */}
                      <div className="w-full h-full flex items-center justify-center text-muted-foreground/20">
                         <LineChart className="h-12 w-12" />
                      </div>
