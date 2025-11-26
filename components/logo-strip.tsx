@@ -47,21 +47,18 @@ export function LogoStrip({ title, logos }: LogoStripProps) {
       )}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center">
         {displayLogos.map((logo, index) => (
-          <a
+          <div
             key={index}
-            href={logo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
+            className="flex items-center justify-center"
           >
             <div className="h-30 w-30 flex items-center justify-center">
               <img
                 src={logo.image}
                 alt={logo.name}
-                className="max-h-full max-w-full object-contain transition-shadow hover:shadow-lg"
+                className="max-h-full max-w-full object-contain transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-110 hover:drop-shadow-xl cursor-pointer"
               />
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>
