@@ -14,9 +14,9 @@ export function LogoStrip({ title, logos }: LogoStripProps) {
     { name: "Henkel", image: "/henkel-logo.webp", url: "" },
     { name: "Moncler", image: "/moncler-logo.webp", url: "" },
     { name: "Hines", image: "/hines-logo.webp", url: "" },
-    { name: "Saint Laurent Paris", image: "/saint-laurent.webp", url: "" },
-    { name: "Stone Island", image: "/stone-island.webp", url: "" },
-    { name: "Kerry Properties Limited", image: "/kerry.webp", url: "" },
+    { name: "Saint Laurent Paris", image: "/saint-laurent-logo.webp", url: "" },
+    { name: "Stone Island", image: "/stone-island-logo.webp", url: "" },
+    { name: "Kerry Properties Limited", image: "/kerry-logo.webp", url: "" },
   ]
 
   const displayLogos = logos && logos.length > 0 ? logos : defaultLogos
