@@ -258,7 +258,7 @@ export default function HardwarePage() {
                   {t.sections.mesp.highlights.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <div className="mt-1 h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 className="h-3 w-3 text-primary" />
+                        <CheckCircle2 className="h-5 w-5 text-primary" />
                       </div>
                       <span className="text-muted-foreground">
                         <strong className="text-foreground font-medium">{item.title}:</strong> {item.text}
