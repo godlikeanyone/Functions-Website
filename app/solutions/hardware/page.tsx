@@ -6,7 +6,6 @@ import {
   Wind,
   RefreshCw,
   ShieldCheck,
-  Fan,
   Cpu,
   Gauge,
   Maximize,
@@ -303,10 +302,11 @@ export default function HardwarePage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Visual Area - Left side for zigzag effect */}
               <div className="relative aspect-square lg:h-[600px] bg-muted rounded-3xl overflow-hidden border border-border shadow-2xl">
-                 <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/30">
-                    <Fan className="h-24 w-24 mb-4 opacity-20" />
-                    <span className="uppercase tracking-widest text-sm">Ventilation Unit Integration</span>
-                 </div>
+                 <img 
+                   src="/ventilation.webp" 
+                   alt="Ventilation System" 
+                   className="absolute inset-0 w-full h-full object-cover" 
+                 />
               </div>
 
               {/* Text Content */}
