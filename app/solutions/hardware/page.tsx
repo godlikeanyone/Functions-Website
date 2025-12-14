@@ -42,7 +42,6 @@ export default function HardwarePage() {
           title: "MESP Filtration",
           description:
             "Next generation MESP+ by Functions is a highly efficient & environmentally friendly filtration technology desgined for building HVAC systems. Utilizing patented advanced Micro Electrostatic Precipitation (MESP+) technology, it delivers superior air quality without compromising energy performance.",
-          // 新增 highlights 数据
           highlights: [
             { title: "Advanced Technology", text: "Uses Micro-Electrostatic fields to capture sub-micron particles." },
             { title: "Comprehensive Protection", text: "Removes PM2.5, allergens, dust, and airborne pathogens." },
@@ -74,15 +73,15 @@ export default function HardwarePage() {
         },
         ventilation: {
           tag: "Commercial Systems",
-          title: "Purifier & Ventilation",
+          title: "Ventilation & Purification",
           description:
-            "A range of commercial systems designed to enhance indoor air quality while reducing energy consumption. Our solutions combine automated control, modular filtration, and energy recovery to create smarter, more efficient airflow management.",
+            "Our comprehensive suite of solutions—including wall-mounted ventilators, Energy Recovery Ventilators (ERV), and commercial in-ceiling purifiers—delivers pristine fresh air while minimizing energy loss. We combine automated control with high-efficiency filtration to create smarter, healthier indoor environments.",
           cta: "Explore Ventilation Solutions",
           features: [
-            "Smart, on-demand ventilation triggered by CO₂ levels or occupancy",
-            "Integrated HEPA or MESP filtration for particle and pathogen control",
-            "Energy recovery cores achieving up to 60% efficiency",
-            "Compact, ceiling-mounted designs for easy installation",
+            "Energy Recovery (ERV): High-efficiency heat exchange cores recover thermal energy to precondition fresh air, reducing HVAC energy load by up to 80%.",
+            "Versatile Form Factors: A complete product lineup featuring wall-mounted, ceiling-concealed, and cabinet-style units to fit any architectural requirement.",
+            "Integrated Purification: Equipped with medical-grade HEPA or MESP+ filtration to strictly eliminate particulates and pathogens from incoming fresh air.",
+            "Smart Automation: Intelligent sensors monitor real-time CO2 levels and occupancy to adjust airflow on demand, optimizing both air quality and efficiency.",
           ],
         },
         monitoring: {
