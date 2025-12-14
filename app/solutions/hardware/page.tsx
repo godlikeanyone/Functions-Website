@@ -372,8 +372,8 @@ export default function HardwarePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-12 items-start">
               
-              {/* Left: Sticky Header / Introduction (Occupies 4 cols) */}
-              <div className="lg:col-span-5 lg:sticky lg:top-32">
+              {/* Left: Sticky Header / Introduction (Occupies 5 cols) */}
+              <div className="lg:col-span-5 lg:sticky lg:top-24">
                 <div className="text-xs font-bold text-primary mb-4 uppercase tracking-widest">
                   {t.sections.monitoring.tag}
                 </div>
@@ -383,19 +383,45 @@ export default function HardwarePage() {
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                   {t.sections.monitoring.description}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 mb-10">
                     <Button variant="outline" className="group">
                     {t.sections.monitoring.cta}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                 </div>
 
-                {/* Mini Image for Context */}
-                <div className="mt-12 hidden lg:block aspect-video rounded-xl bg-muted border border-border overflow-hidden">
-                    {/* Dashboard Screenshot */}
-                      <div className="w-full h-full flex items-center justify-center text-muted-foreground/20">
-                        <img src="/monitor.webp" alt="Monitor"  />
-                      </div>
+                {/* --- Bento Grid Image Layout --- */}
+                <div className="hidden lg:grid grid-cols-2 gap-4">
+                    {/* Main Item: Dashboard UI */}
+                    <div className="col-span-2 relative aspect-[16/9] rounded-2xl bg-muted border border-border/50 overflow-hidden shadow-lg group">
+                        <img 
+                            src="/monitor-dashboard.webp" 
+                            alt="Digital Analytics Dashboard" 
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        {/* Optional overlay for better text contrast if needed, or just a gloss effect */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                    </div>
+
+                    {/* Sub Item 1: Device Front */}
+                    <div className="relative aspect-square rounded-2xl bg-muted border border-border/50 overflow-hidden shadow-md group">
+                         <div className="absolute inset-0 bg-card/50" /> {/* Background base */}
+                         <img 
+                            src="/monitor-front.webp" 
+                            alt="Environmental Monitor Hardware" 
+                            className="absolute inset-0 w-full h-full object-cover p-2 transition-transform duration-500 group-hover:scale-110"
+                        />
+                    </div>
+
+                    {/* Sub Item 2: Device Back */}
+                    <div className="relative aspect-square rounded-2xl bg-muted border border-border/50 overflow-hidden shadow-md group">
+                         <div className="absolute inset-0 bg-card/50" />
+                         <img 
+                            src="/monitor-back.webp" 
+                            alt="Connectivity Ports" 
+                            className="absolute inset-0 w-full h-full object-cover p-2 transition-transform duration-500 group-hover:scale-110"
+                        />
+                    </div>
                 </div>
               </div>
 
@@ -410,11 +436,11 @@ export default function HardwarePage() {
                     return (
                       <div 
                         key={i} 
-                        className={`p-6 rounded-2xl bg-card border border-border/60 hover:border-primary/30 hover:shadow-lg transition-all duration-300 ${
+                        className={`p-6 rounded-2xl bg-card border border-border/60 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group ${
                             isLast && isOddTotal ? "sm:col-span-2" : ""
                         }`}
                       >
-                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
+                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                            <Icon className="h-5 w-5" />
                         </div>
                         <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
