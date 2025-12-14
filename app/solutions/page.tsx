@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button"
 import { SolutionCard } from "@/components/solution-card"
 import { ComparisonTable } from "@/components/comparison-table"
-// 更新了图标引用以匹配 Hardware/Platform/Consultant
 import { Cpu, Monitor, Users, Cloud, Database, Lock, ArrowRight } from "lucide-react"
 import { useEffect, useState } from "react"
 
