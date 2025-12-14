@@ -76,11 +76,24 @@ export default function HardwarePage() {
           description:
             "Our comprehensive suite of solutions—including wall-mounted ventilators, Energy Recovery Ventilators (ERV), and commercial in-ceiling purifiers—delivers pristine fresh air while minimizing energy loss. We combine automated control with high-efficiency filtration to create smarter, healthier indoor environments.",
           cta: "Explore Ventilation Solutions",
+          // 更新：将字符串数组改为对象数组，以支持加粗标题
           features: [
-            "Energy Recovery (ERV): High-efficiency heat exchange cores recover thermal energy to precondition fresh air, reducing HVAC energy load by up to 80%.",
-            "Versatile Form Factors: A complete product lineup featuring wall-mounted, ceiling-concealed, and cabinet-style units to fit any architectural requirement.",
-            "Integrated Purification: Equipped with medical-grade HEPA or MESP+ filtration to strictly eliminate particulates and pathogens from incoming fresh air.",
-            "Smart Automation: Intelligent sensors monitor real-time CO2 levels and occupancy to adjust airflow on demand, optimizing both air quality and efficiency.",
+            {
+              title: "Energy Recovery (ERV)",
+              text: "High-efficiency heat exchange cores recover thermal energy to precondition fresh air, reducing HVAC energy load by up to 80%.",
+            },
+            {
+              title: "Versatile Form Factors",
+              text: "A complete product lineup featuring wall-mounted, ceiling-concealed, and cabinet-style units to fit any architectural requirement.",
+            },
+            {
+              title: "Integrated Purification",
+              text: "Equipped with medical-grade HEPA or MESP+ filtration to strictly eliminate particulates and pathogens from incoming fresh air.",
+            },
+            {
+              title: "Smart Automation",
+              text: "Intelligent sensors monitor real-time CO2 levels and occupancy to adjust airflow on demand, optimizing both air quality and efficiency.",
+            },
           ],
         },
         monitoring: {
@@ -131,7 +144,6 @@ export default function HardwarePage() {
           title: "MESP 过滤技术",
           description:
             "下一代 MESP+（由 Functions 推出） 是一种专为建筑暖通空调（HVAC）系统设计的高效、环保型空气过滤技术。该技术采用获得专利的先进微型静电沉降（Micro Electrostatic Precipitation，MESP+）技术，在不牺牲能源性能的前提下，显着提升空气质量。",
-          // 新增中文 highlights 数据
           highlights: [
             { title: "先进技术", text: "利用微静电场高效捕获亚微米级颗粒物。" },
             { title: "全面防护", text: "有效去除 PM2.5、过敏原、灰尘及空气传播的病原体。" },
@@ -167,11 +179,24 @@ export default function HardwarePage() {
           description:
             "一系列旨在提升室内空气质量同时降低能耗的商用系统。我们的解决方案结合了自动控制、模块化过滤和能量回收，创造更智能、更高效的气流管理。",
           cta: "探索新风解决方案",
+          // 更新：中文结构同步更新，提取了总结词
           features: [
-            "由 CO₂ 浓度或占用率触发的智能按需通风",
-            "集成 HEPA 或 MESP 过滤，用于颗粒物和病原体控制",
-            "能量回收内核效率高达 60%",
-            "紧凑的吸顶式设计，易于安装且干扰最小",
+            {
+              title: "能量回收 (ERV)",
+              text: "高效热交换芯体回收热能以预处理新风，可降低高达 80% 的 HVAC 能耗负荷。",
+            },
+            {
+              title: "多样化形态",
+              text: "完整的产品线，包括壁挂式、吸顶式和柜式机组，满足任何建筑设计要求。",
+            },
+            {
+              title: "集成净化",
+              text: "配备医用级 HEPA 或 MESP+ 过滤，严格去除引入新风中的颗粒物和病原体。",
+            },
+            {
+              title: "智能自动化",
+              text: "智能传感器实时监测 CO₂ 水平和占用率，按需调节气流，同时优化空气质量和效率。",
+            },
           ],
         },
         monitoring: {
@@ -321,12 +346,14 @@ export default function HardwarePage() {
                   {t.sections.ventilation.description}
                 </p>
 
-                {/* List Style for Features */}
+                {/* List Style for Features - UPDATED RENDER LOGIC */}
                 <ul className="space-y-4 mb-10">
                   {t.sections.ventilation.features.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                      <span className="text-muted-foreground">{item}</span>
+                      <span className="text-muted-foreground">
+                        <strong className="text-foreground font-semibold">{item.title}:</strong> {item.text}
+                      </span>
                     </li>
                   ))}
                 </ul>
