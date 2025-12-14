@@ -16,7 +16,8 @@ import {
   Award,
   MonitorSmartphone,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  Check
 } from "lucide-react"
 import { useEffect, useState } from "react"
 
@@ -42,6 +43,12 @@ export default function HardwarePage() {
           title: "MESP Filtration",
           description:
             "Next generation MESP+ by Functions is a highly efficient & environmentally friendly filtration technology desgined for building HVAC systems. Utilizing patented advanced Micro Electrostatic Precipitation (MESP+) technology, it delivers superior air quality without compromising energy performance.",
+          // 新增 highlights 数据
+          highlights: [
+            { title: "Advanced Technology", text: "Uses Micro-Electrostatic fields to capture sub-micron particles." },
+            { title: "Comprehensive Protection", text: "Removes PM2.5, allergens, dust, and airborne pathogens." },
+            { title: "Modular Design", text: "Seamlessly retrofits into existing AHUs and Fan Coil Units (FCU)." },
+          ],
           cta: "Discover MESP+",
           features: [
             {
@@ -127,6 +134,12 @@ export default function HardwarePage() {
           title: "MESP 过滤技术",
           description:
             "下一代 MESP+（由 Functions 推出） 是一种专为建筑暖通空调（HVAC）系统设计的高效、环保型空气过滤技术。该技术采用获得专利的先进微型静电沉降（Micro Electrostatic Precipitation，MESP+）技术，在不牺牲能源性能的前提下，显着提升空气质量。",
+          // 新增中文 highlights 数据
+          highlights: [
+            { title: "先进技术", text: "利用微静电场高效捕获亚微米级颗粒物。" },
+            { title: "全面防护", text: "有效去除 PM2.5、过敏原、灰尘及空气传播的病原体。" },
+            { title: "模块化设计", text: "可无缝改造适配现有的空气处理机组 (AHU) 和风机盘管 (FCU)。" },
+          ],
           cta: "探索 MESP+",
           features: [
             {
@@ -237,9 +250,24 @@ export default function HardwarePage() {
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
                   {t.sections.mesp.title}
                 </h2>
-                <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                   {t.sections.mesp.description}
                 </p>
+
+                {/* ---Highlight List --- */}
+                <ul className="space-y-3 mb-10">
+                  {t.sections.mesp.highlights.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="mt-1 h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-primary" />
+                      </div>
+                      <span className="text-muted-foreground">
+                        <strong className="text-foreground font-medium">{item.title}:</strong> {item.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                {/* ---------------------------------- */}
 
                 {/* 2x2 Grid for MESP Advantages */}
                 <div className="grid sm:grid-cols-2 gap-6 mb-10">
@@ -277,11 +305,9 @@ export default function HardwarePage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Visual Area - Left side for zigzag effect */}
               <div className="relative aspect-square lg:h-[600px] bg-muted rounded-3xl overflow-hidden border border-border shadow-2xl">
-                 {/* 占位图：建议放吸顶式新风机或办公室场景图 */}
                  <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/30">
                     <Fan className="h-24 w-24 mb-4 opacity-20" />
                     <span className="uppercase tracking-widest text-sm">Ventilation Unit Integration</span>
-                    {/* <img src="/ventilation-unit.webp" alt="Ventilation" className="absolute inset-0 w-full h-full object-cover" /> */}
                  </div>
               </div>
 
@@ -342,9 +368,9 @@ export default function HardwarePage() {
                 {/* Mini Image for Context */}
                 <div className="mt-12 hidden lg:block aspect-video rounded-xl bg-muted border border-border overflow-hidden">
                     {/* Dashboard Screenshot */}
-                     <div className="w-full h-full flex items-center justify-center text-muted-foreground/20">
+                      <div className="w-full h-full flex items-center justify-center text-muted-foreground/20">
                         <img src="/monitor.webp" alt="Monitor"  />
-                     </div>
+                      </div>
                 </div>
               </div>
 
@@ -353,7 +379,6 @@ export default function HardwarePage() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   {t.sections.monitoring.subFeatures.map((feature, i) => {
                     const Icon = feature.icon
-                    // Make the last item span full width if it's an odd number of items for better balance
                     const isLast = i === t.sections.monitoring.subFeatures.length - 1
                     const isOddTotal = t.sections.monitoring.subFeatures.length % 2 !== 0
                     
