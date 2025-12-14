@@ -3,7 +3,8 @@
 import { Button } from "@/components/ui/button"
 import { SolutionCard } from "@/components/solution-card"
 import { ComparisonTable } from "@/components/comparison-table"
-import { Cloud, Database, Lock, Workflow, Code, BarChart, ArrowRight } from "lucide-react"
+// 更新了图标引用以匹配 Hardware/Platform/Consultant
+import { Cpu, Monitor, Users, Cloud, Database, Lock, ArrowRight } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function SolutionsPage() {
@@ -20,25 +21,29 @@ export default function SolutionsPage() {
         eyebrow: "Our Solutions",
         title: "Smart systems for healthier, sustainable buildings",
         description:
-          "Our solutions combine advanced air purification, smart ventilation, and real-time environmental monitoring to create healthier, more efficient, and more sustainable indoor environments. Designed for modern buildings, each system works together to enhance comfort, wellbeing, and performance.",
+          "Our solutions combine advanced hardware, intelligent platforms, and expert consultancy to create healthier, more efficient, and more sustainable indoor environments.",
       },
       solutions: [
         {
-          icon: Cloud,
-          title: "MESP Unit",
+          icon: Cpu, // Hardware icon
+          title: "Hardware",
+          href: "/solutions/hardware",
           description:
-            "Advanced micro-electrostatic air purification technology capturing fine particles, dust, and pathogens with high efficiency and low resistance.\nLong-lasting, easy to clean and energy-saving — delivering clean, healthy air for sustainable buildings.",
+            "High-performance air purification and ventilation units designed for modern infrastructure.\nFeaturing MESP technology to capture fine particles and pathogens with high efficiency, low resistance, and minimal energy consumption.",
         },
         {
-          icon: Database,
-          title: "Ventilation Unit",
+          icon: Monitor, // Platform icon
+          title: "Platform",
+          href: "/solutions/platform",
           description:
-            "Smart fresh-air systems designed for comfort and wellbeing.\nContinuously renews indoor air while optimizing energy through intelligent control and heat recovery, ensuring a balanced, healthy environment year-round.",
+            "A centralized intelligent management system for total building control.\nVisualize real-time environmental data, automate HVAC responses, and optimize energy usage through our intuitive, AI-driven cloud interface.",
         },
         {
-          icon: Lock,
-          title: "Environmental Monitor",
-          description: "Real-time monitoring of PM2.5, PM10, CO₂, TVOC, Nox, temperature, humidity, light, noise, air pressure, ozone, NO2, CO and others.\nCloud-connected and data-driven, providing actionable insights for healthier spaces and seamless integration with AI energy optimization platforms.",
+          icon: Users, // Consultant icon
+          title: "Consultant",
+          href: "/solutions/consultant",
+          description:
+            "Expert advisory services for environmental compliance and ESG goals.\nWe provide data-driven assessments, WELL/LEED certification support, and custom strategies to transform your building's health and sustainability metrics.",
         },
       ],
       comparison: {
@@ -89,23 +94,26 @@ export default function SolutionsPage() {
       hero: {
         eyebrow: "我们的解决方案",
         title: "针对每个挑战的全面技术解决方案",
-        description: "从云基础设施到AI驱动的分析，我们提供端到端的解决方案，推动可衡量的业务成果。",
+        description: "从高性能硬件到AI驱动的平台及专家咨询，我们提供端到端的解决方案，推动可衡量的业务成果。",
       },
       solutions: [
         {
-          icon: Cloud,
-          title: "云基础设施",
-          description: "通过为企业性能设计的可扩展、安全的云解决方案实现基础设施现代化。",
+          icon: Cpu,
+          title: "硬件设备",
+          href: "/solutions/hardware",
+          description: "专为现代基础设施设计的高性能空气净化与通风设备。\n集成MESP技术，高效捕获细颗粒物和病原体，具有低阻力、易维护和节能的长效优势。",
         },
         {
-          icon: Database,
-          title: "数据工程",
-          description: "通过强大的数据管道和分析平台将原始数据转化为可操作的见解。",
+          icon: Monitor,
+          title: "管理平台",
+          href: "/solutions/platform",
+          description: "用于全面楼宇控制的集中式智能管理系统。\n通过直观的云端界面，实时监控环境数据，自动化暖通响应，并利用AI算法优化能源使用效率。",
         },
         {
-          icon: Lock,
-          title: "安全与合规",
-          description: "通过企业级安全框架和合规自动化保护您的资产。",
+          icon: Users,
+          title: "专家咨询",
+          href: "/solutions/consultant",
+          description: "针对环境合规性和ESG目标的专家顾问服务。\n提供数据驱动的评估报告、WELL/LEED认证支持以及定制化策略，助力提升建筑健康与可持续性指标。",
         },
       ],
       comparison: {
@@ -184,6 +192,7 @@ export default function SolutionsPage() {
                 icon={solution.icon}
                 title={solution.title}
                 description={solution.description}
+                href={solution.href} // 传递新增的 href 属性
                 locale={locale}
               />
             ))}
