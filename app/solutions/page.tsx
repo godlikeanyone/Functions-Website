@@ -38,9 +38,9 @@ export default function SolutionsPage() {
             "A centralized intelligent management system for total building control.\nVisualize real-time environmental data, automate HVAC responses, and optimize energy usage through our intuitive, AI-driven cloud interface.",
         },
         {
-          icon: Users, // Consultant icon
-          title: "Consultant",
-          href: "/solutions/consultant",
+          icon: Users, // Consulting icon
+          title: "Consulting",
+          href: "/solutions/consulting",
           description:
             "Expert advisory services for environmental compliance and ESG goals.\nWe provide data-driven assessments, WELL/LEED certification support, and custom strategies to transform your building's health and sustainability metrics.",
         },
