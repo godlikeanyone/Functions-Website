@@ -39,9 +39,9 @@ export default function HardwarePage() {
       sections: {
         mesp: {
           tag: "Core Technology",
-          title: "MESP + Filtration",
+          title: "MESP Filtration",
           description:
-            "CleanFlow is Functions’ flagship air purification technology—an advanced Micro Electrostatic Precipitation (Micro-ESP) system. Unlike traditional filters that restrict airflow, MESP+ uses polymer dielectric materials to generate a stable, intense electric field that captures and sterilises particles down to 0.01μm.",
+            "Next generation MESP+ by Functions is a highly efficient & environmentally friendly filtration technology desgined for building HVAC systems. Utilizing patented advanced Micro Electrostatic Precipitation (MESP+) technology, it delivers superior air quality without compromising energy performance.",
           cta: "Discover MESP+",
           features: [
             {
@@ -124,9 +124,9 @@ export default function HardwarePage() {
       sections: {
         mesp: {
           tag: "内核技术",
-          title: "MESP 过滤技术: CleanFlow",
+          title: "MESP 过滤技术",
           description:
-            "CleanFlow 是 Functions 的旗舰空气净化技术——一种先进的微静电沉淀 (Micro-ESP) 系统。与限制气流的传统过滤器不同，MESP+ 使用高分子介电材料产生稳定、强烈的电场，可捕获并杀灭小至 0.01μm 的颗粒物。",
+            "下一代 MESP+（由 Functions 推出） 是一种专为建筑暖通空调（HVAC）系统设计的高效、环保型空气过滤技术。该技术采用获得专利的先进微型静电沉降（Micro Electrostatic Precipitation，MESP+）技术，在不牺牲能源性能的前提下，显着提升空气质量。",
           cta: "探索 MESP+",
           features: [
             {
