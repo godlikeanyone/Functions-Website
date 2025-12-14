@@ -31,7 +31,7 @@ export default function HardwarePage() {
   const content = {
     en: {
       hero: {
-        eyebrow: "Hardware & Technology",
+        eyebrow: "Hardware",
         title: "Engineering the Invisible",
         description:
           "From proprietary MESP filtration to digital twin analytics, our hardware ecosystem is designed to make buildings breathe, think, and perform.",
@@ -39,7 +39,7 @@ export default function HardwarePage() {
       sections: {
         mesp: {
           tag: "Core Technology",
-          title: "MESP Filtration: CleanFlow",
+          title: "MESP + Filtration",
           description:
             "CleanFlow is Functions’ flagship air purification technology—an advanced Micro Electrostatic Precipitation (Micro-ESP) system. Unlike traditional filters that restrict airflow, MESP+ uses polymer dielectric materials to generate a stable, intense electric field that captures and sterilises particles down to 0.01μm.",
           cta: "Discover MESP+",
@@ -117,7 +117,7 @@ export default function HardwarePage() {
     },
     zh: {
       hero: {
-        eyebrow: "硬件与技术",
+        eyebrow: "硬件",
         title: "重塑隐形环境",
         description: "从自研 MESP 过滤技术到数字孪生分析，我们的硬件生态系统旨在让建筑会呼吸、会思考、且性能卓越。",
       },
