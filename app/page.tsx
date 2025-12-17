@@ -324,14 +324,28 @@ export default function Home() {
                   {/* Bullet Points */}
                   {active === index && panel.bullets && (
                     <motion.ul
-                      className="mt-4 text-gray-200 list-disc list-inside text-sm"
+                      className="mt-4 text-gray-200 list-disc list-inside text-sm space-y-2" // 增加了 space-y-2 让间距更舒服
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      {panel.bullets.map((bullet, i) => (
-                        <li key={i}>{bullet}</li>
-                      ))}
+                      {panel.bullets.map((bullet, i) => {
+                        const parts = bullet.split(":")
+                        const hasLabel = parts.length > 1
+                    
+                        return (
+                          <li key={i}>
+                            {hasLabel ? (
+                              <>
+                                <span className="font-bold text-white">{parts[0]}:</span>
+                                <span>{parts.slice(1).join(":")}</span>
+                              </>
+                            ) : (
+                              bullet
+                            )}
+                          </li>
+                        )
+                      })}
                     </motion.ul>
                   )}
                 </motion.div>
