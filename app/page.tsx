@@ -305,7 +305,7 @@ export default function Home() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 />
 
-                <div className="absolute inset-0 z-0 bg-black/60 backdrop-blur-md transition-all duration-500" />
+                <div className="absolute inset-0 z-0 bg-black/60 backdrop-blur-sm transition-all duration-500" />
 
                 <motion.div
                   className="relative p-6 md:p-8 z-10 flex flex-col h-full"
