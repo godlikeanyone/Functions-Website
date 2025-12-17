@@ -35,6 +35,7 @@ export default function Home() {
       },
       problem: {
         title: ["Infrastructure", "Intelligence", "Impact"],
+        subtitle: "A holistic approach to healthier, smarter and greener built environments.",
         panels: [
           {
             title: "Hardware Solutions",
@@ -124,6 +125,7 @@ export default function Home() {
       },
       problem: {
         title: ["基建", "智能", "影响力"],
+        subtitle: "打造更健康、更智能、更绿色建筑环境的全方位方案。",
         description: "组织面临遗留系统、分散的技术堆栈以及数字化转型的复杂性。传统方法无法跟上创新的步伐。",
         points: ["遗留基础设施阻碍创新", "断开的系统造成低效", "缺乏可扩展的未来解决方案"],
       },
@@ -240,6 +242,10 @@ export default function Home() {
               t.problem.title
             )}
           </h2>
+          {/* Subtitle */}
+          <p className="mt-6 mb-12 text-lg md:text-xl text-gray-600 text-center max-w-3xl mx-auto leading-relaxed text-balance">
+            {t.problem.subtitle}
+          </p>
           
           <div className="flex flex-col md:flex-row gap-6 h-[480px]">
             {t.problem.panels.map((panel, index) => (
