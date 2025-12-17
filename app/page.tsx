@@ -73,7 +73,7 @@ export default function Home() {
         ],
       },
       companyInfo: {
-        intro: "Founded in 2017 in Hong Kong, Functions delivers environmental and sustainability consultancy projects across Asia, the Subcontinent and the Middle East through a network of industry partners who excel in their regions.",
+        intro: "Founded in 2017 in Hong Kong, Functions delivers premier environmental and sustainability consultancy across the Asia-Pacific (APAC) and Middle East regions. We leverage a strategic network of industry partners to combine global standards with deep regional expertise.",
         points: [
           {
             title: "Expertise",
@@ -162,7 +162,7 @@ export default function Home() {
         ],
       },
       companyInfo: {
-        intro: "Functions Ltd成立于2017年，总部位于香港，通过其在各地区表现卓越的行业合作伙伴网络，在亚洲、次大陆和中东提供环境和可持续发展咨询项目。",
+        intro: "Functions 成立于 2017 年，总部位于香港，是一家面向亚太（APAC）及中东地区的领先环境与可持续发展咨询机构。公司依托覆盖多个行业的战略合作伙伴网络，融合国际通行标准与深厚的本土实践经验，为客户提供高水平、定制化的专业咨询服务。",
         points: [
           {
             title: "专业经验",
