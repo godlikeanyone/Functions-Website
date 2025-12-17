@@ -283,12 +283,7 @@ export default function Home() {
             {t.problem.panels.map((panel, index) => (
               <motion.div
                 key={index}
-                className="relative rounded-2xl overflow-hidden bg-gray-200 cursor-pointer flex flex-col justify-end text-gray"
-                style={{
-                  backgroundImage: `url(${panel.bgImage})`,
-                  backgroundSize: "300% 100%",
-                  backgroundPosition: panel.bgPosition,
-                }}
+                className="relative rounded-2xl overflow-hidden bg-gray-900 cursor-pointer flex flex-col justify-end text-white isolate" 
                 onMouseEnter={() => setActive(index)}
                 onMouseLeave={() => setActive(null)}
                 animate={{
@@ -296,10 +291,22 @@ export default function Home() {
                   transition: { duration: 0.6, type: "spring" },
                 }}
               >
-                {/* Half-transparent overlay */}
-                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-all duration-500" />
-      
-                {/* Content */}
+                <motion.div
+                  className="absolute inset-0 -z-10"
+                  style={{
+                    backgroundImage: `url(${panel.bgImage})`,
+                    backgroundSize: "300% 100%", 
+                    backgroundPosition: panel.bgPosition,
+                  }}
+                  animate={{
+                    scale: active === index ? 1.05 : 1,
+                  }}
+                  initial={{ scale: 1, originX: 0.5, originY: 0.5 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                />
+
+                <div className="absolute inset-0 z-0 bg-black/60 backdrop-blur-md transition-all duration-500" />
+
                 <motion.div
                   className="relative p-6 md:p-8 z-10 flex flex-col h-full"
                   style={{ maxWidth: "550px" }}
@@ -317,40 +324,40 @@ export default function Home() {
                     }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                   >
-                    <h3 className="text-2xl font-semibold mb-2 text-gray-300">{panel.title}</h3>
+
+                    <h3 className={`text-2xl font-semibold mb-2 transition-colors duration-300 ${active === index ? "text-white" : "text-gray-300"}`}>
+                        {panel.title}
+                    </h3>
                     <p className="text-sm md:text-base text-gray-200 leading-relaxed">{panel.detail}</p>
                   </motion.div>
                 
                   {/* Bullet Points */}
                   {active === index && panel.bullets && (
                     <motion.ul
-                      className="mt-6 space-y-3"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      {panel.bullets.map((bullet, i) => {
-                        const parts = bullet.split(":")
-                        const hasLabel = parts.length > 1
-                    
-                        return (
-                          <li key={i} className="flex items-start group">
-                            {/* Horizontal Line */}
-                            <span className="mt-2.5 mr-3 h-[1px] w-4 bg-white/60 shrink-0 group-hover:w-6 group-hover:bg-white transition-all duration-300" />
-                            
-                            <span className="text-sm leading-relaxed text-gray-200">
-                              {hasLabel ? (
-                                <>
-                                  <span className="font-bold text-white mr-1.5">{parts[0]}:</span>
-                                  <span>{parts.slice(1).join(":")}</span>
-                                </>
-                              ) : (
-                                bullet
-                              )}
-                            </span>
-                          </li>
-                        )
-                      })}
+                        className="mt-6 space-y-4"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        >
+                        {panel.bullets.map((bullet, i) => {
+                            const parts = bullet.split(":")
+                            const hasLabel = parts.length > 1
+
+                            return (
+                            <li key={i} className="flex flex-col border-l border-white/40 pl-4 py-1">
+                                <span className="text-sm leading-relaxed text-gray-100">
+                                {hasLabel ? (
+                                    <>
+                                    <span className="font-bold text-white tracking-wide block mb-0.5">{parts[0]}</span>
+                                    <span className="opacity-90">{parts.slice(1).join(":")}</span>
+                                    </>
+                                ) : (
+                                    bullet
+                                )}
+                                </span>
+                            </li>
+                            )
+                        })}
                     </motion.ul>
                   )}
                 </motion.div>
