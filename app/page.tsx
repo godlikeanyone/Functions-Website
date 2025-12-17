@@ -283,7 +283,7 @@ export default function Home() {
             {t.problem.panels.map((panel, index) => (
               <motion.div
                 key={index}
-                className="relative rounded-2xl overflow-hidden bg-gray-200 cursor-pointer flex flex-col justify-end text-white"
+                className="relative rounded-2xl overflow-hidden bg-gray-200 cursor-pointer flex flex-col justify-end text-gray"
                 style={{
                   backgroundImage: `url(${panel.bgImage})`,
                   backgroundSize: "300% 100%",
@@ -297,7 +297,7 @@ export default function Home() {
                 }}
               >
                 {/* Half-transparent overlay */}
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-md transition-all duration-500" />
       
                 {/* Content */}
                 <motion.div
