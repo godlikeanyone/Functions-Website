@@ -324,7 +324,7 @@ export default function Home() {
                   {/* Bullet Points */}
                   {active === index && panel.bullets && (
                     <motion.ul
-                      className="mt-4 text-gray-200 list-disc list-inside text-sm space-y-2" // 增加了 space-y-2 让间距更舒服
+                      className="mt-6 space-y-3"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
@@ -334,15 +334,20 @@ export default function Home() {
                         const hasLabel = parts.length > 1
                     
                         return (
-                          <li key={i}>
-                            {hasLabel ? (
-                              <>
-                                <span className="font-bold text-white">{parts[0]}:</span>
-                                <span>{parts.slice(1).join(":")}</span>
-                              </>
-                            ) : (
-                              bullet
-                            )}
+                          <li key={i} className="flex items-start group">
+                            {/* Horizontal Line */}
+                            <span className="mt-2.5 mr-3 h-[1px] w-4 bg-white/60 shrink-0 group-hover:w-6 group-hover:bg-white transition-all duration-300" />
+                            
+                            <span className="text-sm leading-relaxed text-gray-200">
+                              {hasLabel ? (
+                                <>
+                                  <span className="font-bold text-white mr-1.5">{parts[0]}:</span>
+                                  <span>{parts.slice(1).join(":")}</span>
+                                </>
+                              ) : (
+                                bullet
+                              )}
+                            </span>
                           </li>
                         )
                       })}
