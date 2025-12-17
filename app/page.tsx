@@ -39,36 +39,35 @@ export default function Home() {
         panels: [
           {
             title: "Hardware Solutions",
-            detail:
-              "Delivering advanced air and ventilation systems to enhance indoor air quality and building performance.",
-            bgImage: "/complex-enterprise-technology-infrastructure.jpg",
+            detail: "Delivering advanced air and ventilation systems to enhance indoor air quality and building performance.",
+            bgImage: "/complex-enterprise-technology-infrastructure.jpg", // 记得确认图片路径
             bgPosition: "left",
             bullets: [
-              "MESP Units – Electrostatic air purification with high efficiency and low maintenance",
-              "Ventilation Units – Fresh air solutions improving comfort and wellbeing",
-              "Environmental Sensors – Real-time indoor environmental monitoring for data-driven decisions"
+              "EcoFlow: Industrial-grade Micro Electrostatic Precipitation (MESP) that delivers healthy indoor air with zero consumable maintenance.",
+              "SkyVent: Next generation ERV units that balance superior purified fresh air delivery with maximum thermal energy recovery.",
+              "Smart Sensing: IoT-enabled environmental sensors providing the granular data foundation for building optimization."
             ],
           },
           {
-            title: "Smart Platform",
-            detail:
-              "Harnessing data intelligence to optimize energy performance and indoor environmental quality.",
+            title: "Digital Platforms",
+            detail: "Harnessing data intelligence to optimize energy performance and indoor environmental quality.",
             bgImage: "/complex-enterprise-technology-infrastructure.jpg",
             bgPosition: "center",
             bullets: [
-              "Monitoring Platform – Centralized dashboard for real-time environmental quality and comfort insights",
-              "AI Energy Optimization – Machine-learning algorithms that reduce energy consumption and enhance system efficiency"
+              "Centralized Monitoring: A unified dashboard visualizing real-time IEQ metrics, occupant comfort, and operational health.",
+              "AI Energy Optimization: Proprietary algorithms that dynamically adjust HVAC loads to reduce carbon footprint without compromising comfort.",
+              "Data-Driven Decisions: Predictive analytics that empower facility managers to anticipate needs rather than react to issues."
             ],
           },
           {
-            title: "Professional Consultancy",
-            detail:
-              "Guiding clients toward healthier, greener, and more responsible buildings and organizations.",
+            title: "Sustainability Services",
+            detail: "Guiding buildings and organizations toward a healthier, greener, and more responsible future.",
             bgImage: "/complex-enterprise-technology-infrastructure.jpg",
             bgPosition: "right",
             bullets: [
-              "Green Building Certification – LEED, BREEAM, WELL and other sustainability frameworks",
-              "ESG Strategy & Planning – Customized ESG roadmaps and reporting solutions"
+              "Global Certification: Expert leadership for LEED, WELL, BREEAM, and RESET to validate building performance.",
+              "ESG Strategy: Tailored roadmaps and reporting solutions that align corporate goals with international sustainability benchmarks.",
+              "Health & Wellbeing: Holistic strategies that prioritize human-centric design to boost productivity and occupant satisfaction."
             ],
           },
         ],
@@ -126,8 +125,41 @@ export default function Home() {
       problem: {
         title: ["基建", "智能", "影响力"],
         subtitle: "打造更健康、更智能、更绿色建筑环境的全方位方案。",
-        description: "组织面临遗留系统、分散的技术堆栈以及数字化转型的复杂性。传统方法无法跟上创新的步伐。",
-        points: ["遗留基础设施阻碍创新", "断开的系统造成低效", "缺乏可扩展的未来解决方案"],
+        panels: [
+          {
+            title: "硬件解决方案",
+            detail: "提供先进的空气与通风系统，全面提升室内空气质量与建筑性能。",
+            bgImage: "/complex-enterprise-technology-infrastructure.jpg",
+            bgPosition: "left",
+            bullets: [
+              "EcoFlow: 工业级微静电沉淀 (MESP) 技术，提供零耗材维护的健康室内空气。",
+              "SkyVent: 下一代全热交换 (ERV) 机组，在提供卓越净化新风的同时实现最大化热能回收。",
+              "智能传感: 支持物联网的环境传感器，为建筑优化奠定精细的数据基础。"
+            ],
+          },
+          {
+            title: "数字化平台",
+            detail: "利用数据智能优化能源绩效与室内环境质量。",
+            bgImage: "/complex-enterprise-technology-infrastructure.jpg",
+            bgPosition: "center",
+            bullets: [
+              "集中监控: 统一仪表盘，实时可视化呈现 IEQ 指标、人员舒适度及运营健康状况。",
+              "AI 能源优化: 专有算法动态调整暖通空调负荷，在不牺牲舒适度的前提下减少碳足迹。",
+              "数据驱动决策: 预测性分析赋能设施管理者未雨绸缪，变被动响应为主动管理。"
+            ],
+          },
+          {
+            title: "可持续发展服务",
+            detail: "指引建筑与组织走向更健康、更绿色、更负责任的未来。",
+            bgImage: "/complex-enterprise-technology-infrastructure.jpg",
+            bgPosition: "right",
+            bullets: [
+              "全球认证: 提供 LEED, WELL, BREEAM 和 RESET 的专家级指导，权威验证建筑性能。",
+              "ESG 策略: 定制的路线图与报告解决方案，将企业目标与国际可持续发展基准对齐。",
+              "健康与福祉: 优先考虑以人为本设计的整体策略，旨在提高生产力和居住者满意度。"
+            ],
+          },
+        ],
       },
       companyInfo: {
         intro: "Functions Ltd成立于2017年，总部位于香港，通过其在各地区表现卓越的行业合作伙伴网络，在亚洲、次大陆和中东提供环境和可持续发展咨询项目。",
