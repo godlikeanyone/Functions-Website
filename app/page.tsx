@@ -34,7 +34,7 @@ export default function Home() {
         cta2: "View Solutions",
       },
       problem: {
-        title: "The challenge facing modern enterprises",
+        title: ["Infrastructure", "Intelligence", "Impact"],
         panels: [
           {
             title: "Hardware Solutions",
@@ -123,7 +123,7 @@ export default function Home() {
         cta2: "查看解决方案",
       },
       problem: {
-        title: "现代企业面临的挑战",
+        title: ["基建", "智能", "影响力"],
         description: "组织面临遗留系统、分散的技术堆栈以及数字化转型的复杂性。传统方法无法跟上创新的步伐。",
         points: ["遗留基础设施阻碍创新", "断开的系统造成低效", "缺乏可扩展的未来解决方案"],
       },
@@ -225,10 +225,22 @@ export default function Home() {
       {/* Problem Section */}
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-balance">
-            {t.problem.title}
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-balance flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
+            {Array.isArray(t.problem.title) ? (
+              t.problem.title.map((item, index) => (
+                <span key={index} className="flex items-center">
+                  <span>{item}</span>
+                  
+                  {index < t.problem.title.length - 1 && (
+                    <span className="mx-3 h-8 w-[2px] bg-gray-300/50 rotate-12 md:rotate-0 md:h-10 md:w-[3px] rounded-full" aria-hidden="true" />
+                  )}
+                </span>
+              ))
+            ) : (
+              t.problem.title
+            )}
           </h2>
-      
+          
           <div className="flex flex-col md:flex-row gap-6 h-[480px]">
             {t.problem.panels.map((panel, index) => (
               <motion.div
