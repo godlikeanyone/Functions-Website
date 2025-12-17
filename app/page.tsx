@@ -317,7 +317,7 @@ export default function Home() {
                     }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                   >
-                    <h3 className="text-2xl font-semibold mb-2">{panel.title}</h3>
+                    <h3 className="text-2xl font-semibold mb-2 text-gray-300">{panel.title}</h3>
                     <p className="text-sm md:text-base text-gray-200 leading-relaxed">{panel.detail}</p>
                   </motion.div>
                 
