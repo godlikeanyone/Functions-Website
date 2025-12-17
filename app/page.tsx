@@ -297,7 +297,7 @@ export default function Home() {
                 }}
               >
                 {/* Half-transparent overlay */}
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-all duration-500" />
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-all duration-500" />
       
                 {/* Content */}
                 <motion.div
