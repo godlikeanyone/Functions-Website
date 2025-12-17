@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { StatsBand } from "@/components/stats-band"
 import { LogoStrip } from "@/components/logo-strip"
 import { CaseStudyCard } from "@/components/case-study-card"
-import { ArrowRight, Zap, Shield, Cpu } from "lucide-react"
+import { ArrowRight, Zap, Shield, Cpu, Award, Globe, RefreshCw } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function Home() {
@@ -76,20 +76,24 @@ export default function Home() {
         intro: "Founded in 2017 in Hong Kong, Functions delivers premier environmental and sustainability consultancy across the Asia-Pacific (APAC) and Middle East regions. We leverage a strategic network of industry partners to combine global standards with deep regional expertise.",
         points: [
           {
-            title: "Expertise",
-            detail: "Functions brings together seasoned consultants and engineers with over 40 years of combined experience in indoor environmental quality and sustainability.",
+            title: "Multidisciplinary Expertise",
+            detail: "Bridging the gap between engineering precision and strategic sustainability. Our team combines seasoned consultants and technical specialists with decades of experience to solve complex built environment challenges.",
+            icon: <Award className="h-8 w-8 text-primary" />,
           },
           {
-            title: "Capabilities",
-            detail: "Functions specializes in filtration, ventilation, monitoring, digital integration, and environmental solutions to build healthier, more efficient spaces.",
+            title: "Integrated Innovation",
+            detail: "Going beyond disparate systems. We seamlessly integrate advanced filtration hardware, smart ventilation, and AI-driven data platforms to create adaptive, self-optimizing building ecosystems.",
+            icon: <Cpu className="h-8 w-8 text-primary" />,
           },
           {
-            title: "Collaboration",
-            detail: "Functions works with partners to customize, source, or co-develop solutions, supported by local communication, project management, and quality control.",
+            title: "Strategic Global Network",
+            detail: "Global standards, local execution. We leverage a curated ecosystem of regional leaders across APAC and the Middle East to ensure strict compliance, agile response, and precise project delivery.",
+            icon: <Globe className="h-8 w-8 text-primary" />,
           },
           {
-            title: "Solutions",
-            detail: "Functions delivers end-to-end wellness and sustainability services—from planning and design to construction, retrofit, and operations.",
+            title: "Holistic Lifecycle Value",
+            detail: "Delivering value at every stage. From initial ESG strategy and system design to retrofit implementation and operational monitoring, we provide end-to-end stewardship for your asset’s performance.",
+            icon: <RefreshCw className="h-8 w-8 text-primary" />,
           },
         ],
         logos: [
@@ -165,20 +169,24 @@ export default function Home() {
         intro: "Functions 成立于 2017 年，总部位于香港，是一家面向亚太（APAC）及中东地区的领先环境与可持续发展咨询机构。公司依托覆盖多个行业的战略合作伙伴网络，融合国际通行标准与深厚的本土实践经验，为客户提供高水平、定制化的专业咨询服务。",
         points: [
           {
-            title: "专业经验",
-            detail: "Functions汇集了拥有40年以上室内环境质量与可持续发展经验的资深顾问和工程师。",
+            title: "多元专业知识",
+            detail: "弥合工程精度与战略可持续性之间的鸿沟。我们的团队汇集了经验丰富的顾问和技术专家，凭借数十年的经验解决复杂的建筑环境挑战。",
+            icon: <Award className="h-8 w-8 text-primary" />,
           },
           {
-            title: "能力",
-            detail: "Functions专注于过滤、通风、监测、数字化集成及环境解决方案，打造更健康、更高效的空间。",
+            title: "集成化创新",
+            detail: "超越零散的系统。我们无缝集成先进的过滤硬件、智能通风和 AI 驱动的数据平台，打造具有自适应、自优化能力的建筑生态系统。",
+            icon: <Cpu className="h-8 w-8 text-primary" />,
           },
           {
-            title: "合作",
-            detail: "Functions与合作伙伴共同定制、采购或联合开发解决方案，并提供本地沟通、项目管理及质量控制支持。",
+            title: "战略全球网络",
+            detail: "国际标准，本地执行。我们利用在亚太和中东地区精心构建的区域领导者生态系统，确保严格的合规性、敏捷的响应和精准的项目交付。",
+            icon: <Globe className="h-8 w-8 text-primary" />,
           },
           {
-            title: "解决方案",
-            detail: "Functions提供端到端的健康与可持续服务——从规划设计到施工、改造及运营。",
+            title: "全生命周期价值",
+            detail: "在每个阶段交付价值。从最初的 ESG 策略和系统设计到改造实施和运营监测，我们为您的资产性能提供端到端的管理服务。",
+            icon: <RefreshCw className="h-8 w-8 text-primary" />,
           },
         ],
         logos: [
@@ -387,11 +395,21 @@ export default function Home() {
 
           {/* 4 Key Points */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {t.companyInfo.points.map((point, index) => (
-              <div key={index} className="p-6 bg-white rounded-2xl shadow-sm">
-                <h3 className="text-2xl font-semibold mb-2">{point.title}</h3>
-                <p className="text-gray-600">{point.detail}</p>
-              </div>
+            {t.companyInfo.points.map((point: any, index: number) => (
+              <motion.div 
+                key={index} 
+                className="p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-start text-left"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="mb-4 p-3 bg-primary/10 rounded-xl">
+                  {point.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">{point.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{point.detail}</p>
+              </motion.div>
             ))}
           </div>
           
