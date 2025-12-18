@@ -313,7 +313,16 @@ export default function Home() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 />
 
-                <div className="absolute inset-0 z-0 bg-black/60 backdrop-blur-sm transition-all duration-500" />
+                {/* Dynamic Overlay: Glassmorphism */}
+                <motion.div
+                  className="absolute inset-0 z-0 bg-black"
+                  initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+                  animate={{
+                    opacity: active === index ? 0.6 : 0.2, 
+                    backdropFilter: active === index ? "blur(8px)" : "blur(0px)",
+                  }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                />
 
                 <motion.div
                   className="relative p-6 md:p-8 z-10 flex flex-col h-full"
