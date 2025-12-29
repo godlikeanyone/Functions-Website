@@ -18,9 +18,10 @@ export default function SolutionsPage() {
     en: {
       hero: {
         eyebrow: "Our Solutions",
-        title: "Smart systems for healthier, sustainable buildings",
+        title: ["Infrastructure", "Intelligence", "Impact"],
+        subHeadline: "We combine advanced engineering with AI-driven insights.",
         description:
-          "Our solutions combine advanced hardware, intelligent platforms, and expert consultancy to create healthier, more efficient, and more sustainable indoor environments.",
+          "Our solution starts with ventilation, purification and sensing infrastructure to secure healthy environment, integrates with AI smart platform to optimize energy usage, and culminates in sustainability strategies that future-proof your assets.",
       },
       solutions: [
         {
@@ -92,8 +93,9 @@ export default function SolutionsPage() {
     zh: {
       hero: {
         eyebrow: "我们的解决方案",
-        title: "针对每个挑战的全面技术解决方案",
-        description: "从高性能硬件到AI驱动的平台及专家咨询，我们提供端到端的解决方案，推动可衡量的业务成果。",
+        title: ["基建", "智能", "影响力"],
+        subHeadline: "我们将先进工程技术与 AI 驱动的洞察相结合。",
+        description: "我们的解决方案以通风、净化和传感基础设施为起点，保障健康的环境；随后集成 AI 智能平台以优化能源使用；最终通过可持续发展策略，为您的资产实现面向未来的长期价值保障。",
       },
       solutions: [
         {
@@ -165,21 +167,49 @@ export default function SolutionsPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-card via-background to-background" />
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.15),transparent_50%)]" />
+    {/* Hero Section */}
+    <section className="relative py-24 md:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-card via-background to-background" />
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.15),transparent_50%)]" />
+      </div>
+    
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Eyebrow */}
+        <div className="inline-block mb-4 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
+          <span className="text-sm font-medium text-primary">{t.hero.eyebrow}</span>
         </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block mb-4 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
-            <span className="text-sm font-medium text-primary">{t.hero.eyebrow}</span>
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">{t.hero.title}</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">{t.hero.description}</p>
-        </div>
-      </section>
+    
+        {/* Title With Vertical Divider */}
+        <h1 className="text-5xl md:text-6xl font-bold mb-8 text-balance flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
+          {Array.isArray(t.hero.title) ? (
+            t.hero.title.map((item, index) => (
+              <span key={index} className="flex items-center">
+                <span>{item}</span>
+                {index < t.hero.title.length - 1 && (
+                  <span 
+                    className="mx-3 h-10 w-[2px] bg-gray-300/50 rotate-12 md:rotate-0 md:h-12 md:w-[3px] rounded-full" 
+                    aria-hidden="true" 
+                  />
+                )}
+              </span>
+            ))
+          ) : (
+            t.hero.title
+          )}
+        </h1>
+    
+        {/* Subheadline */}
+        <p className="text-2xl md:text-3xl font-semibold mb-6 text-foreground text-balance">
+          {t.hero.subHeadline}
+        </p>
+    
+        {/* Description */}
+        <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto text-balance leading-relaxed">
+          {t.hero.description}
+        </p>
+      </div>
+    </section>
 
       {/* Solutions Grid */}
       <section className="py-24 md:py-32 bg-background">
