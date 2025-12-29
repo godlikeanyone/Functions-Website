@@ -40,7 +40,7 @@ export default function Home() {
           {
             title: "Hardware Solutions",
             detail: "Delivering advanced air and ventilation systems to enhance indoor air quality and building performance.",
-            bgImage: "/complex-enterprise-technology-infrastructure.jpg", // 记得确认图片路径
+            bgImage: "/complex-enterprise-technology-infrastructure.jpg",
             bgPosition: "left",
             bullets: [
               "EcoFlow: Industrial-grade Micro Electrostatic Precipitation (MESP) that delivers healthy indoor air with zero consumable maintenance.",
