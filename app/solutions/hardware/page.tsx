@@ -77,7 +77,6 @@ export default function HardwarePage() {
           description:
             "Our comprehensive suite of solutions—including wall-mounted ventilators, Energy Recovery Ventilators (ERV), and commercial in-ceiling purifiers—delivers pristine fresh air while minimizing energy loss. We combine automated control with high-efficiency filtration to create smarter, healthier indoor environments.",
           cta: "Explore Ventilation Solutions",
-          // 更新：将字符串数组改为对象数组，以支持加粗标题
           features: [
             {
               title: "Energy Recovery (ERV)",
@@ -315,7 +314,7 @@ export default function HardwarePage() {
               {/* Visual Area */}
               <div className="order-1 lg:order-2 relative aspect-square lg:h-[700px] bg-gradient-to-br from-muted to-muted/50 rounded-3xl overflow-hidden border border-border shadow-2xl">
                  <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/30">
-                    <img src="/mesp-filter.webp" alt="MESP Technology" className="absolute inset-0 w-full h-full object-cover" />
+                    <img src="/mesp-filter.webp" alt="MESP Technology" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                  </div>
               </div>
             </div>
@@ -331,7 +330,7 @@ export default function HardwarePage() {
                  <img 
                    src="/ventilation.webp" 
                    alt="Ventilation System" 
-                   className="absolute inset-0 w-full h-full object-cover" 
+                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                  />
               </div>
 
