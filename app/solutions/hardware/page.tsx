@@ -38,15 +38,16 @@ export default function HardwarePage() {
       sections: {
         mesp: {
           tag: "Core Technology",
-          title: "MESP Filtration",
+          title: "EcoFlow™ Advanced Air Filtration",
           description:
-            "Next generation MESP+ by Functions is a highly efficient & environmentally friendly filtration technology desgined for building HVAC systems. Utilizing patented advanced Micro Electrostatic Precipitation (MESP+) technology, it delivers superior air quality without compromising energy performance.",
+            "From proprietary EcoFlow™ purification and integrated ventilation systems to real-time environmental monitoring, our hardware is designed to make buildings breathe, think and perform. EcoFlow™ is a highly efficient & environmental friendly filtration:",
           highlights: [
-            { title: "Advanced Technology", text: "Uses Micro-Electrostatic fields to capture sub-micron particles." },
-            { title: "Comprehensive Protection", text: "Removes PM2.5, allergens, dust, and airborne pathogens." },
-            { title: "Modular Design", text: "Seamlessly retrofits into existing AHUs and Fan Coil Units (FCU)." },
+            { title: "Advanced Technology", text: "Utilizes enhanced MESP+ technology to neutralize 99% of Particulate Matter, Allergens, Dust and Airborne Pathogens." },
+            { title: "Energy Saving", text: "Latest engineering refinements achieve a perfect balance between high-efficiency performance and minimal pressure drop, significantly reducing HVAC energy loads." },
+            { title: "Modular Design", text: "Seamless retrofits into existing AHUs and Fan Coil Units(FCU)." },
+            { title: "Washable & Reusable", text: "Features permanent, washable filter elements that eliminate the need for costly consumables, lowering the total lifecycle operational costs of the building." },
           ],
-          cta: "Discover MESP+",
+          cta: "Discover EcoFlow™ Advanced Air Filtration",
           features: [
             {
               icon: Zap,
