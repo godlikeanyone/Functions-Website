@@ -312,7 +312,7 @@ export default function HardwarePage() {
               </div>
 
               {/* Visual Area */}
-              <div className="order-1 lg:order-2 relative aspect-square lg:h-[700px] bg-gradient-to-br from-muted to-muted/50 rounded-3xl overflow-hidden border border-border shadow-2xl">
+              <div className="group order-1 lg:order-2 relative aspect-square lg:h-[700px] bg-gradient-to-br from-muted to-muted/50 rounded-3xl overflow-hidden border border-border shadow-2xl">
                  <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/30">
                     <img src="/mesp-filter.webp" alt="MESP Technology" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                  </div>
@@ -326,7 +326,7 @@ export default function HardwarePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Visual Area - Left side for zigzag effect */}
-              <div className="relative aspect-square lg:h-[600px] bg-muted rounded-3xl overflow-hidden border border-border shadow-2xl">
+              <div className="group relative aspect-square lg:h-[600px] bg-muted rounded-3xl overflow-hidden border border-border shadow-2xl">
                  <img 
                    src="/ventilation.webp" 
                    alt="Ventilation System" 
