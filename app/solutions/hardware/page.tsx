@@ -106,7 +106,7 @@ export default function HardwarePage() {
             {
               icon: Activity,
               title: "Comprehensive Measurement",
-              text: "Tracks 16 key parameters (PM₂.₅, CO₂, TVOC, etc.) for a complete environmental picture.",
+              text: "Tracks up to 16 key parameters (PM10, PM2.5, TVOC, CO2, Light, Noise, Air Pressure, Ozone and etc.) for a complete environmental picture.",
             },
             {
               icon: Wifi,
@@ -126,7 +126,7 @@ export default function HardwarePage() {
             {
               icon: MonitorSmartphone,
               title: "Digital Platform",
-              text: "Intuitive dashboards, analytics, and automated reporting for ESG outcomes.",
+              text: "Real-time visualization, historical analytics, and BMS integration for environmental hardware and green building certification reporting.",
             },
           ],
         },
@@ -452,7 +452,6 @@ export default function HardwarePage() {
                   })}
                 </div>
               </div>
-
             </div>
           </div>
         </section>
