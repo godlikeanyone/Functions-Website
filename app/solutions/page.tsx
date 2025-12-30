@@ -159,7 +159,7 @@ export default function SolutionsPage() {
                 icon={solution.icon}
                 title={solution.title}
                 description={solution.description}
-                href={solution.href} // 传递新增的 href 属性
+                href={solution.href}
                 locale={locale}
               />
             ))}
