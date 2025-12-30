@@ -43,7 +43,7 @@ export default function SolutionsPage() {
           title: "Sustainability Services",
           tagline: "Strategic Advisory Services",
           href: "/solutions/consulting",
-          description: "We bridge the gap between technical upgrades and business goals. From Green Building certification to lifecycle asset planning, our experts ensure your investments translate into verified ESG performance and regulatory compliance.",
+          description: "Measurable Impact, Long-term Value\n\nWe bridge the gap between technical upgrades and business goals. From Green Building certification to lifecycle asset planning, our experts ensure your investments translate into verified ESG performance and regulatory compliance.",
         },
       ],
       comparison: {
@@ -69,24 +69,24 @@ export default function SolutionsPage() {
       solutions: [
         {
           icon: Cpu,
-          title: "硬件设备方案",
-          tagline: "空气处理与传感基础设施",
+          title: "硬件解决方案",
+          tagline: "空气治理与环境感知基础设施",
           href: "/solutions/hardware",
-          description: "净化 I 通风 I 监测\n\n基于专有的 MESP+ 技术，我们提供工业级的空气净化和智能通风解决方案。结合商业级环境监测器，我们为健康、无病原体的建筑环境奠定物理基础。",
+          description: "净化 | 通风 | 监测\n\n依托自主研发的 MESP+ 技术，我们提供工业级空气净化与智能通风解决方案，并结合商用级环境监测设备，构建健康、低病原风险的建筑物理基础。",
         },
         {
           icon: Monitor,
-          title: "智能管理平台",
-          tagline: "实时控制与 AI 优化",
+          title: "数字化平台",
+          tagline: "AI 驱动的智能平台",
           href: "/solutions/platform",
-          description: "可视化 I 自动化 I 优化效率\n\n用于全面楼宇控制的集中式智能管理系统。通过直观的云端界面，实时监控环境数据，自动化暖通响应，并利用 AI 算法优化能源使用效率。",
+          description: "让智能真正实现节能\n\n不仅止于数据可视化，平台通过 AI 算法对 HVAC 系统进行动态调节，在保障舒适性的同时持续优化能效，实现自动化节能并实时降低碳排放。",
         },
         {
           icon: Users,
-          title: "专家战略咨询",
-          tagline: "环境合规与 ESG 战略",
-          href: "/solutions/consultant",
-          description: "评估 I 认证 I 转型升级\n\n针对环境合规性和 ESG 目标的专家顾问服务。提供数据驱动的评估报告、WELL/LEED 认证支持以及定制化策略，助力提升建筑健康与可持续性指标。",
+          title: "可持续发展服务",
+          tagline: "战略级咨询与顾问服务",
+          href: "/solutions/consulting",
+          description: "可量化成果，长期价值\n\n我们连接技术升级与商业目标。从绿色建筑认证到资产全生命周期规划，专家团队确保您的投资转化为可验证的 ESG 绩效与合规成果。",
         },
       ],
       comparison: {
