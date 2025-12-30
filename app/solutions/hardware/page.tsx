@@ -250,7 +250,7 @@ export default function HardwarePage() {
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block mb-6 px-4 py-1.5 bg-primary/5 border border-primary/10 rounded-full backdrop-blur-sm">
-            <span className="text-sm font-medium text-primary tracking-wide uppercase">{t.hero.eyebrow}</span>
+            <span className="text-sm font-medium text-primary tracking-wide">{t.hero.eyebrow}</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-balance tracking-tight">{t.hero.title}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
