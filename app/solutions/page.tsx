@@ -115,15 +115,22 @@ export default function SolutionsPage() {
           <div className="inline-block mb-4 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
             <span className="text-sm font-medium text-primary">{t.hero.eyebrow}</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
-            {t.hero.title.map((item, index) => (
-              <span key={index} className="flex items-center">
-                <span>{item}</span>
-                {index < t.hero.title.length - 1 && (
-                  <span className="mx-4 h-12 w-[2px] bg-primary/20 hidden md:block" />
-                )}
-              </span>
-            ))}
+          <h1 className="text-5xl md:text-6xl font-bold mb-8 text-balance flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
+            {Array.isArray(t.hero.title) ? (
+              t.hero.title.map((item, index) => (
+                <span key={index} className="flex items-center">
+                  <span>{item}</span>
+                  {index < t.hero.title.length - 1 && (
+                    <span 
+                      className="mx-3 h-10 w-[2px] bg-gray-300/50 rotate-12 md:rotate-0 md:h-12 md:w-[3px] rounded-full" 
+                      aria-hidden="true" 
+                    />
+                  )}
+                </span>
+              ))
+            ) : (
+              t.hero.title
+            )}
           </h1>
           <p className="text-2xl md:text-3xl font-semibold mb-6 text-foreground">{t.hero.subHeadline}</p>
           <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
