@@ -26,7 +26,7 @@ export default function SolutionsPage() {
       solutions: [
         {
           icon: Cpu, // Hardware icon
-          title: "Hardware",
+          title: "Hardware Solutions",
           href: "/solutions/hardware",
           description:
             "High-performance air purification and ventilation units designed for modern infrastructure.\nFeaturing MESP technology to capture fine particles and pathogens with high efficiency, low resistance, and minimal energy consumption.",
@@ -56,37 +56,6 @@ export default function SolutionsPage() {
           { feature: "Proactive monitoring", traditional: false, functions: true },
           { feature: "Cost optimization", traditional: false, functions: true },
           { feature: "Future-proof technology", traditional: false, functions: true },
-        ],
-      },
-      process: {
-        title: "Our proven process",
-        description: "A systematic approach that delivers results",
-        steps: [
-          {
-            number: "01",
-            title: "Discovery",
-            description: "Deep dive into your business challenges, goals, and technical landscape",
-          },
-          {
-            number: "02",
-            title: "Design",
-            description: "Architect solutions tailored to your requirements with scalability in mind",
-          },
-          {
-            number: "03",
-            title: "Develop",
-            description: "Build with best practices, continuous testing, and agile methodology",
-          },
-          {
-            number: "04",
-            title: "Deploy",
-            description: "Seamless implementation with minimal disruption to operations",
-          },
-          {
-            number: "05",
-            title: "Optimize",
-            description: "Continuous improvement through monitoring, feedback, and iteration",
-          },
         ],
       },
     },
@@ -127,37 +96,6 @@ export default function SolutionsPage() {
           { feature: "主动监控", traditional: false, functions: true },
           { feature: "成本优化", traditional: false, functions: true },
           { feature: "面向未来的技术", traditional: false, functions: true },
-        ],
-      },
-      process: {
-        title: "我们经过验证的流程",
-        description: "提供结果的系统方法",
-        steps: [
-          {
-            number: "01",
-            title: "发现",
-            description: "深入了解您的业务挑战、目标和技术环境",
-          },
-          {
-            number: "02",
-            title: "设计",
-            description: "根据您的需求架构解决方案，考虑可扩展性",
-          },
-          {
-            number: "03",
-            title: "开发",
-            description: "采用最佳实践、持续测试和敏捷方法进行构建",
-          },
-          {
-            number: "04",
-            title: "部署",
-            description: "无缝实施，最小化对运营的干扰",
-          },
-          {
-            number: "05",
-            title: "优化",
-            description: "通过监控、反馈和迭代持续改进",
-          },
         ],
       },
     },
@@ -233,29 +171,6 @@ export default function SolutionsPage() {
       <section className="py-24 md:py-32 bg-card">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <ComparisonTable title={t.comparison.title} rows={t.comparison.rows} locale={locale} />
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.process.title}</h2>
-            <p className="text-lg text-muted-foreground">{t.process.description}</p>
-          </div>
-
-          <div className="grid md:grid-cols-5 gap-8">
-            {t.process.steps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="text-6xl font-bold text-primary/20 mb-4">{step.number}</div>
-                <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                {index < t.process.steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-border -translate-x-1/2" />
-                )}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </div>
