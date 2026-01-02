@@ -409,7 +409,7 @@ export default function HardwarePage() {
                          <img 
                             src="/monitor-front.webp" 
                             alt="Environmental Monitor Hardware" 
-                            className="absolute inset-0 w-full h-full object-cover p-2 transition-transform duration-500 group-hover:scale-110"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                     </div>
 
@@ -419,7 +419,7 @@ export default function HardwarePage() {
                          <img 
                             src="/monitor-back.webp" 
                             alt="Connectivity Ports" 
-                            className="absolute inset-0 w-full h-full object-cover p-2 transition-transform duration-500 group-hover:scale-110"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                     </div>
                 </div>
