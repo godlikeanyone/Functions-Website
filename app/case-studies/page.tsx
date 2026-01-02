@@ -17,7 +17,7 @@ export default function CaseStudiesPage() {
     en: {
       hero: {
         eyebrow: "Case Studies",
-        title: "Real results from real partnerships",
+        title: "Real Results From Real Partnerships",
         description:
           "Explore how we've helped organizations across industries transform their operations and achieve measurable success.",
       },
