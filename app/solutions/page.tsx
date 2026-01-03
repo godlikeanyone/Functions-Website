@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import { ComparisonTable } from "@/components/comparison-table"
-import { Cpu, Monitor, Users, Cloud, Database, Lock, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 
@@ -25,21 +26,21 @@ export default function SolutionsPage() {
       },
       solutions: [
         {
-          icon: Cpu,
+          image: "hardware-solutions-preview.webp",
           title: "Hardware Solutions",
           tagline: "Air Treatment & Sensing Infrastructure",
           href: "/solutions/hardware",
           description: "Purification | Ventilation | Monitoring\n\nPowered by proprietary MESP+ technology, we deliver industrial-grade air purification and smart ventilation solutions. Combined with commercial environmental monitors, we build the physical foundation for a healthy, pathogen-free building environment.",
         },
         {
-          icon: Monitor,
+          image: "digital-platform-preview.webp",
           title: "Digital Platform",
           tagline: "AI-Driven Smart Platform",
           href: "/solutions/platform",
           description: "Intelligence that Saves Energy\n\nBeyond simple visualization, our platform utilizes AI algorithms to dynamically adjust HVAC systems. It balances comfort with efficiency, delivering automated energy savings and reducing carbon footprint in real-time.",
         },
         {
-          icon: Users,
+          image: "sustainability-services-preview.webp",
           title: "Sustainability Services",
           tagline: "Strategic Advisory Services",
           href: "/solutions/consulting",
@@ -56,21 +57,21 @@ export default function SolutionsPage() {
       },
       solutions: [
         {
-          icon: Cpu,
+          image: "hardware-solutions-preview.webp",
           title: "硬件解决方案",
           tagline: "空气治理与环境感知基础设施",
           href: "/solutions/hardware",
           description: "净化 | 通风 | 监测\n\n依托自主研发的 MESP+ 技术，我们提供工业级空气净化与智能通风解决方案，并结合商用级环境监测设备，构建健康、低病原风险的建筑物理基础。",
         },
         {
-          icon: Monitor,
+          image: "digital-platform-preview.webp",
           title: "数字化平台",
           tagline: "AI 驱动的智能平台",
           href: "/solutions/platform",
           description: "让智能真正实现节能\n\n不仅止于数据可视化，平台通过 AI 算法对 HVAC 系统进行动态调节，在保障舒适性的同时持续优化能效，实现自动化节能并实时降低碳排放。",
         },
         {
-          icon: Users,
+          image: "sustainability-services-preview.webp",
           title: "可持续发展服务",
           tagline: "战略级咨询与顾问服务",
           href: "/solutions/consulting",
@@ -128,9 +129,14 @@ export default function SolutionsPage() {
               >
                 {/* Visual Side */}
                 <div className="flex-1 w-full">
-                  <div className="relative aspect-video md:aspect-square max-w-[500px] mx-auto bg-card rounded-3xl border border-border flex items-center justify-center group overflow-hidden shadow-2xl shadow-primary/5">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent group-hover:opacity-100 transition-opacity" />
-                    <solution.icon className="w-32 h-32 text-primary/40 group-hover:scale-110 transition-transform duration-500" />
+                  <div className="relative aspect-video md:aspect-square max-w-[500px] mx-auto bg-card rounded-3xl border border-border group overflow-hidden shadow-2xl shadow-primary/5">
+                    <Image
+                      src={solution.image}
+                      alt={solution.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-w: 768px) 100vw, 500px"
+                    />
                   </div>
                 </div>
 
