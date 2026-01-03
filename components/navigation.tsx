@@ -32,6 +32,7 @@ export function Navigation({ locale = "en", onLocaleChange, onThemeToggle, theme
             <Link href="/" className="flex items-center gap-2">
               <div className="flex items-center">
                 <img
+                  // 即使隐藏了切换按钮，Logo 依然可以根据当前的 theme 属性显示
                   src={theme === "dark" ? "/logo-light.webp" : "/logo-dark.webp"}
                   alt="Functions logo"
                   className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
@@ -55,19 +56,12 @@ export function Navigation({ locale = "en", onLocaleChange, onThemeToggle, theme
     
             {/* Actions */}
             <div className="flex items-center gap-3">
-              <Button variant="ghost" size="sm" onClick={onThemeToggle} className="hidden sm:flex">
+              {/* Theme Toggle - Temporarily disabled */}
+              {/* <Button variant="ghost" size="sm" onClick={onThemeToggle} className="hidden sm:flex">
                 {theme === "dark" ? "☀️" : "🌙"}
-              </Button>
-              {/* Maybe later
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => onLocaleChange?.(locale === "en" ? "zh" : "en")}
-                className="hidden sm:flex"
-              >
-                {locale === "en" ? "中文" : "EN"}
-              </Button>
+              </Button> 
               */}
+              
               <Button size="sm" className="hidden sm:flex">
                 {locale === "zh" ? "联系我们" : "Contact Us"}
               </Button>
@@ -94,12 +88,9 @@ export function Navigation({ locale = "en", onLocaleChange, onThemeToggle, theme
                   </Link>
                 ))}
                 <div className="flex items-center gap-2 pt-2">
-                  <Button variant="ghost" size="sm" onClick={onThemeToggle}>
+                  {/* Theme Toggle - Temporarily disabled */}
+                  {/* <Button variant="ghost" size="sm" onClick={onThemeToggle}>
                     {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
-                  </Button>
-                  {/* Maybe later
-                  <Button variant="ghost" size="sm" onClick={() => onLocaleChange?.(locale === "en" ? "zh" : "en")}>
-                    {locale === "en" ? "中文" : "EN"}
                   </Button>
                   */}
                 </div>
