@@ -46,18 +46,6 @@ export default function SolutionsPage() {
           description: "Measurable Impact, Long-term Value\n\nWe bridge the gap between technical upgrades and business goals. From Green Building certification to lifecycle asset planning, our experts ensure your investments translate into verified ESG performance and regulatory compliance.",
         },
       ],
-      comparison: {
-        title: "Why choose Functions Ltd?",
-        rows: [
-          { feature: "Rapid deployment (weeks not months)", traditional: false, functions: true },
-          { feature: "Built-in security and compliance", traditional: false, functions: true },
-          { feature: "Scalable architecture", traditional: true, functions: true },
-          { feature: "24/7 global support", traditional: false, functions: true },
-          { feature: "Proactive monitoring", traditional: false, functions: true },
-          { feature: "Cost optimization", traditional: false, functions: true },
-          { feature: "Future-proof technology", traditional: false, functions: true },
-        ],
-      },
     },
     zh: {
       hero: {
@@ -89,18 +77,6 @@ export default function SolutionsPage() {
           description: "可量化成果，长期价值\n\n我们连接技术升级与商业目标。从绿色建筑认证到资产全生命周期规划，专家团队确保您的投资转化为可验证的 ESG 绩效与合规成果。",
         },
       ],
-      comparison: {
-        title: "为什么选择 Functions Ltd？",
-        rows: [
-          { feature: "快速部署（数周而非数月）", traditional: false, functions: true },
-          { feature: "内置安全性和合规性", traditional: false, functions: true },
-          { feature: "可扩展架构", traditional: true, functions: true },
-          { feature: "24/7 全球支持", traditional: false, functions: true },
-          { feature: "主动监控", traditional: false, functions: true },
-          { feature: "成本优化", traditional: false, functions: true },
-          { feature: "面向未来的技术", traditional: false, functions: true },
-        ],
-      },
     },
   }
 
@@ -185,13 +161,6 @@ export default function SolutionsPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Comparison Table */}
-      <section className="py-24 md:py-32 bg-card/50 border-y">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ComparisonTable title={t.comparison.title} rows={t.comparison.rows} locale={locale} />
         </div>
       </section>
     </div>
