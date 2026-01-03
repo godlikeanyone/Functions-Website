@@ -403,24 +403,16 @@ export default function HardwarePage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </div>
 
-                    {/* Sub Item 1: Device Front */}
-                    <div className="relative aspect-square rounded-2xl bg-muted border border-border/50 overflow-hidden shadow-md group">
+                    {/* Main Item 2: Hardware Large View (Replaces the two smaller images) */}
+                    <div className="col-span-2 relative aspect-[16/9] rounded-2xl bg-muted border border-border/50 overflow-hidden shadow-lg group">
                          <div className="absolute inset-0 bg-card/50" /> {/* Background base */}
                          <img 
-                            src="/monitor-front.webp" 
-                            alt="Environmental Monitor Hardware" 
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            src="/monitor-installation.webp" 
+                            alt="Environmental Monitor Hardware Integrated View" 
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                    </div>
-
-                    {/* Sub Item 2: Device Back */}
-                    <div className="relative aspect-square rounded-2xl bg-muted border border-border/50 overflow-hidden shadow-md group">
-                         <div className="absolute inset-0 bg-card/50" />
-                         <img 
-                            src="/monitor-back.webp" 
-                            alt="Connectivity Ports" 
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
+                         {/* Added overlay for consistency with the dashboard image above */}
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
                     </div>
                 </div>
               </div>
