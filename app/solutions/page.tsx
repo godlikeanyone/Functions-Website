@@ -134,7 +134,7 @@ export default function SolutionsPage() {
                       src={solution.image}
                       alt={solution.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="object-contain group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-w: 768px) 100vw, 500px"
                     />
                   </div>
