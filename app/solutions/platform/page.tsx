@@ -349,13 +349,13 @@ export default function PlatformPage() {
                  </div>
 
                  {/* Right: Architecture Diagram Image */}
-                 <div className="relative aspect-square lg:aspect-[4/3] bg-card rounded-2xl border border-border shadow-xl overflow-hidden group">
+                 <div className="relative aspect-[1024/559] bg-card rounded-2xl border border-border shadow-xl overflow-hidden group">
                     <img 
                         src="/system-architechure.webp" 
                         alt="System Architecture Diagram" 
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                     />
-                    {/* Optional subtle gradient overlay for consistency */}
+                    {/* Subtle gradient overlay for consistency */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-transparent pointer-events-none" />
                  </div>
             </div>
