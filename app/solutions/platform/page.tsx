@@ -348,13 +348,15 @@ export default function PlatformPage() {
                     })}
                  </div>
 
-                 {/* Right: Architecture Diagram Placeholder */}
-                 <div className="relative aspect-square lg:aspect-[4/3] bg-card rounded-2xl border border-border shadow-xl overflow-hidden flex items-center justify-center">
-                    <div className="text-center p-8">
-                         <Network className="h-20 w-20 text-muted-foreground/20 mx-auto mb-4" />
-                         <p className="text-muted-foreground/50 font-medium uppercase tracking-widest">System Architecture Diagram</p>
-                         {/* <img src="/architecture-diagram.webp" alt="Architecture" className="absolute inset-0 w-full h-full object-contain p-8" /> */}
-                    </div>
+                 {/* Right: Architecture Diagram Image */}
+                 <div className="relative aspect-square lg:aspect-[4/3] bg-card rounded-2xl border border-border shadow-xl overflow-hidden group">
+                    <img 
+                        src="/system-architechure.webp" 
+                        alt="System Architecture Diagram" 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    />
+                    {/* Optional subtle gradient overlay for consistency */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-transparent pointer-events-none" />
                  </div>
             </div>
          </div>
