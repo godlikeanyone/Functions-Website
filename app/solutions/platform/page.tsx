@@ -226,7 +226,7 @@ export default function PlatformPage() {
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-card via-background to-background" />
-        {/* 使用更纯净的 Sky Blue 渐变，体现软件/AI的冷静与智慧 */}
+        {/* Sky Blue Radial*/}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-500/20 via-blue-500/10 to-transparent" />
         </div>
@@ -241,13 +241,13 @@ export default function PlatformPage() {
             {t.hero.description}
           </p>
           
-          {/* Dashboard Preview Placeholder */}
+          {/* Dashboard Preview */}
           <div className="relative max-w-5xl mx-auto aspect-[16/9] bg-muted/50 rounded-xl border border-border/50 shadow-2xl overflow-hidden group">
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground/30 transition-opacity group-hover:opacity-50">
-                <Activity className="h-16 w-16 mb-4" />
-                <span className="uppercase tracking-widest font-semibold">Platform Dashboard Interface</span>
-            </div>
-            {/* <img src="/dashboard-ui.webp" alt="Dashboard" className="w-full h-full object-cover" /> */}
+            <img 
+                src="/digital-platform-dashboard.webp" 
+                alt="AI Smart Energy Optimization Platform Dashboard" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+            />
             
             {/* Decorative overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
