@@ -235,7 +235,6 @@ export default function SustainabilityPage() {
                     </li>
                   ))}
                 </ul>
-                <Button className="rounded-full px-8">Contact an AP</Button>
               </div>
               <div className="order-1 lg:order-2 relative aspect-video lg:aspect-square bg-muted rounded-3xl overflow-hidden shadow-2xl border">
                  <img src="/global-green-building.webp" alt="Certifications" className="w-full h-full object-cover" />
