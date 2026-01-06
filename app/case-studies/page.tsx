@@ -34,7 +34,7 @@ export default function CaseStudiesPage() {
           { icon: Users, value: "90%", label: "Staff Satisfaction" },
           { icon: Clock, value: "8%", label: "Productivity Enhancement" },
         ],
-        image: "/henkel-office.webp",
+        image: "/henkel-building.webp",
       },
       monclerCase: {
         category: "Retail",
