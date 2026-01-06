@@ -10,6 +10,7 @@ export function Footer({ locale = "en" }: FooterProps) {
   const footerSections = [
     {
       title: locale === "zh" ? "解决方案" : "Solutions",
+      href: "/solutions",
       links: [
         { label: locale === "zh" ? "硬件方案" : "Hardware", href: "/solutions/hardware" },
         { label: locale === "zh" ? "软件平台" : "Platform", href: "/solutions/platform" },
@@ -18,10 +19,12 @@ export function Footer({ locale = "en" }: FooterProps) {
     },
     {
       title: locale === "zh" ? "成功案例" : "Case Studies",
+      href: "/case-studies",
       links: [],
     },
     {
       title: locale === "zh" ? "关于我们" : "About",
+      href: "/about",
       links: [],
     },
   ]
@@ -50,7 +53,14 @@ export function Footer({ locale = "en" }: FooterProps) {
           {/* Links */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="font-semibold mb-4">{section.title}</h3>
+              <h3 className="font-semibold mb-4">
+                <Link
+                  href={section.href}
+                  className="hover:text-foreground transition-colors"
+                >
+                  {section.title}
+                </Link>
+              </h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
