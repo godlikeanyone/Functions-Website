@@ -43,7 +43,6 @@ export default function CaseStudiesPage() {
           "Tailored indoor air purification solution for retail space",
           "Integrated monitoring system ensuring comfort and sustainability",
         ],
-        // 更新了这里的三个数字和图标
         results: [
           { icon: Zap, value: "25%", label: "Energy Saved" },
           { icon: Wind, value: "99%", label: "Pollutant Neutralized" },
@@ -73,7 +72,6 @@ export default function CaseStudiesPage() {
         ],
         image: "/henkel-office.webp",
       },
-      // 补全了 Moncler 的中文翻译
       monclerCase: {
         category: "零售业",
         title: "为盟可睐 (Moncler) 打造绿色奢华：清洁空气，认证性能",
