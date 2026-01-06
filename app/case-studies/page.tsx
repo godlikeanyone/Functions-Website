@@ -1,8 +1,7 @@
 "use client"
 
-import { CaseStudyCard } from "@/components/case-study-card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingUp, Clock, Users } from "lucide-react"
+import { ArrowRight, TrendingUp, Clock, Users, Zap, Wind, ShieldCheck } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function CaseStudiesPage() {
@@ -30,7 +29,7 @@ export default function CaseStudiesPage() {
           "Tailored air ventilation upgrade improving comfort and efficiency",
         ],
         results: [
-          { icon: TrendingUp, value: "1st", label: "WELL V2 Platium" },
+          { icon: TrendingUp, value: "1st", label: "WELL V2 Platinum" },
           { icon: Users, value: "90%", label: "Staff Satisfaction" },
           { icon: Clock, value: "8%", label: "Productivity Enhancement" },
         ],
@@ -44,10 +43,11 @@ export default function CaseStudiesPage() {
           "Tailored indoor air purification solution for retail space",
           "Integrated monitoring system ensuring comfort and sustainability",
         ],
+        // 更新了这里的三个数字和图标
         results: [
-          { icon: TrendingUp, value: "40%", label: "Cost Reduction" },
-          { icon: Clock, value: "60%", label: "Faster Production" },
-          { icon: Users, value: "2M+", label: "Hours Saved Annually" },
+          { icon: Zap, value: "25%", label: "Energy Saved" },
+          { icon: Wind, value: "99%", label: "Pollutant Neutralized" },
+          { icon: ShieldCheck, value: "7/24", label: "Real-time Integrity" },
         ],
         image: "/moncler-store.webp",
       },
@@ -73,6 +73,22 @@ export default function CaseStudiesPage() {
         ],
         image: "/henkel-office.webp",
       },
+      // 补全了 Moncler 的中文翻译
+      monclerCase: {
+        category: "零售业",
+        title: "为盟可睐 (Moncler) 打造绿色奢华：清洁空气，认证性能",
+        solution: [
+          "LEED 认证咨询与现场测试调试",
+          "专为零售空间定制的室内空气净化方案",
+          "集成监测系统确保舒适度与可持续性",
+        ],
+        results: [
+          { icon: Zap, value: "25%", label: "能源节省" },
+          { icon: Wind, value: "99%", label: "污染物中和" },
+          { icon: ShieldCheck, value: "7/24", label: "实时可靠性" },
+        ],
+        image: "/moncler-store.webp",
+      },
     },
   }
 
@@ -96,12 +112,12 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Case Study */}
+      {/* Case Studies List */}
       <section className="py-24 md:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-24">
             {[t.henkelCase, t.monclerCase].map((caseItem, index) => {
-              const isReversed = index === 1 // Moncler 左图右文
+              const isReversed = index === 1
               return (
                 <div
                   key={index}
@@ -117,8 +133,8 @@ export default function CaseStudiesPage() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
                       {caseItem.title}
                     </h2>
-            
-                    <div>
+                    
+                    <div className="mb-8">
                       <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                         {locale === "zh" ? "解决方案" : "Solution"}
                       </h3>
@@ -135,7 +151,7 @@ export default function CaseStudiesPage() {
                         return (
                           <div key={idx}>
                             <Icon className="h-5 w-5 text-primary mb-2" />
-                            <div className="text-3xl font-bold text-primary mb-1">{result.value}</div>
+                            <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{result.value}</div>
                             <div className="text-xs text-muted-foreground">{result.label}</div>
                           </div>
                         )
@@ -143,10 +159,10 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
             
-                  {/* Right Side (image) */}
+                  {/* Right Side (image) with Hover zoom effect */}
                   <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden">
                     <img
-                      src={caseItem.image}
+                      src={caseItem.image || "/placeholder.svg"}
                       alt={caseItem.title}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
