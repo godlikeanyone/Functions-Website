@@ -238,7 +238,6 @@ export default function SustainabilityPage() {
               </div>
               <div className="order-1 lg:order-2 relative aspect-video lg:aspect-square bg-muted rounded-3xl overflow-hidden shadow-2xl border">
                  <img src="/global-green-building.webp" alt="Certifications" className="w-full h-full object-cover" />
-                 <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors" />
               </div>
             </div>
           </div>
