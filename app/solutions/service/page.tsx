@@ -204,7 +204,7 @@ export default function SustainabilityPage() {
           <div className="inline-block mb-6 px-4 py-1.5 bg-green-500/5 border border-green-500/10 rounded-full backdrop-blur-sm">
             <span className="text-sm font-medium text-green-600 dark:text-green-400 tracking-wide">{t.hero.eyebrow}</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-balance tracking-tight tracking-tighter italic">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-balance tracking-tight">
             {t.hero.title}
           </h1>
           <p className="text-xl text-foreground font-medium mb-6 max-w-2xl mx-auto">
