@@ -146,9 +146,9 @@ export default function CaseStudiesPage() {
                   {/* Right Side (image) */}
                   <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden">
                     <img
-                      src={caseItem.image || "/placeholder.svg"}
+                      src={caseItem.image}
                       alt={caseItem.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
                 </div>
