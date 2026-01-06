@@ -17,9 +17,9 @@ export default function CaseStudiesPage() {
     en: {
       hero: {
         eyebrow: "Case Studies",
-        title: "Real Results From Real Partnerships",
+        title: "Impact in Action: Proven Success Stories",
         description:
-          "Explore how we've helped organizations across industries transform their operations and achieve measurable success.",
+          "Evidence-based transformations that redefine building performance.",
       },
       henkelCase: {
         category: "Manufacturing",
