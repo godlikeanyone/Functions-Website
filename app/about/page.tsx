@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { StatsBand } from "@/components/stats-band"
-import { Target, Users, Globe, Award } from "lucide-react"
+import { Target, Users, Globe, Award, Wind, RefreshCw, AirVent, Fan, Activity, Zap, Settings, Leaf, Recycle } from "lucide-react"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 
@@ -93,6 +93,20 @@ export default function AboutPage() {
             text: "Our solutions of filters, modules, and systems can be tailored to individual project needs.",
           },
         ],
+      },
+      radialSection: {
+        title: "Functions",
+        items: [
+          { text: "Air Filtration", icon: Wind },
+          { text: "ERVs", icon: RefreshCw },
+          { text: "Ventilation", icon: AirVent },
+          { text: "Fan Filter Units", icon: Fan },
+          { text: "Sensors & Controls", icon: Activity },
+          { text: "Energy Optimization", icon: Zap },
+          { text: "HVAC Optimization", icon: Settings },
+          { text: "Green Building", icon: Leaf },
+          { text: "Waste Management", icon: Recycle },
+        ]
       },
       innovationApproach: {
         title:
@@ -308,107 +322,82 @@ export default function AboutPage() {
       </section>
 
       {/* FUNCTIONS Radial Section */}
-      <section className="relative py-32 bg-gradient-to-b from-slate-50 to-slate-100 overflow-hidden">
-        <div className="flex justify-center items-center" style={{ height: '700px' }}>
-          <div 
-            className="relative"
-            style={{ 
-              width: '600px', 
-              height: '600px',
-            }}
-          >
-            
-            {/* Central Circle */}
-            <div 
-              className="absolute w-40 h-40 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/40 flex items-center justify-center font-semibold text-lg shadow-lg border border-blue-200 z-10"
-              style={{
-                left: '220px',
-                top: '220px',
-              }}
-            >
-              FUNCTIONS
-            </div>
-  
-            {/* Surroundings */}
-            {[
-              "Air filtration for particulates, chemicals, virus and bacterias",
-              "ERVs",
-              "Ventilation",
-              "FAN filter units",
-              "Sensors and controls",
-              "Energy optimization",
-              "HVAC optimization",
-              "Green building and sustainability consulting",
-              "Waste Management",
-            ].map((text, i) => {
-              const angle = (i / 9) * 2 * Math.PI - Math.PI / 2;
-              const x = 300 + 240 * Math.cos(angle);
-              const y = 300 + 240 * Math.sin(angle);
-  
-              return (
-                <motion.div
-                  key={`item-${i}`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
-                  className="absolute"
-                  style={{
-                    left: `${x - 70}px`,
-                    top: `${y - 20}px`,
-                    width: '140px',
-                  }}
-                >
-                  <div className="flex items-start gap-3 group">
-                    <span className="inline-block w-2 h-2 bg-blue-500 rounded-full flex-shrink-0 mt-1 group-hover:w-3 group-hover:h-3 transition-all duration-300"></span>
-                    <span className="text-xs md:text-sm font-medium text-slate-700 leading-snug group-hover:text-blue-600 transition-colors duration-300">
-                      {text}
-                    </span>
-                  </div>
-                </motion.div>
-              );
-            })}
-  
-            {/* SVG lines */}
-            <svg
-              className="absolute inset-0 pointer-events-none"
-              width="600"
-              height="600"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {[
-                "Air filtration for particulates, chemicals, virus and bacterias",
-                "ERVs",
-                "Ventilation",
-                "FAN filter units",
-                "Sensors and controls",
-                "Energy optimization",
-                "HVAC optimization",
-                "Green building and sustainability consulting",
-                "Waste Management",
-              ].map((_, i) => {
-                const angle = (i / 9) * 2 * Math.PI - Math.PI / 2;
-                const x = 300 + 180 * Math.cos(angle);
-                const y = 300 + 180 * Math.sin(angle);
-                
+      <section className="relative py-32 bg-background border-t border-border overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 relative">
+          <div className="flex justify-center items-center h-[600px] md:h-[700px]">
+            <div className="relative w-full max-w-[600px] aspect-square">
+              
+              {/* Central Brand Node */}
+              <motion.div 
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                className="absolute inset-0 m-auto w-32 h-32 md:w-40 md:h-40 rounded-full bg-primary flex items-center justify-center z-20 shadow-2xl shadow-primary/20 border-4 border-background"
+              >
+                <span className="font-bold text-primary-foreground tracking-tighter text-xl">
+                  {t.radialSection.title}
+                </span>
+              </motion.div>
+      
+              {/* Orbiting Items */}
+              {t.radialSection.items.map((item: any, i: number) => {
+                const count = t.radialSection.items.length;
+                const angle = (i / count) * 2 * Math.PI - Math.PI / 2;
+                const radius = typeof window !== 'undefined' && window.innerWidth < 768 ? 140 : 250;
+                const x = radius * Math.cos(angle);
+                const y = radius * Math.sin(angle);
+                const Icon = item.icon;
+      
                 return (
-                  <motion.line
-                    key={`line-${i}`}
-                    x1="300"
-                    y1="300"
-                    x2={x}
-                    y2={y}
-                    stroke="rgb(59, 130, 246)"
-                    strokeWidth="2"
-                    strokeOpacity="0.3"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08, duration: 0.6 }}
-                  />
+                  <div key={i} className="absolute inset-0 flex items-center justify-center">
+                    {/* Connecting Line */}
+                    <motion.div
+                      initial={{ width: 0, opacity: 0 }}
+                      whileInView={{ width: radius, opacity: 0.2 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1, duration: 0.8 }}
+                      className="absolute h-px bg-primary origin-left pointer-events-none"
+                      style={{ 
+                        transform: `rotate(${angle}rad) translateX(20px)`,
+                        left: '50%',
+                        top: '50%'
+                      }}
+                    />
+      
+                    {/* Item Card */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1, duration: 0.5 }}
+                      className="absolute"
+                      style={{
+                        transform: `translate(${x}px, ${y}px)`
+                      }}
+                    >
+                      <div className="flex flex-col items-center gap-2 group cursor-default">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-card border border-border shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                          <Icon className="w-5 h-5 md:w-6 md:h-6" />
+                        </div>
+                        <div className="bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full border border-border opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -bottom-8 whitespace-nowrap shadow-sm">
+                          <span className="text-[10px] md:text-xs font-semibold uppercase tracking-wider">
+                            {item.text}
+                          </span>
+                        </div>
+                        {/* Always visible label for mobile */}
+                        <span className="md:hidden text-[10px] font-medium text-muted-foreground whitespace-nowrap">
+                          {item.text}
+                        </span>
+                      </div>
+                    </motion.div>
+                  </div>
                 );
               })}
-            </svg>
+      
+              {/* Decorative Background Circles */}
+              <div className="absolute inset-0 m-auto w-[280px] h-[280px] md:w-[500px] md:h-[500px] border border-primary/5 rounded-full pointer-events-none" />
+              <div className="absolute inset-0 m-auto w-[180px] h-[180px] md:w-[350px] md:h-[350px] border border-primary/10 rounded-full pointer-events-none border-dashed" />
+            </div>
           </div>
         </div>
       </section>
