@@ -336,7 +336,7 @@ export default function AboutPage() {
                 className="w-32 h-32 md:w-44 md:h-44 rounded-full bg-primary flex items-center justify-center z-50 shadow-2xl border-4 border-background"
               >
                 <span className="font-bold text-primary-foreground text-xl md:text-2xl tracking-tighter">
-                  Functions
+                  {t.radialSection.title}
                 </span>
               </motion.div>
       
