@@ -318,7 +318,8 @@ export default function AboutPage() {
             {t.whywork.title}
           </motion.h2>
       
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+          {/* 修改点：将 lg:grid-cols-4 改为 lg:grid-cols-3，并添加 max-w-6xl mx-auto 确保比例协调 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-6xl mx-auto">
             {t.whywork.items.map((item, i) => (
               <motion.div
                 key={i}
@@ -326,7 +327,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
-                className="rounded-2xl border border-border bg-card/50 p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                className="rounded-2xl border border-border bg-card/50 p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
               >
                 <div className="h-1.5 w-12 bg-gradient-to-r from-primary/80 to-primary/40 rounded-full mb-6"></div>
                 <h3 className="text-xl font-semibold mb-4 leading-snug">{item.title}</h3>
