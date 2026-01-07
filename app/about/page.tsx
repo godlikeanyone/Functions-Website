@@ -22,34 +22,28 @@ export default function AboutPage() {
         description:
           "We don’t just consult; we build the intelligence that makes infrastructure sustainable.",
       },
-      mission: {
-        title: "Our Mission",
+      philosophy: {
+        title: "Our Philosophy",
         items: [
           {
-            title: "Healthier Buildings",
-            bullets: [
-              "Reduce occupant complaints",
-              "Ensure compliance to regulatory targets",
-              "Deliver safer and certified indoor environments",
-            ],
+            title: "Infrastructure",
+            desc: "High-precision hardware to secure healthy indoor environments.",
+            icon: Wind, // Representing air/environment control
+            tag: "01"
           },
           {
-            title: "More Sustainable Operations",
-            bullets: [
-              "Optimize HVAC operations to deliver more with less",
-              "Cost down maintenance",
-              "Balance performance, energy and cost",
-            ],
+            title: "Intelligence",
+            desc: "AI-driven insights that optimize energy usage and operational efficiency.",
+            icon: Zap, // Representing energy/smart logic
+            tag: "02"
           },
           {
-            title: "More Productive Profitable Spaces",
-            bullets: [
-              "Engage occupants through trust and transparency reporting",
-              "Become a leader in environmental excellence",
-              "Contribute to ESG goals and targets",
-            ],
-          },
-        ],
+            title: "Impact",
+            desc: "Sustainability strategies that future-proof global assets and ensure human wellness.",
+            icon: Globe, // Representing global impact/asset protection
+            tag: "03"
+          }
+        ]
       },
       values: [
         {
@@ -142,34 +136,28 @@ export default function AboutPage() {
         title: "一次一个解决方案，工程未来",
         description: "Functions Ltd成立于2015年，从一个小型工程师团队发展成为财富500强公司信赖的全球技术合作伙伴。",
       },
-      mission: {
-        title: "我们的使命",
+      philosophy: {
+        title: "我们的经营哲学",
         items: [
           {
-            title: "更健康的建筑",
-            bullets: [
-              "减少居住者投诉",
-              "确保符合监管目标",
-              "提供更安全、认证的室内环境",
-            ],
+            title: "基础设施 (Infrastructure)",
+            desc: "高精度硬件，确保健康的室内环境。",
+            icon: Wind,
+            tag: "01"
           },
           {
-            title: "更可持续的运营",
-            bullets: [
-              "优化 HVAC 运行，实现高效低耗",
-              "降低维护成本",
-              "平衡性能、能源和成本",
-            ],
+            title: "智能 (Intelligence)",
+            desc: "AI 驱动的见解，优化能源使用和运营效率。",
+            icon: Zap,
+            tag: "02"
           },
           {
-            title: "更高效、盈利的空间",
-            bullets: [
-              "通过信任和透明的报告与居住者互动",
-              "成为环境卓越的领导者",
-              "助力实现 ESG 目标和指标",
-            ],
-          },
-        ],
+            title: "影响力 (Impact)",
+            desc: "可持续发展战略，助力全球资产面向未来并确保人类健康。",
+            icon: Globe,
+            tag: "03"
+          }
+        ]
       },
       values: [
         {
@@ -242,29 +230,61 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-24 md:py-32 bg-card/30 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">{t.mission.title}</h2>
+      {/* Philosophy Section - Replaces Mission Section */}
+      <section className="py-24 md:py-32 bg-card/30 backdrop-blur-sm relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20 text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">{t.philosophy.title}</h2>
+            <div className="mt-4 h-1.5 w-24 bg-primary mx-auto rounded-full" />
+          </motion.div>
       
-          <div className="grid md:grid-cols-3 gap-8 text-left">
-            {t.mission.items.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
-                className="rounded-2xl border border-border bg-card/60 shadow-sm hover:shadow-md transition-all p-8"
-              >
-                <h3 className="text-2xl font-semibold mb-6 text-center">{item.title}</h3>
-                <ul className="list-disc pl-6 space-y-3 text-muted-foreground text-sm leading-relaxed">
-                  {item.bullets.map((bullet: string, i: number) => (
-                    <li key={i}>{bullet}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-12 relative">
+            {t.philosophy.items.map((item: any, index: number) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.2, ease: [0.21, 0.45, 0.32, 0.9] }}
+                  className="group relative"
+                >
+                  {/* Background Numbering for "Advanced" Look */}
+                  <span className="absolute -top-10 -left-4 text-8xl font-black text-primary/[0.03] select-none group-hover:text-primary/[0.06] transition-colors duration-500">
+                    {item.tag}
+                  </span>
+      
+                  <div className="relative p-8 rounded-2xl border border-border bg-card/40 hover:bg-card/80 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2">
+                    <div className="mb-6 flex items-center justify-between">
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
+                        <Icon className="w-7 h-7" />
+                      </div>
+                      <div className="h-px flex-grow bg-border mx-4 opacity-50" />
+                    </div>
+      
+                    <h3 className="text-2xl font-bold mb-4 tracking-tight group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-muted-foreground leading-relaxed text-balance">
+                      {item.desc}
+                    </p>
+      
+                    {/* Bottom accent line */}
+                    <div className="mt-8 h-1 w-0 bg-primary group-hover:w-full transition-all duration-700 rounded-full" />
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
