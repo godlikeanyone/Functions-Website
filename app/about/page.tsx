@@ -68,23 +68,19 @@ export default function AboutPage() {
         },
       ],
       whywork: {
-        title: "WHY WORK WITH US",
+        title: "Why Work With Functions",
         items: [
           {
-            title: "Tested and Validated Technologies",
-            text: "Trusted by global brands across commercial, healthcare, education, and the hospitality & retail sectors.",
+            title: "Engineering-First Consultancy",
+            text: "Unlike traditional consultancies, we are rooted in technical engineering. With over 15 years of hands-on experience in building systems and sustainable design, we provide solutions that are technically viable, not just theoretical.",
           },
           {
-            title: "Easy To Implement Solutions",
-            text: "Innovations proven to improve wellbeing and reduce costs, easily deployable at scale.",
+            title: "Full-Lifecycle Partnership",
+            text: "We offer professional guidance through the entire lifecycle of a project—from design and construction to long-term operation—ensuring persistent performance and asset resilience.",
           },
           {
-            title: "Result Focussed",
-            text: "Measurable improvements in air quality, energy use, and certification outcomes.",
-          },
-          {
-            title: "Customized Product Development and Supply",
-            text: "Our solutions of filters, modules, and systems can be tailored to individual project needs.",
+            title: "Data-Driven Impact",
+            text: "Our approach integrates AI-driven insights with hardware infrastructure to deliver measurable outcomes, such as significant energy savings and verified indoor environmental quality.",
           },
         ],
       },
@@ -309,7 +305,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* WHY WORK WITH US Section */}
+      {/* Why Work Section */}
       <section className="py-24 md:py-32 bg-background border-y border-border relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h2
