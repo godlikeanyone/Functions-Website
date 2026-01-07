@@ -323,77 +323,79 @@ export default function AboutPage() {
 
       {/* FUNCTIONS Radial Section */}
       <section className="relative py-32 bg-background border-t border-border overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 relative">
-          {/* 增加一个 Heading 引导 */}
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em] mb-4">Our Technical Ecosystem</h2>
-          </div>
-      
-          <div className="flex justify-center items-center h-[650px] md:h-[800px]">
-            {/* 内核容器：确保它是相对定位且有固定大小 */}
-            <div className="relative w-[300px] h-[300px] md:w-[600px] md:h-[600px] flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-center items-center h-[600px] md:h-[800px]">
+            
+            {/* 内核容器：设置为 relative 且居中 */}
+            <div className="relative flex items-center justify-center">
               
-              {/* 中央品牌节点 (Brand Node) */}
+              {/* 1. 中央品牌节点 */}
               <motion.div 
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                className="relative w-32 h-32 md:w-44 md:h-44 rounded-full bg-primary flex items-center justify-center z-30 shadow-[0_0_50px_rgba(59,130,246,0.3)] border-4 border-background"
+                className="w-32 h-32 md:w-44 md:h-44 rounded-full bg-primary flex items-center justify-center z-50 shadow-2xl border-4 border-background"
               >
-                <span className="font-bold text-primary-foreground tracking-tighter text-xl md:text-2xl">
-                  {t.hero.eyebrow?.split(' ')[1] || "FUNCTIONS"}
+                <span className="font-bold text-primary-foreground text-xl md:text-2xl tracking-tighter">
+                  FUNCTIONS
                 </span>
               </motion.div>
       
-              {/* 轨道项 (Orbiting Items) */}
+              {/* 2. 环绕业务节点 */}
               {t.radialSection.items.map((item: any, i: number) => {
                 const count = t.radialSection.items.length;
+                // 计算角度 (弧度制)
                 const angle = (i / count) * 2 * Math.PI - Math.PI / 2;
                 
-                // 使用不同的半径：移动端 140px, 桌面端 280px
-                const x = Math.cos(angle);
-                const y = Math.sin(angle);
+                // 根据屏幕宽度定义半径 (响应式)
+                const radius = typeof window !== 'undefined' && window.innerWidth < 768 ? 140 : 280;
+                
+                // 直接计算 X 和 Y 轴的偏移量
+                const targetX = Math.cos(angle) * radius;
+                const targetY = Math.sin(angle) * radius;
+      
                 const Icon = item.icon;
       
                 return (
                   <div key={i} className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    {/* 连接线 (Connecting Line) */}
+                    {/* 连接线 */}
                     <motion.div
                       initial={{ width: 0, opacity: 0 }}
-                      whileInView={{ width: 'var(--line-width)', opacity: 0.1 }}
+                      whileInView={{ width: radius - 40, opacity: 0.2 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.05, duration: 0.8 }}
-                      className="absolute h-[1px] bg-primary origin-left [--line-width:120px] md:[--line-width:240px]"
+                      className="absolute h-px bg-primary origin-left"
                       style={{ 
-                        transform: `rotate(${angle}rad) translateX(40px)`,
-                        left: '50%',
-                        top: '50%'
+                        transform: `rotate(${angle}rad) translateX(20px)`,
                       }}
                     />
       
-                    {/* 业务节点 (Service Nodes) */}
+                    {/* 图标节点 */}
                     <motion.div
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0, x: 0, y: 0 }}
+                      whileInView={{ 
+                        opacity: 1, 
+                        x: targetX, 
+                        y: targetY 
+                      }}
                       viewport={{ once: true }}
-                      transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+                      transition={{ 
+                        delay: i * 0.1, 
+                        type: "spring", 
+                        stiffness: 70, 
+                        damping: 12 
+                      }}
                       className="absolute pointer-events-auto"
-                      style={{
-                        // 使用 CSS transform 代替简单的 left/top，确保位置精准
-                        transform: `translate(calc(${x} * var(--radius)), calc(${y} * var(--radius)))`,
-                        // 定义 CSS 变量方便响应式调整
-                        '--radius': '140px' // 默认移动端半径
-                      } as any}
                     >
-                      {/* 桌面端半径通过媒体查询或在容器类名中处理 */}
-                      <div className="md:[--radius:280px] flex flex-col items-center group">
-                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-card border border-border shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-500">
-                          <Icon className="w-6 h-6 md:w-8 md:h-8" />
+                      <div className="flex flex-col items-center group">
+                        {/* 图标球 */}
+                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-card border border-border shadow-md flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
+                          {Icon && <Icon className="w-6 h-6 md:w-8 md:h-8" />}
                         </div>
                         
-                        {/* 文本标签：桌面端 Hover 显示，移动端始终显示 */}
-                        <div className="mt-3 px-3 py-1 bg-background/80 backdrop-blur-sm rounded-full border border-border md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 shadow-sm">
-                          <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest whitespace-nowrap">
+                        {/* 标签 */}
+                        <div className="mt-2 px-2 py-1 bg-background/90 backdrop-blur-sm rounded border border-border shadow-sm md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+                          <span className="text-[10px] md:text-xs font-bold uppercase whitespace-nowrap">
                             {item.text}
                           </span>
                         </div>
@@ -403,9 +405,10 @@ export default function AboutPage() {
                 );
               })}
       
-              {/* 背景装饰环 */}
-              <div className="absolute inset-0 m-auto w-[280px] h-[280px] md:w-[560px] md:h-[560px] border border-primary/5 rounded-full pointer-events-none" />
-              <div className="absolute inset-0 m-auto w-[180px] h-[180px] md:w-[380px] md:h-[380px] border border-primary/10 rounded-full pointer-events-none border-dashed" />
+              {/* 3. 装饰背景环 */}
+              <div className="absolute w-[280px] h-[280px] md:w-[560px] md:h-[560px] border border-primary/5 rounded-full pointer-events-none" />
+              <div className="absolute w-[180px] h-[180px] md:w-[360px] md:h-[360px] border border-primary/10 rounded-full border-dashed pointer-events-none" />
+      
             </div>
           </div>
         </div>
