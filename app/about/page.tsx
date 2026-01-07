@@ -321,15 +321,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* FUNCTIONS Radial Section */}
+      {/* Functions Radial Section */}
       <section className="relative py-32 bg-background border-t border-border overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-center items-center h-[600px] md:h-[800px]">
-            
-            {/* 内核容器：设置为 relative 且居中 */}
+
             <div className="relative flex items-center justify-center">
               
-              {/* 1. 中央品牌节点 */}
+              {/* Central logo */}
               <motion.div 
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
@@ -337,20 +336,20 @@ export default function AboutPage() {
                 className="w-32 h-32 md:w-44 md:h-44 rounded-full bg-primary flex items-center justify-center z-50 shadow-2xl border-4 border-background"
               >
                 <span className="font-bold text-primary-foreground text-xl md:text-2xl tracking-tighter">
-                  FUNCTIONS
+                  Functions
                 </span>
               </motion.div>
       
-              {/* 2. 环绕业务节点 */}
+              {/* Surrounding nodes */}
               {t.radialSection.items.map((item: any, i: number) => {
                 const count = t.radialSection.items.length;
-                // 计算角度 (弧度制)
+                // Angle
                 const angle = (i / count) * 2 * Math.PI - Math.PI / 2;
                 
-                // 根据屏幕宽度定义半径 (响应式)
+                // Radius
                 const radius = typeof window !== 'undefined' && window.innerWidth < 768 ? 140 : 280;
                 
-                // 直接计算 X 和 Y 轴的偏移量
+                // X-axis and Y-axis
                 const targetX = Math.cos(angle) * radius;
                 const targetY = Math.sin(angle) * radius;
       
@@ -358,7 +357,7 @@ export default function AboutPage() {
       
                 return (
                   <div key={i} className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    {/* 连接线 */}
+                    {/* Connecting lines */}
                     <motion.div
                       initial={{ width: 0, opacity: 0 }}
                       whileInView={{ width: radius - 40, opacity: 0.2 }}
@@ -370,7 +369,7 @@ export default function AboutPage() {
                       }}
                     />
       
-                    {/* 图标节点 */}
+                    {/* Node */}
                     <motion.div
                       initial={{ opacity: 0, x: 0, y: 0 }}
                       whileInView={{ 
@@ -388,12 +387,12 @@ export default function AboutPage() {
                       className="absolute pointer-events-auto"
                     >
                       <div className="flex flex-col items-center group">
-                        {/* 图标球 */}
+                        {/* Icon */}
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-card border border-border shadow-md flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
                           {Icon && <Icon className="w-6 h-6 md:w-8 md:h-8" />}
                         </div>
                         
-                        {/* 标签 */}
+                        {/* Label */}
                         <div className="mt-2 px-2 py-1 bg-background/90 backdrop-blur-sm rounded border border-border shadow-sm md:opacity-0 md:group-hover:opacity-100 transition-opacity">
                           <span className="text-[10px] md:text-xs font-bold uppercase whitespace-nowrap">
                             {item.text}
@@ -405,7 +404,7 @@ export default function AboutPage() {
                 );
               })}
       
-              {/* 3. 装饰背景环 */}
+              {/* Background ring */}
               <div className="absolute w-[280px] h-[280px] md:w-[560px] md:h-[560px] border border-primary/5 rounded-full pointer-events-none" />
               <div className="absolute w-[180px] h-[180px] md:w-[360px] md:h-[360px] border border-primary/10 rounded-full border-dashed pointer-events-none" />
       
