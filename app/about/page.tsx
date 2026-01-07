@@ -18,9 +18,9 @@ export default function AboutPage() {
     en: {
       hero: {
         eyebrow: "About Functions",
-        title: "Reimagining the Future of Indoor Environments",
+        title: "Engineering a Smarter, Healthier World",
         description:
-          "Harness intelligent monitoring and automation to reduce energy waste, ensure compliance, and enhance comfort across every building you manage.",
+          "We don’t just consult; we build the intelligence that makes infrastructure sustainable.",
       },
       mission: {
         title: "Our Mission",
