@@ -17,8 +17,7 @@ export default function CaseStudiesPage() {
       hero: {
         eyebrow: "Case Studies",
         title: "Impact in Action: Proven Success Stories",
-        description:
-          "Evidence-based transformations that redefine building performance.",
+        description: "Evidence-based transformations that redefine building performance.",
       },
       henkelCase: {
         category: "Manufacturing",
@@ -50,6 +49,21 @@ export default function CaseStudiesPage() {
         ],
         image: "/moncler-store.webp",
       },
+      hinesCase: {
+        category: "Mixed Used Building",
+        title: "Optimizing Iconic Assets: AI-Driven Energy Efficiency for One Museum Place",
+        solution: [
+          "AI-based parameter optimization using neural network modeling of historical chiller plant data",
+          "Data-driven 'Consulting Mode' providing real-time operational insights and expert recommendations",
+          "Dynamic system adjustment of chilled water temperatures and load distribution to maintain peak efficiency",
+        ],
+        results: [
+          { icon: Zap, value: "6%", label: "Energy Optimization" },
+          { icon: ShieldCheck, value: "Zero", label: "Equip. Replacement" },
+          { icon: Clock, value: "<3yr", label: "ROI Period" },
+        ],
+        image: "/hines-building.webp",
+      },
     },
     zh: {
       hero: {
@@ -59,18 +73,18 @@ export default function CaseStudiesPage() {
       },
       henkelCase: {
         category: "制造业",
-        title: "全球制造业数字化转型",
+        title: "为汉高打造 WELL 空间：智慧空气，健康办公",
         solution: [
-          "WELL认证咨询与实施",
+          "WELL 认证咨询与实施",
           "持续的室内环境监测",
           "定制化空气通风系统升级以提升舒适度与效率",
         ],
         results: [
-          { icon: TrendingUp, value: "40%", label: "成本降低" },
-          { icon: Clock, value: "60%", label: "生产加速" },
-          { icon: Users, value: "200万+", label: "每年节省工时" },
+          { icon: TrendingUp, value: "首个", label: "WELL V2 铂金级" },
+          { icon: Users, value: "90%", label: "员工满意度" },
+          { icon: Clock, value: "8%", label: "生产力提升" },
         ],
-        image: "/henkel-office.webp",
+        image: "/henkel-building.webp",
       },
       monclerCase: {
         category: "零售业",
@@ -86,6 +100,21 @@ export default function CaseStudiesPage() {
           { icon: ShieldCheck, value: "7/24", label: "实时可靠性" },
         ],
         image: "/moncler-store.webp",
+      },
+      hinesCase: {
+        category: "综合体建筑",
+        title: "优化标志性资产：AI 驱动的上海博华广场 (One Museum Place) 能源效率提升",
+        solution: [
+          "基于历史冷机房数据的神经网络模型 AI 参数优化",
+          "数据驱动的“咨询模式”提供实时运行洞察与专家建议",
+          "动态调节冷冻水温度和负荷分配，确保系统持续处于峰值效率",
+        ],
+        results: [
+          { icon: Zap, value: "6%", label: "能源优化" },
+          { icon: ShieldCheck, value: "零", label: "设备更换成本" },
+          { icon: Clock, value: "<3年", label: "投资回报期" },
+        ],
+        image: "/hines-building.webp",
       },
     },
   }
@@ -114,8 +143,10 @@ export default function CaseStudiesPage() {
       <section className="py-24 md:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-24">
-            {[t.henkelCase, t.monclerCase].map((caseItem, index) => {
-              const isReversed = index === 1
+            {/* 这里的数组顺序决定了显示的顺序：Henkel -> Moncler -> Hines */}
+            {[t.henkelCase, t.monclerCase, t.hinesCase].map((caseItem, index) => {
+              // 自动判断：偶数索引（0, 2..）文案在左，奇数索引（1, 3..）文案在右
+              const isReversed = index % 2 !== 0
               return (
                 <div
                   key={index}
@@ -123,7 +154,7 @@ export default function CaseStudiesPage() {
                     isReversed ? "lg:[&>div:first-child]:order-2" : ""
                   }`}
                 >
-                  {/* Left Side (text) */}
+                  {/* Text Content */}
                   <div>
                     <div className="text-xs text-primary font-semibold mb-4 uppercase tracking-wider">
                       {caseItem.category}
@@ -157,7 +188,7 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
             
-                  {/* Right Side (image) with Hover zoom effect */}
+                  {/* Image with Hover zoom effect */}
                   <div className="relative aspect-square lg:aspect-auto lg:h-[600px] bg-muted rounded-2xl overflow-hidden">
                     <img
                       src={caseItem.image}
