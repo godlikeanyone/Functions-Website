@@ -77,6 +77,7 @@ export default function SustainabilityPage() {
           title: "Energy Intelligence & Engineering",
           focus: "Human-centric design powered by data.",
           value: "Reducing operational expenditures while future-proofing your infrastructure against evolving regulations.",
+          image: "/energy-audit.webp",
           services: [
             { title: "Energy Audits", text: "Technical excellence in Level 1-3 audits to identify savings." },
             { title: "HVAC Retrofitting", text: "Engineering upgrades for legacy systems to modern efficiency." },
@@ -291,9 +292,9 @@ export default function SustainabilityPage() {
                 <div className="lg:col-span-7">
                     <div className="relative w-full aspect-[2816/1536] rounded-3xl bg-muted overflow-hidden group shadow-xl">
                        <img 
-                         src="/energy-audit.webp"
+                         src={t.sections.energy.image}
                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                         alt="Energy Audit" 
+                         alt={t.sections.energy.title} 
                        />
                     </div>
                 </div>
