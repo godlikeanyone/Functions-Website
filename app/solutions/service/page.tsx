@@ -43,6 +43,7 @@ export default function SustainabilityPage() {
           title: "Global Green Building Certifications",
           focus: "Navigating the path to world-class recognition.",
           value: "Navigating the complexities of global certification to enhance asset recognition and occupant well-being.",
+          image: "/global-green-building.webp",
           services: [
             "Comprehensive management for LEED, WELL, BREEAM, and EDGE",
             "Performance verification and technical documentation",
@@ -125,6 +126,7 @@ export default function SustainabilityPage() {
           title: "全球绿色建筑认证",
           focus: "迈向世界级认可之路。",
           value: "通过应对复杂的全球认证体系，提升资产认可度并改善租户福祉。",
+          image: "/global-green-building.webp",
           services: [
             "LEED, WELL, BREEAM 及 EDGE 全流程管理",
             "性能验证与技术文档编制",
@@ -159,6 +161,7 @@ export default function SustainabilityPage() {
           title: "能源智能与工程技术",
           focus: "以数据为驱动的人本设计。",
           value: "在降低运营开支的同时，使您的基础设施能够应对不断变化的法规挑战。",
+          image: "/energy-audit.webp",
           services: [
             { title: "能源审计", text: "提供 1-3 级专业审计，精准锁定节能空间。" },
             { title: "HVAC 改造", text: "针对旧有系统的工程升级，实现现代化能效。" },
@@ -237,8 +240,13 @@ export default function SustainabilityPage() {
                   ))}
                 </ul>
               </div>
-              <div className="order-1 lg:order-2 relative aspect-video lg:aspect-square bg-muted rounded-3xl overflow-hidden shadow-2xl border">
-                 <img src="/global-green-building.webp" alt="Certifications" className="w-full h-full object-cover" />
+              <div className="order-1 lg:order-2 relative group aspect-video lg:aspect-square bg-muted rounded-3xl overflow-hidden shadow-2xl border border-border/50">
+                 <img 
+                    src={t.sections.certifications.image} 
+                    alt={t.sections.certifications.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+                 />
+                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-700" />
               </div>
             </div>
           </div>
