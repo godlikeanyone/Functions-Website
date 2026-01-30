@@ -277,23 +277,24 @@ export default function SustainabilityPage() {
                    <h2 className="text-4xl md:text-5xl font-bold mb-6">{t.sections.energy.title}</h2>
                    <p className="text-lg text-muted-foreground mb-8">{t.sections.energy.value}</p>
                    <div className="space-y-6">
-                      {t.sections.energy.services.map((s, i) => (
-                        <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-muted/50 transition-colors">
-                           <CheckCircle2 className="h-6 w-6 text-primary mt-1" />
-                           <div>
-                              <h4 className="font-bold text-lg">{s.title}</h4>
-                              <p className="text-muted-foreground">{s.text}</p>
-                           </div>
-                        </div>
-                      ))}
+                     {t.sections.energy.services.map((s, i) => (
+                       <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-muted/50 transition-colors">
+                          <CheckCircle2 className="h-6 w-6 text-primary mt-1" />
+                          <div>
+                             <h4 className="font-bold text-lg">{s.title}</h4>
+                             <p className="text-muted-foreground">{s.text}</p>
+                          </div>
+                       </div>
+                     ))}
                    </div>
                 </div>
-                <div className="lg:col-span-7 grid grid-cols-2 gap-4">
-                    <div className="h-64 md:h-80 rounded-3xl bg-muted overflow-hidden">
-                       <img src="/energy-audit.webp" className="w-full h-full object-cover" alt="Energy Audit" />
-                    </div>
-                    <div className="h-64 md:h-80 rounded-3xl bg-muted mt-8 overflow-hidden">
-                       <img src="/hvac-retro.webp" className="w-full h-full object-cover" alt="Retrofit" />
+                <div className="lg:col-span-7">
+                    <div className="relative w-full aspect-[2816/1536] rounded-3xl bg-muted overflow-hidden group shadow-xl">
+                       <img 
+                         src="/energy-audit.webp"
+                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                         alt="Energy Audit" 
+                       />
                     </div>
                 </div>
              </div>
